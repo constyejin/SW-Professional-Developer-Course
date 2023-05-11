@@ -1,0 +1,45 @@
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 36px;
+}
+
+.header {
+  /* 부모 태그의 100% */
+  width: 100%;
+  height: 100px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  /* background-color: aquamarine; */
+}
+
+.left-menu {
+  /* 부모 태그의 30% */
+  width: 20%;
+  height: 400px;
+  border: 2px solid blue;
+  box-sizing: border-box;
+  /* background-color: cornflowerblue; */
+  /* 이 요소를 붕 띄워서 왼쪽으로 정렬 */
+  float: left;
+}
+
+.right-menu {
+  width: 80%;
+  height: 400px;
+  border: 2px solid green;
+  box-sizing: border-box;
+  /* background-color: coral; */
+  float: left;
+  /* 앞에 left 옆으로 붙으라는 의미에서 left를 사용해도되고, 남은 공간 오른쪽으로 가라 해서 right를 사용해도 됨! */
+}
+
+.footer {
+  clear: both;
+  width: 100%;
+  height: 150px;
+  border: 2px solid yellow;
+  box-sizing: border-box;
+  /* background-color: lightgreen; */
+}
+

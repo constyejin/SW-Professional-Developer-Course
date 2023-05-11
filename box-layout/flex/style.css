@@ -1,0 +1,39 @@
+.wrapper {
+  width: 1200px;
+  font-size: 36px;
+  margin: 0 auto;
+}
+
+.layout {
+  display: flex;
+  /* 기본값이 nowrap : 폭이 넘쳐도 아래로 안 떨어지고 꽉 채움 */
+  flex-wrap: wrap;
+}
+
+.header {
+  width: 1200px;
+  height: 100px;
+  background-color: aquamarine;
+}
+
+.left-menu {
+  /* order: 2; */
+  width: 200px;
+  height: 500px;
+  background-color: cornflowerblue;
+}
+
+.right-menu {
+  /* order: 1; */
+  width: 1000px;
+  height: 500px;
+  background-color: coral;
+}
+
+.footer {
+  /* order: 3; */
+  width: 1200px;
+  height: 150px;
+  background-color: lightgreen;
+}
+
