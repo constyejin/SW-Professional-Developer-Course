@@ -87,8 +87,16 @@ body {
 
 .potato-img {
   width: 300px;
+  height: 300px;
   margin-top: 30px;
   border-radius: 50%;
+  object-fit: cover;
+  /*  1. cover
+        : 내용이 비율을 유지하면서 정의된 가로 X 세로 사이즈를 가득 채울 때 까지 확대된다.
+      2. contain
+        : 내용이 비율을 유지하면서 정의된 가로 X 세로 
+        안에서 가능한한 많이 확대한다.
+  */
 }
 
 .global-footer {
