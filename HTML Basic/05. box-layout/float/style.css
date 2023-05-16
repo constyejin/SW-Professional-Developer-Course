@@ -16,7 +16,7 @@
 .left-menu {
   /* 부모 태그의 30% */
   width: 20%;
-  height: 400px;
+  height: 500px;
   border: 2px solid blue;
   box-sizing: border-box;
   /* background-color: cornflowerblue; */
@@ -26,7 +26,7 @@
 
 .right-menu {
   width: 80%;
-  height: 400px;
+  height: 500px;
   border: 2px solid green;
   box-sizing: border-box;
   /* background-color: coral; */

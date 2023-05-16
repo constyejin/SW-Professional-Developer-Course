@@ -1,12 +1,16 @@
+.box div {
+  width: 100px;
+  height: 100px;
+  border: 5px solid red;
+}
+
 .left {
   margin-top: 30px;
 }
 
 .left_float div {
   float: left;
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
+
 }
 
 /*  부모 요소 다음에 오는 요소한테 clear */
@@ -16,9 +20,6 @@
 
 .left_inline div {
   display: inline-block;
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
 }
 
 .left_flex {
@@ -26,21 +27,13 @@
   display: flex;
 }
 
-.left_flex div {
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
-}
-
 /* right */
 .right_float div {
   float: right;
 }
+
 .right_float div div {
   float: left;
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
 }
 
 .right_inline {
@@ -49,9 +42,6 @@
 
 .right_inline div {
   display: inline-block;
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
   text-align: left;
 }
 
@@ -60,47 +50,33 @@
   justify-content: end;
 }
 
-.right_flex div {
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
-}
 
 /* center */
 .center_float {
   width: 330px;
   margin: 0 auto;
 }
+
 .center_float div {
   float: left;
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
 }
 
 .center_inline {
-  /* block 요소에 text-align 속성을 적용할 때는 부모 요소에게 줘야함 */
+  /* text-align : 문단을 수평으로 정렬하는 속성 */
+  /* block 요소에 안에 있는 inline 요소를 정렬한다 */
   /* text를 정렬할 때는 본인에게 적용가능 */
-  /* text뿐 아니라 이미지도 inline 요소라면 가능함! */
+  /* inline 요소라면 text뿐 아니라 이미지도 정렬 가능함! */
   text-align: center;
 }
+
 .center_inline div {
   display: inline-block;
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
   text-align: left;
 }
 
 .center_flex {
   display: flex;
   justify-content: center;
-}
-
-.center_flex div {
-  width: 100px;
-  height: 100px;
-  border: 5px solid red;
 }
 
 .flex {
@@ -117,7 +93,5 @@
 }
 
 .flex div  {
-  width: 100px;
-  height: 100px;
   border: 5px solid blue;
 }
