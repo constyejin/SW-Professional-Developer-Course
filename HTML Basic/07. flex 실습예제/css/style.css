@@ -25,20 +25,18 @@ nav {
   /* 수직정렬 하는 속성 */
   align-items: center;
   /* align-items: center :사진과 동일하게 가운데 선상으로 옮기는 것 */
-  padding: 10px 0;
+  padding: 15px 40px;
   background-color: #333;
 }
 
 .logo img {
   width: 40px;
-  margin-left: 20px;
 }
 
 .gnb-list {
   display: flex;
   justify-content: space-between;
   width: 300px;
-  margin-right: 40px;
 }
 
 .gnb-item a {
@@ -56,10 +54,13 @@ nav {
 .background {
   height: 600px;
   background-image: url('../images/back.jpeg');
+  /* display 설정할 때 바둑판처럼 남은 공간에 이미지 반복 여부 설정 */
   background-repeat: no-repeat;
   /* 배경 이미지를 어디에 위치하게 할건지 top,bottom, left, right, center, x축 y축 픽셀로도 지정가능! */
   background-position: center;
-  /* 1. */
+  /* object-fit처럼 배경 이미지 사이즈 설정 */
+  /* 기본값 : auto : 원래 이미지 크기만큼 표시 */
+  /* Contain, Cover, px(가로X세로), % */
   background-size: cover;
 }
 
@@ -104,7 +105,23 @@ nav {
   color: #fff;
   background-color: #000;
   border-radius: 20px;
-  box-shadow: 5px 5px 5px #666;
+
+  /* 속성 3개 작성 */
+  /* offset-x | offset-y | color */
+  /* 수평 | 수직 | 색상 */
+  
+  /* 속성 4개 작성 */
+  /* offset-x | offset-y | blur-radius | color */
+  /* 수평 | 수직 | 그림자 테두리 선명함 | 색상 */
+  /* offset-x | offset-y 값이 양수일 때 : 오른쪽 하단 */
+  /* offset-x | offset-y 값이 음수일 때 : 왼쪽 상단 */
+  /* blur-radius는 음수 값 사용 불가 0이 가장 선명 */
+
+  /* 속성 5개 작성 */
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  /* 수평 | 수직 | 그림자 테두리 선명함 | 그림자 크기 | 색상 */
+  /* spread-radius : 양수 값은 그림자가 커지고, 음수 값은 그림자가 작아진다. 기본값은 0 */
+  box-shadow: 5px 5px 10px #666;
 }
 
 .second-txt p {
