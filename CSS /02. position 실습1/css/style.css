@@ -1,3 +1,7 @@
+/* position : fixed 참고 자료
+  https://velog.io/@bigbrothershin/css-position-fixed-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%ED%8C%81
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -24,23 +28,22 @@ body 태그처럼 페이지 전체를 감싸고 있는 태그의 바로 자식�
 /* 부모 height 높이 값만큼만 sticky가 고정됨 */
 
 .global-header {
-  width: 100%;
+  height: 80px;
+}
+
+nav {
+  /* css 작성순서 : 1. display, 2.position, 3.width X height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position fixed주면 width값이 줄어드는 현상 */
+  /* absolute, fixed 사용 시, block 레벨 요소의 width는 inline 요소와 같이 content에 맞게 변화되므로 width를 지정 해줘야 한다. */
   position: fixed;
   top: 0;
   /* 공중에 떠있는 애들중에 누가 맨 앞에오고 뒤에 올건지 정해주는 속성 : 정수 z-index가 높을수록 앞으로 */
   z-index: 10;
-}
-
-
-nav {
-  /* display: flex는내가 정렬하고 아이템의 부모에게 줘야함 */
-  /* flexible box라고도 부른다. 말 그대로 유연한 박스 배치가 가능! */
-  display: flex;
-  /* 수평정렬 하는 속성  */
-  justify-content: space-between;
-  /* 수직정렬 하는 속성 */
-  align-items: center;
-  /* align-items: center :사진과 동일하게 가운데 선상으로 옮기는 것 */
+  width: 100%;
+  height: 80px;
   padding: 10px 0;
   background-color: skyblue;
 }
@@ -65,10 +68,6 @@ nav {
 
 .gnb-item a:hover {
   color: dodgerblue;
-}
-
-main {
-  margin-top: 76px;
 }
 
 .background {
