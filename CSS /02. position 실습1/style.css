@@ -149,18 +149,21 @@ nav {
 }
 
 .back1 {
-  width: 500px;
+  width: 1000px;
 	height: 500px;
 	background-attachment: fixed;
 	background-image: url('./images/스누피2.png');
-  background-position: center left 25%;
+  /* px, %, top bottom left right */
+  /* px, % 사용시 왼쪽 상단 기준으로 거리 기재 */
+  /* x, y / 가로 X 세로 모두 center일 때는 한번만 써도 됨 */
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 500px;
   background-color: #fff;
   margin-right: 20px;
 }
 
-.back2 {
+/* .back2 {
   width: 500px;
 	height: 500px;
 	background-attachment: fixed;
@@ -169,7 +172,7 @@ nav {
   background-repeat: no-repeat;
   background-size: 500px;
   background-color: #fff;
-}
+} */
 
 footer {
   background-color: skyblue;
