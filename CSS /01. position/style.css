@@ -17,6 +17,7 @@
   border: 1px solid #000;
   text-align: center;
   box-sizing: border-box;
+  /* normal : 웹브라우저에서 정한 기본값 1.2입니다. */
   line-height: 100px;
 }
 
