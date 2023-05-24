@@ -31,6 +31,7 @@ body 태그처럼 페이지 전체를 감싸고 있는 태그의 바로 자식�
   z-index: 10;
 }
 
+
 nav {
   /* display: flex는내가 정렬하고 아이템의 부모에게 줘야함 */
   /* flexible box라고도 부른다. 말 그대로 유연한 박스 배치가 가능! */
@@ -64,6 +65,10 @@ nav {
 
 .gnb-item a:hover {
   color: dodgerblue;
+}
+
+main {
+  margin-top: 76px;
 }
 
 .background {
