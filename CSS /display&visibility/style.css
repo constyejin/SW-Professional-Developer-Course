@@ -1,0 +1,18 @@
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+.box1 {
+  /* display: none; */
+  background-color: red;
+}
+
+.box2 {
+  /* visibility: hidden; */
+  background-color: green;
+}
+
+.box3 {
+  background-color: blue;
+}
