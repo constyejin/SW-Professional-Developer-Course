@@ -70,6 +70,10 @@ nav {
   color: dodgerblue;
 }
 
+/* nav:hover .gnb-item a {
+  color: red;
+} */
+
 .background {
   width: 100%;
   height: 500px;
@@ -133,11 +137,11 @@ nav {
   max-width: 600px;
   /* 최소폭을 결정하는 속성 : 이 이하로는 작아지지 말아라 */
   min-width: 300px;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
   padding: 30px;
   background-color: rgb(217, 241, 254);
   border-radius: 10px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .post-card > div:first-child {
@@ -198,8 +202,12 @@ footer {
   display: flex;
 }
 
-.footer-item {
-  margin-right: 20px;
+.footer-item a {
+  padding-right: 20px;
+}
+
+.footer-item:last-child a {
+  padding-right: 0;
 }
 
 .footer-item :last-child {
@@ -214,7 +222,12 @@ footer {
   transition: color 300ms ease-in-out;
 }
 
-.footer-item a:hover {
+.footer-item a i {
+  transition: all 500ms;
+}
+
+.footer-item a:hover i {
+  transform: scale(1.2);
   color: dodgerblue;
 }
 
