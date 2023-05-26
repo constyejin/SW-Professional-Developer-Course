@@ -25,7 +25,7 @@ body {
   height: 500px;
   border: 10px solid darkblue;
   background-color: #fff;
-  transition: all 500ms ease-in-out;
+  transition: all 500ms;
 }
 
 .wrapper:hover .box {
@@ -55,6 +55,7 @@ body {
   background-color: red;
 }
 .yellow {
+  /* 교차축 혼자 정렬 */
   align-self: center;
   background-color: yellow;
 }
