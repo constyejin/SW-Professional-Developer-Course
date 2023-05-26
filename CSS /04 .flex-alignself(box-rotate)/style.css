@@ -53,7 +53,12 @@ body {
 
 .red {
   background-color: red;
+  /* transition: border 1s; */
 } 
+
+.red:hover ~.green {
+  transform: rotate(-45deg) scale(1.5);
+}
 
 .yellow {
   /* 교차축 혼자 정렬 */
@@ -69,5 +74,8 @@ body {
   [문제2] 
   1. .wrapper에 hover 했을 때 .box 모두 45deg 회전되도록 하기 
   2. border 각자 background-color로 변경
+
+  [문제3]
+  1. .red 박스에 hover시 .green 박스 크기가 커지게 작성
   */
 
