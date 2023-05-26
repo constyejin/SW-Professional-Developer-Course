@@ -53,7 +53,8 @@ body {
 
 .red {
   background-color: red;
-}
+} 
+
 .yellow {
   /* 교차축 혼자 정렬 */
   align-self: center;
@@ -64,8 +65,9 @@ body {
   background-color: green;
 }
 
-
-/* [문제2] display: flex와 justify-content 속성 사용하기 */
-/* [문제3] align-self 속성 사용하기 */
-/* [문제4] .wrapper에 hover 했을 때 .box 모두 45deg 회전되도록 하기 */
+/* 
+  [문제2] 
+  1. .wrapper에 hover 했을 때 .box 모두 45deg 회전되도록 하기 
+  2. border 각자 background-color로 변경
+  */
 
