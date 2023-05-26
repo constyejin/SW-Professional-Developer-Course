@@ -1,6 +1,6 @@
 /* [문제1] 아래 요구사항에 맞춰 기본 스타일 작성하기 */
 /*
-	.wrapper (가로 세로 500px, 보더 10px darkblue, 배경색 #fff)
+	.wrapper (가로 세로 500px, 보더 10px darkblue, 배경색 #fff) 가로 x 세로 중앙정렬
 	.box (가로 세로 100px, 보더 5px black)
 	.box.red (배경색 red)
 	.box.yellow (배경색 yellow)
@@ -15,7 +15,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 500px;
 	height: 100vh;
 }
 
