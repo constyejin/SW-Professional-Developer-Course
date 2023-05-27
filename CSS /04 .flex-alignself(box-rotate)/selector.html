@@ -7,18 +7,29 @@
   <title>CSS Selector</title>
  </head>
  <style>
+  /* 부모 hover시 자식 요소는 선택자 없이 적용가능 */
+  /* .parents:hover p {
+    color: blue;
+  } */
+
   h1:hover ~ p {
     color: red;
+  }
+
+  .first:hover ~ .second {
+    color: red;
+    font-size: 24px;
   }
  </style>
  <body>
   <div class="wrapper">
-    <div>
+    <div class="parents">
       <h1>안녕</h1>
-      <p>문단1</p>
-      <p>문단2</p>
+      <p class="first">문단1</p>
+      <p class="second">문단2</p>
       <p>문단3</p>
     </div>
+    <p>문단4</p>
   </div>
  </body>
  </html>
