@@ -1,0 +1,112 @@
+.box {
+  background: orange;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-direction: alternate; 
+  /* 
+  애니메이션 재생 설정(앞으로만 이동, 뒤로 이동, 번갈아재생) */
+  /* alternate - 앞뒤 재생, normal - 앞으로재생, 
+  reverse - 뒤로 재생, alternate-reverse - 뒤앞 재생 */
+  animation-iteration-count: infinite; /* 재생횟수 설정 */
+}
+
+@keyframes move {
+  0%{
+    left:0;
+  }
+  25%{
+    background:red; left: 100px;
+  }
+  50%{
+    background:blue; left: 200px;
+  }
+  75%{
+    background:pink; left: 300px;
+  }
+  100%{
+    background: green; left: 400px;
+  }
+}
+
+
+.line_active{
+  position: relative;
+  height: 80px;
+}
+
+.line_active h2{
+  position: relative;
+  top: 30px;
+}
+
+.line_active span:nth-child(1){
+  height: 3px;
+  width: 30px;
+  display: inline-block;
+  background: red;
+  box-shadow: 0 0 2px 1px red;
+  position: absolute;
+  top: 25px;
+  animation-name: move1;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.line_active span:nth-child(2){
+  height: 3px;
+  width: 30px;
+  display: inline-block;
+  background: blue;
+  box-shadow: 0 0 2px 1px blue;
+  position: absolute;
+  top: 65px;
+  animation-name: move2;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 0.5s;
+}
+
+@keyframes move1{
+  from {
+    left:0;
+  } 
+  to {
+    left:165px;
+  }
+}
+
+@keyframes move2{
+  from {
+    left:0;
+  } 
+  to {
+    left:165px;
+  }
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  position: relative;
+  border: 5px solid #000;
+}
+
+.circle::before {
+  /* width: 100%;
+  height: 100%; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  border: 25px solid transparent;
+  border-top-color: red;
+  border-bottom-color: blue ;
+}
