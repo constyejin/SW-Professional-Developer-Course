@@ -16,6 +16,21 @@
     color: red;
   }
 
+  .second {
+    /* 
+      transition 속성
+      1. property : 변화를 주고자 하는 CSS 속성 지정(복수 지정 가능) none, all, 특정 속성
+      2. duration : transition을 적용할 시간 지정 (s, ms) 1s = 1000ms
+      3. timing-function : transition 패턴 지정 (ex 천천히 -> 빠르게 등) 
+      - linear : 일정한 속도로 변화
+      - ease : 천천히 시작 -> 빠르게 -> 천천히 끝
+      - ease-in : 천천히 시작 -> 빠르게 끝
+      - ease-out : 빠르게 시작 -> 천천히 끝
+      - ease-in-out : 천천히 시작 -> 천천히 끝
+    */
+    transition: all 500ms;
+  }
+
   .first:hover ~ .second {
     color: red;
     font-size: 24px;
