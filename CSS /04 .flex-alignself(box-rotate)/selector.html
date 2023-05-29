@@ -21,9 +21,9 @@
       transition 속성
       1. property : 변화를 주고자 하는 CSS 속성 지정(복수 지정 가능) none, all, 특정 속성
       2. duration : transition을 적용할 시간 지정 (s, ms) 1s = 1000ms
-      3. timing-function : transition 패턴 지정 (ex 천천히 -> 빠르게 등) 
+      3. timing-function : transition 패턴 지정 (ex 천천히 -> 빠르게 등)
+      - ease : 천천히 시작 -> 빠르게 -> 천천히 끝 (기본값)
       - linear : 일정한 속도로 변화
-      - ease : 천천히 시작 -> 빠르게 -> 천천히 끝
       - ease-in : 천천히 시작 -> 빠르게 끝
       - ease-out : 빠르게 시작 -> 천천히 끝
       - ease-in-out : 천천히 시작 -> 천천히 끝
@@ -35,6 +35,17 @@
     color: red;
     font-size: 24px;
   }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    transition: transform 3s ease;
+  }
+
+  .box:hover {
+    transform: translateX(500px);
+  }
  </style>
  <body>
   <div class="wrapper">
@@ -45,6 +56,7 @@
       <p>문단3</p>
     </div>
     <p>문단4</p>
+    <div class="box"></div>
   </div>
  </body>
  </html>
