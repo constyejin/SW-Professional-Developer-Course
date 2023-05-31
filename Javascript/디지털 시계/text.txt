@@ -1,0 +1,14 @@
+About
+Company
+History
+Community
+Contact us
+<i class="fab fa-facebook-f"></i>
+<i class="fab fa-twitter"></i>
+<i class="fa fa-envelope"></i>
+Lorem Ipsum
+Lorem Ipsum is simply dummy text of the printing Materials
+morning
+afternoon
+evening
+night
