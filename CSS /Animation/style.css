@@ -34,22 +34,17 @@
 
 .line_active{
   position: relative;
-  height: 80px;
+  margin-top: 30px;
 }
 
-.line_active h2{
-  position: relative;
-  top: 30px;
-}
-
-.line_active span:nth-child(1){
+.line_active span:first-child{
   height: 3px;
   width: 30px;
   display: inline-block;
   background: red;
   box-shadow: 0 0 2px 1px red;
   position: absolute;
-  top: 25px;
+  top: 0;
   animation-name: move1;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -57,20 +52,24 @@
   animation-direction: alternate;
 }
 
-.line_active span:nth-child(2){
+.line_active h2 {
+  padding: 10px 0;
+}
+
+.line_active span:last-child{
   height: 3px;
   width: 30px;
   display: inline-block;
   background: blue;
   box-shadow: 0 0 2px 1px blue;
   position: absolute;
-  top: 65px;
-  animation-name: move2;
+  bottom: 0;
+  animation-name: move1;
   animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-delay: 0.5s;
+  /* animation-delay: 0.5s; */
 }
 
 @keyframes move1{
