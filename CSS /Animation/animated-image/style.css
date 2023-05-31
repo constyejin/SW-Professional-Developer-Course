@@ -14,19 +14,19 @@
 
 .animated-container img {
   width: 50%;
-  /* height: auto; */
 }
 
 .elements {
   position: absolute;
   top: 0;
   left:0;
-  /* linear : 처음부터 끝까지 일정한 속도로 진행 */
-  /* 이름을 설정해야 애니메이션을 재생할 수 있습니다. (이름 : move) */
-  animation: move linear 1.5s infinite;
-  /* animation-name: move;
+  /* animation: name | duration | timing-function | delay | iteration-count | direction;
+     name은 필수값 */
+  /* animation: move 1.5s linear infinite; */
+  animation-name: move;
   animation-duration: 1.5s;
-  animation-iteration-count:infinite; */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
 }
 
 /* 0%는 애니메이션의 시작 부분을 의미하고 100%는 애니메이션의 종료 부분을 의미 */
