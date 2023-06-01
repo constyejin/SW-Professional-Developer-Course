@@ -68,14 +68,11 @@ nav {
 }
 
 .lnb-item:first-child {
-  margin-left: 10px;
-}
-
-.lnb-item {
-  padding: 0 20px;
+  margin-left: 20px;
 }
 
 .lnb-item a {
+  padding: 0 20px;
   color: #fff;
 }
 
