@@ -94,7 +94,11 @@ nav {
 
 .food-box-list {
   display: flex;
-  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.food-box-list:first-child {
+  margin-top: 0;
 }
 
 .food-box-item {
