@@ -18,6 +18,9 @@ a {
   display: none;
 }
 
+/* 부트스트랩에서 사용하는 그리드 시스템
+   sm(Small), md(Medium) 768px, lg(Large) 1200px  
+  */
 .sm-only {
   display: none;
 }
