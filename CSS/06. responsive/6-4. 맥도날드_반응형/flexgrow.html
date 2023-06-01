@@ -35,6 +35,35 @@
     background-color: cornflowerblue;
     /* flex-grow: 1; */
   }
+
+  .selector p, span {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #000;
+  }
+  
+  /* 부모 안에서 모든 요소들 중 첫번째,마지막 요소 선택 */
+  .selector p:last-child {
+    background-color: skyblue;
+  }
+
+  /* 타입이 p 태그인 것 중에 첫번째 또는 마지막 요소 선택 */
+  .selector p:last-of-type {
+    background-color: skyblue;
+  }
+
+  /* 부모 안에서 모든 요소들 중 n번째 요소 선택 */
+  .selector span:nth-child(1) {
+    background-color: coral;
+  }
+
+  /* 타입이 span인 것 중에 n번재 요소 선택 */
+  .selector span:nth-of-type(1) {
+    background-color: coral;
+  }
 </style>
 <body>
   <div class="wrapper">
@@ -43,6 +72,17 @@
       <div class="flex-item">box2</div>
       <div class="flex-item">box3</div>
       <div class="flex-item">box4</div>
+    </div>
+
+    <!-- 클래스 사용하지 않고 selector 안에 모든 요소들에 박스 적용 -->
+    <div class="selector">
+      <p>p</p>
+      <span>span</span>
+      <p>p</p>
+      <p>p</p>
+      <p>p</p>
+      <span>span</span>
+      <span>span</span>
     </div>
   </div>
 </body>
