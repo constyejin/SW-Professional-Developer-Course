@@ -191,6 +191,8 @@ footer {
   color: yellow;
 }
 
+/* flex-grow 속성
+*/
 .mac-info-list {
   flex-grow: 1;
 }
@@ -215,19 +217,15 @@ footer {
   transition: background-color 300ms ease-in-out;
 }
 
-.mac-icon-list li:hover {
-  background-color: rgb(235, 27, 27);
-}
-
-
-.mac-icon-list li:hover i {
-  color: #fff
-}
-
 .mac-icon-list li:last-child {
   margin-right: 0;
 }
 
+.mac-icon-list li:hover {
+  background-color: rgb(235, 27, 27);
+}
+
+/* position 가운데 정렬  */
 .mac-icon-list i {
   position: absolute;
   top: 50%;
@@ -236,6 +234,10 @@ footer {
   font-size: 26px;
   color: rgb(235, 27, 27);
   transition: color 300ms ease-in-out;
+}
+
+.mac-icon-list li:hover i {
+  color: #fff
 }
 
 @media screen and (max-width : 1200px) { 
