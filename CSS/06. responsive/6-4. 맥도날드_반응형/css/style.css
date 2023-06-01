@@ -435,10 +435,10 @@ footer {
     transition: visibility 200ms ease-in-out; 
   }
     
-    .overlay.is-active {
-      display: block;
-      opacity: 1;
-      /* 눈에 보이게 함 / 디폴트값 */
-      /* visibility: visible;  */
-    }
+  .overlay.is-active {
+    display: block;
+    opacity: 1;
+    /* 눈에 보이게 함 / 디폴트값 */
+    /* visibility: visible;  */
+  }
 }
