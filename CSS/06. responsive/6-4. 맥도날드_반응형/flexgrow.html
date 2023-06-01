@@ -6,7 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>flex-grow</title>
 </head>
+<style>
+  .flex-list {
+    display: flex;
+    padding: 30px 0;
+    background-color: #333;
+  }
+
+  .flex-item {
+    width: 200px;
+    height: 200px;
+  }
+
+  .flex-item:nth-child(1) {
+    background-color: aqua;
+    /* flex-grow: 1; */
+  }
+
+  .flex-item:nth-child(2) {
+    background-color: aquamarine;
+  }
+
+  .flex-item:nth-child(3) {
+    background-color: coral;
+  }
+
+  .flex-item:nth-child(4) {
+    background-color: cornflowerblue;
+    /* flex-grow: 1; */
+  }
+</style>
 <body>
-  
+  <div class="wrapper">
+    <div class="flex-list">
+      <div class="flex-item">box1</div>
+      <div class="flex-item">box2</div>
+      <div class="flex-item">box3</div>
+      <div class="flex-item">box4</div>
+    </div>
+  </div>
 </body>
 </html>
