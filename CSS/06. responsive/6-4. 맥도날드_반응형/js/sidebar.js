@@ -30,6 +30,7 @@ function openSidebar() {
   // class 이름만 넣어주면 됨!
 }
 
+// 내가 sidebarMenuButton에게 클릭 이벤트를 추가할건데, 걔를 클릭 했을 때 openSidebar 함수를 실행 시켜줘
 sidebarMenuButton.addEventListener('click', openSidebar)
 
 function closeSidebar() {
