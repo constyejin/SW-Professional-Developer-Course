@@ -19,8 +19,7 @@ a {
 }
 
 /* 부트스트랩에서 사용하는 그리드 시스템
-   sm(Small), md(Medium) 768px, lg(Large) 1200px  
-  */
+   sm(Small), md(Medium) 768px, lg(Large) 1200px  */
 .sm-only {
   display: none;
 }
@@ -29,20 +28,20 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 95%;
+  margin: 0 auto;
   padding: 10px 0;
   background-color: #fff;
 }
 
 .logo img {
   width: 70px;
-  margin-left: 20px;
 }
 
 .gnb-list {
   display: flex;
   justify-content: space-between;
   width: 300px;
-  margin-right: 40px;
 }
 
 .gnb-item a {
