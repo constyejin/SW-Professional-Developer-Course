@@ -102,9 +102,6 @@ nav {
 }
 
 .food-box-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 300px; 
   color: #fff;
   margin-right: 30px;
