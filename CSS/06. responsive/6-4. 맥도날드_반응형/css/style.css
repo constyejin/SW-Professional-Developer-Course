@@ -167,7 +167,12 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 90%;
+  color: #fff;
   margin: 0 auto;
+}
+
+.global-footer a {
+  color: #fff;
 }
 
 .mac-link-list {
@@ -175,8 +180,7 @@ footer {
 }
 
 .mac-link-item a {
-  display: block;
-  color: #fff;
+  display: inline-block;
   padding: 5px 0;
 }
 
@@ -192,7 +196,6 @@ footer {
 }
 
 .mac-info-list li {
-  color: #ffff;
   padding: 5px 0;
 }
 
@@ -206,7 +209,6 @@ footer {
   width: 50px;
   height: 50px;
   margin-right: 10px;
-  background-color: #fff;
   border-radius: 50%;
   transition: background-color 300ms ease-in-out;
 }
