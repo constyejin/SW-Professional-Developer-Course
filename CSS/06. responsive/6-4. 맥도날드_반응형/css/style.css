@@ -108,6 +108,7 @@ nav {
   border-radius: 10px;
   text-align: center;
   box-shadow: 3px 3px 5px #e1e1e1;
+  overflow: hidden;
 }
 
 .food-box-item:last-child {
@@ -120,11 +121,6 @@ nav {
 
 .food-box-item a:hover {
   opacity: .7;
-}
-
-.img-wrap {
-  overflow: hidden;
-  border-radius: 10px 10px 0 0;
 }
 
 .food-box-item img {
