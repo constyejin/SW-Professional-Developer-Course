@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <title>modal 팝업레이어</title>
+  <link href="css/style.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <button id="open-btn" type="button">모달열기</button>
+    
+    <div id="img-list">
+      <img src="./images/img1.jpg" alt="" />
+      <img src="./images/img2.jpg" alt="" />
+      <img src="./images/img3.jpg" alt="" />
+      <img src="./images/img4.jpg" alt="" />
+      <img src="./images/img5.jpg" alt="" />
+    </div>
+
+    <div id="img-modal">
+      <div id="img-modal-box">
+        <button id="img-modal-btn" class="close-btn">X</button>
+          <!-- img-wrapper 추가해서 이미지 박스 넘치는거 감추기 -->
+          <img src="./images/img1.jpg" alt="" />
+      </div>
+    </div>
+    
+    <div id="modal">
+      <div id="modal-box">
+        <div id="modal-head">
+          <span>모달 타이틀</span>
+          <button id="modal-close" class="close-btn" type="button">X</button>
+        </div>
+        <div id="modal-sec">
+          <img src="./images/img1.jpg" alt="" />
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, est sagittis malesuada aliquet,
+            enim mauris commodo ipsum, vitae tempor elit leo accumsan nibh. Phasellus vulputate, est faucibus scelerisque
+            pulvinar, mi nibh euismod libero, vel vulputate odio leo quis ligula. Pellentesque congue nisl ante,
+            scelerisque tincidunt elit tempor eu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Donec iaculis, nisl nec semper viverra, lectus ante lacinia leo, sit amet dignissim magna
+            dolor non quam. Suspendisse porttitor tempor est, id tempus metus semper id. Nam ornare sed dui nec posuere.
+            Donec non nisi turpis. Ut at lacus enim. Phasellus ut ipsum sem. Aliquam erat volutpat. Vestibulum ante ipsum
+            primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam facilisis, urna id tincidunt
+            consectetur, nunc ex aliquet justo, vitae pharetra quam nisl eget tortor. Nunc mollis non purus ut gravida. In
+            hac habitasse platea dictumst.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script/script.js"></script>
+</body>
+
+</html>
