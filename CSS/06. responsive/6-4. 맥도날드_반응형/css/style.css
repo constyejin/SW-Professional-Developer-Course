@@ -171,16 +171,13 @@ footer {
   margin: 0 auto;
 }
 
-.global-footer a {
-  color: #fff;
-}
-
 .mac-link-list {
   margin-right: 100px;
 }
 
 .mac-link-item a {
   display: inline-block;
+  color: #fff;
   padding: 5px 0;
 }
 
