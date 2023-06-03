@@ -116,12 +116,12 @@ button {
   padding: 30px 20px;
   background-color: #fff;
   z-index: 200;
-  transform: translate(-240px, 0);
+  transform: translateX(-240px);
   transition: transform 300ms ease-in-out;
 }
 
 .sidebar.is-active {
-  transform: translate(0, 0);
+  transform: translateX(0);
 }
 
 .sidebar-header {
@@ -170,11 +170,8 @@ button {
   border-top: 1px solid #e0e2e7;
 }
 
-.drawer-menu.is-active {
-  color: rgb(222, 0, 0);
-}
-
 .drawer-menu.is-open.is-product .drawer-menu-content {
+  /* drawer-menu-item height * li 갯수 */
   max-height: 288px;
 }
 
@@ -200,7 +197,6 @@ button {
   height: 54px;
   padding: 0 8px;
   font-weight: 700;
-  transition: color 200ms ease-in-out;
 }
 
 .drawer-menu-button i:first-child {
