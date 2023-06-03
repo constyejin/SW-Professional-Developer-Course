@@ -17,94 +17,92 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-  <header class="global-header">
-    <div class="gnb">
-      <div class="gnb-wrapper">
-        <div class="gnb-left">
-          <h1 class="logo">
-            <a href=""><img src="./images/logo.png" alt="내일의 집" /></a>
-          </h1>
+  <header>
+    <div class="gnb-wrapper">
+      <div class="gnb-left">
+        <h1 class="logo">
+          <a href=""><img src="./images/logo.png" alt="내일의 집" /></a>
+        </h1>
 
-          <nav class="gnb-nav sm-hidden">
-            <h2 class="visually-hidden">메뉴</h2>
-            <ul class="gnb-nav-list">
-              <li class="gnb-nav-item"><a href="/">제품쇼핑</a></li>
-              <li class="gnb-nav-item">
-                <a href="/">브랜드소개</a>
-              </li>
-              <li class="gnb-nav-item"><a href="/">고객지원</a></li>
-              <li class="gnb-nav-item"><a href="/">세일</a></li>
-            </ul>
-          </nav>
+        <nav class="gnb-nav sm-hidden">
+          <h2 class="visually-hidden">메뉴</h2>
+          <ul class="gnb-nav-list">
+            <li class="gnb-nav-item"><a href="/">제품쇼핑</a></li>
+            <li class="gnb-nav-item">
+              <a href="/">브랜드소개</a>
+            </li>
+            <li class="gnb-nav-item"><a href="/">고객지원</a></li>
+            <li class="gnb-nav-item"><a href="/">세일</a></li>
+          </ul>
+        </nav>
 
-          <!-- 우리는 시각적으로 보면 알 수 있지만 웹 서비스를 스크린리더 같은 도구를 이용해서 사용하시는 분들은
-          이 아이콘이 대체 무슨 아이콘인지, 무슨 버튼인지 알 길이 없음. 그래서 추가적으로 정보를 주는게 aria-lable -->
-          <button type="button" class="sm-only gnb-icon-button is-menu" aria-label="메뉴 열기 버튼">
-            <i class="fa-solid fa-bars"></i>
-          </button>
+        <!-- 우리는 시각적으로 보면 알 수 있지만 웹 서비스를 스크린리더 같은 도구를 이용해서 사용하시는 분들은
+        이 아이콘이 대체 무슨 아이콘인지, 무슨 버튼인지 알 길이 없음. 그래서 추가적으로 정보를 주는게 aria-lable -->
+        <button type="button" class="sm-only gnb-icon-button is-menu" aria-label="메뉴 열기 버튼">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="gnb-right">
+        <div class="gnb-search lg-only">
+          <div class="input-group">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="form-input" type="text" placeholder="스토어 검색" />
+          </div>
         </div>
 
-        <div class="gnb-right">
-          <div class="gnb-search lg-only">
-            <div class="input-group">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input class="form-input" type="text" placeholder="스토어 검색" />
-            </div>
-          </div>
+        <div class="button-group">
+          <button type="button" class="gnb-icon-button lg-hidden" aria-label="검색창 열기 버튼">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
 
-          <div class="button-group">
-            <button type="button" class="gnb-icon-button lg-hidden" aria-label="검색창 열기 버튼">
-              <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="my-menu sm-hidden">
+            <button type="button" class="sm-hidden my-menu-button" aria-label="마이메뉴 열기 버튼">
+              <div class="avatar">
+                <img src="./images/user.jpeg" alt="프로필 사진" />
+              </div>
             </button>
 
-            <div class="my-menu sm-hidden">
-              <button type="button" class="sm-hidden my-menu-button" aria-label="마이메뉴 열기 버튼">
-                <div class="avatar">
-                  <img src="./images/user.jpeg" alt="프로필 사진" />
-                </div>
-              </button>
+            <!-- (T) my-menu-content -->
+            <div class="my-menu-content md-only">
+              <ul class="my-menu-list">
+                <li class="my-menu-item">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </li>
+                <li class="my-menu-item">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </li>
+              </ul>
+            </div>
 
-              <!-- (T) my-menu-content -->
-              <div class="my-menu-content md-only">
-                <ul class="my-menu-list">
-                  <li class="my-menu-item">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </li>
-                  <li class="my-menu-item">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- (D) my-menu-content -->
-              <div class="my-menu-content lg-only">
-                <ul class="my-menu-list">
-                  <li class="my-menu-item">
-                    <a href="/">장바구니</a>
-                  </li>
-                  <li class="my-menu-item">
-                    <a href="/">로그아웃</a>
-                  </li>
-                </ul>
-              </div>
+            <!-- (D) my-menu-content -->
+            <div class="my-menu-content lg-only">
+              <ul class="my-menu-list">
+                <li class="my-menu-item">
+                  <a href="/">장바구니</a>
+                </li>
+                <li class="my-menu-item">
+                  <a href="/">로그아웃</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <nav class="lnb">
-      <h1 class="visually-hidden">제품 메뉴</h1>
-      <ul class="lnb-list">
-        <li class="lnb-item"><a href="/">신제품</a></li>
-        <li class="lnb-item"><a href="/">독점제품</a></li>
-        <li class="lnb-item"><a href="/">행사</a></li>
-        <li class="lnb-item"><a href="/">아이디어</a></li>
-        <li class="lnb-item"><a href="/">베스트셀러</a></li>
-        <li class="lnb-item"><a href="/">레어제품</a></li>
-      </ul>
-    </nav>
   </header>
+
+  <div class="lnb-wrapper">
+    <h1 class="visually-hidden">제품 메뉴</h1>
+    <ul class="lnb-list">
+      <li class="lnb-item"><a href="/">신제품</a></li>
+      <li class="lnb-item"><a href="/">독점제품</a></li>
+      <li class="lnb-item"><a href="/">행사</a></li>
+      <li class="lnb-item"><a href="/">아이디어</a></li>
+      <li class="lnb-item"><a href="/">베스트셀러</a></li>
+      <li class="lnb-item"><a href="/">레어제품</a></li>
+    </ul>
+  </div>
 
   <main>
     <div class="background"></div>
