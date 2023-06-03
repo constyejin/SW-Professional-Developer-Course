@@ -387,10 +387,9 @@ footer {
 
  .side-menu-item a {
     display: block;
+    padding: 10px;
     font-size: 14px;
     color: #3f4150;
-    width: 100%;
-    height: 36px;
   }
 
   .overlay {
