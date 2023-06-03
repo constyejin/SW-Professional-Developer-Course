@@ -116,6 +116,7 @@ button {
   padding: 30px 20px;
   background-color: #fff;
   z-index: 200;
+  overflow-y: auto;
   transform: translateX(-240px);
   transition: transform 300ms ease-in-out;
 }
