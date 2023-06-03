@@ -404,15 +404,16 @@ footer {
     height: 100%;
     z-index: 100;
     background-color: rgba(63, 65, 80, 0.5);
-    display: none;
-    transition: opacity 200ms ease-in-out;
-    transition: visibility 200ms ease-in-out; 
+    /* display: none은 transiton이 먹지 않는다.
+       UI Animation 효과를 주고싶다면, visibility 사용!
+    */
+    visibility: hidden;
+    transition: all 200ms ease-in-out; 
   }
     
   .overlay.is-active {
-    display: block;
-    opacity: 1;
     /* 눈에 보이게 함 / 디폴트값 : visible*/
-    /* visibility: visible, hidden  */
+    visibility: visible;
+    opacity: 1;
   }
 }
