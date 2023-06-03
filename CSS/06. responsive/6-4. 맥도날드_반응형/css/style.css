@@ -379,7 +379,6 @@ footer {
     z-index: 200;
     transform: translateX(-200px);
     transition: transform 200ms ease-in-out; 
-    margin-right: 0;
   }
 
   .sidebar.is-active {
