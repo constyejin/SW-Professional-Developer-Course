@@ -286,10 +286,6 @@ footer {
 }
 
 @media screen and (max-width : 768px) { 
-  nav {
-    padding: 0;
-  }
-
   .logo img {
     width: 50px;
     margin-left: 10px;
