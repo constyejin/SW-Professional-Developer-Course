@@ -298,6 +298,10 @@ footer {
     width: 50px;
   }
 
+  .gnb-icon-button i {
+    font-size: 24px;
+  }
+
   .background {
     height: 300px;
   }
@@ -362,10 +366,6 @@ footer {
   .mac-icon-list li {
     width: 40px;
     height: 40px;
-  }
-
-  .sm-only i {
-    font-size: 24px;
   }
 
   .sidebar {
