@@ -1,3 +1,4 @@
+// 변수 선언 : var, let, const 
 // 변수명이 길더라도 명시적으로 적어주는 게 좋음
 const sidebarMenuButton = document.querySelector('.gnb-icon-button')
 
