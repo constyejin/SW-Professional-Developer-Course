@@ -12,15 +12,15 @@ const sidebarOverlay = document.querySelector('.overlay')
 // 내 의도대로 작성을 했는지 확인을 해보는게 좋음 -> 
 // 실수가 적어지니까 실력이 빨리 늘게됨. => 
 // 그 중에 방법 하나가 로그 찍어보기
+console.log(gnbIconBtn);
 
-// console.log(sidebarMenuButton, sidebar, sidebarOverlay)
 
 function openSidebar() {
   // 우리가 하고 싶은 내용 = 사이드바, 오버레이가 보이게 하려면 
   // is-active라는 클래스를 가지고 있으면 됨
   // DOM에 메소드를 이용해서 쉽게 클래스를 추가 및 제거 할 수 있음 
   // 그걸 도와주는 친구가 classList
-
+  // class 탈부착 식으로 코드를 작성해야 확장성이 좋다.
   sidebar.classList.add('is-active');
   sidebarOverlay.classList.add('is-active');
 
@@ -32,7 +32,18 @@ function openSidebar() {
 }
 
 // 내가 sidebarMenuButton에게 클릭 이벤트를 추가할건데, 걔를 클릭 했을 때 openSidebar 함수를 실행 시켜줘
-sidebarMenuButton.addEventListener('click', openSidebar)
+gnbIconBtn.addEventListener('click', openSidebar);
+
+
+// 콜백함수 : 함수를 활용하는 하나의 방식
+// 변수의 유효범위(scope), 동기 / 비동기처리
+// 코드가 작성된 순서대로 동작(가독성이, 재사용성이 좋다)
+// 결과는 같지만, 함수를 호출하는 시점이나 동작하는 순서가 달라진다.
+// gnbIconBtn.addEventListener('click', function() {
+//   sidebar.classList.add('is-active');
+//   sidebarOverlay.classList.add('is-active');
+// })
+
 
 function closeSidebar() {
   // is-actvie 제거
@@ -41,3 +52,9 @@ function closeSidebar() {
 }
 
 sidebarOverlay.addEventListener('click', closeSidebar)
+
+
+// sidebarOverlay.addEventListener('click', function() {
+//   sidebar.classList.remove('is-active');
+//   sidebarOverlay.classList.remove('is-active');
+// })
