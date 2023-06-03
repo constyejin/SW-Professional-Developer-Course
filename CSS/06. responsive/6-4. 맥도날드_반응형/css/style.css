@@ -286,14 +286,16 @@ footer {
 }
 
 @media screen and (max-width : 768px) { 
-  .logo img {
-    width: 50px;
-    margin-left: 10px;
+  .sm-hidden {
+    display: none;
   }
 
-  .gnb-list {
-    width: 200px;
-    margin-right: 15px;
+  .sm-only {
+    display: block;
+  }
+
+  .logo img {
+    width: 50px;
   }
 
   .lnb-wrapper {
@@ -378,15 +380,6 @@ footer {
   .mac-icon-list li {
     width: 40px;
     height: 40px;
-  }
-
-    .sm-hidden {
-    display: none;
-  }
-
-  .sm-only {
-    display: block;
-    margin-right: 30px;
   }
 
   .sm-only i {
