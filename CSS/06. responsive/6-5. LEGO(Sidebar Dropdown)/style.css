@@ -233,6 +233,10 @@ button {
   font-weight: 700;
 }
 
+.drawer-menu.is-active .drawer-menu-button i{
+  color: rgb(255, 204, 0);
+}
+
 .overlay {
   position: fixed;
   top: 0;
