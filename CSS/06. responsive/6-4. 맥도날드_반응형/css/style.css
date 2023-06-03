@@ -298,15 +298,6 @@ footer {
     width: 50px;
   }
 
-  .lnb-wrapper {
-    position: sticky;
-    top: 0;
-  }
-
-  .lnb-list {
-    justify-content: center;
-  }
-
   .background {
     height: 200px;
   }
