@@ -1,6 +1,6 @@
 // 변수 선언 : var, let, const 
 // 변수명이 길더라도 명시적으로 적어주는 게 좋음
-const sidebarMenuButton = document.querySelector('.gnb-icon-button')
+const gnbIconBtn = document.querySelector('.gnb-icon-button')
 
 const sidebar = document.querySelector('.sidebar')
 // 자바스크립트가 처음이기 때문에 하나하나 이해하려고 하지말고 
@@ -8,7 +8,7 @@ const sidebar = document.querySelector('.sidebar')
 // 그렇다고 지켜보지만 말고 코드를 같이 작성 해보는게 중요함
 const sidebarOverlay = document.querySelector('.overlay')
 
-// 어떤 실수를 할지 모르기 때문에 항상 작성을 하고나서 
+// 어떤 실수를 할지 모르기 때문에 항상 작성을 하고나서
 // 내 의도대로 작성을 했는지 확인을 해보는게 좋음 -> 
 // 실수가 적어지니까 실력이 빨리 늘게됨. => 
 // 그 중에 방법 하나가 로그 찍어보기
