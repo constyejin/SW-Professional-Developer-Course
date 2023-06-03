@@ -26,7 +26,7 @@ button {
   display: none;
 }
 
-.gnb {
+.global-header {
   background-color: rgb(255, 204, 0);
   border-bottom: 1px solid #e0e2e7;
 }
