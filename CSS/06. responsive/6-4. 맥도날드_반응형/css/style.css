@@ -322,13 +322,16 @@ footer {
     margin: 20px auto 0 auto;
   }
 
+  .food-box-item:first-child {
+    margin-top: 0;
+  }
+
   .food-box-item:last-child {
     margin-right: auto;
   }
 
   .food-box-item img {
     width: 100%;
-    height: 150px;
   }
 
   .food-box-txt {
