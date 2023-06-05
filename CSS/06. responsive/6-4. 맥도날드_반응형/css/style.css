@@ -399,9 +399,7 @@ footer {
     height: 100%;
     z-index: 100;
     background-color: rgba(63, 65, 80, 0.5);
-    /* display: none은 transiton이 먹지 않는다.₩
-       UI Animation 효과를 주고싶다면, visibility 사용!
-    */
+    /* display: none은 transiton이 먹지 않으므로 UI Animation 효과를 주고싶다면 visibility 사용 */
     visibility: hidden;
     transition: all 200ms ease-in-out; 
   }
