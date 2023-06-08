@@ -44,7 +44,7 @@
       document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
         // 실행하고 싶은 코드 작성
         document.getElementsByClassName('list-group')[0].classList.toggle('show');
-        // 버튼 한 번 더 누르면 다시 숨기기 toggle : 있
+        // 버튼 한 번 더 누르면 다시 숨기기 toggle : 있으면 제거하고, 없으면 부여
       })
 
       // Selector : getElementById(), getElementByClassName()
@@ -57,9 +57,9 @@
       document.querySelectorAll('.list-group-item')[1].style.color = 'red';
 
       // querySelector()로 ul toggle
-      document.querySelector('.navbar-toggler').addEventListener('click', function (){
-        document.querySelector('#test1').classList.toggle('show');
-      })
+      // document.querySelector('.navbar-toggler').addEventListener('click', function (){
+      //   document.querySelector('#test1').classList.toggle('show');
+      // })
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
