@@ -7,17 +7,19 @@ const sidebar = document.querySelector('.sidebar')
 // 저런 식으로 작성을 하는구나 정도만 느껴도 충분함 
 const sidebarOverlay = document.querySelector('.overlay')
 
-// 어떤 실수를 할지 모르기 때문에 항상 작성을 하고나서
-// 내 의도대로 작성을 했는지 확인을 해보는게 좋음 -> 
-// 실수가 적어지니까 실력이 빨리 늘게됨. => 
-// 그 중에 방법 하나가 로그 찍어보기
-console.log(gnbIconBtn);
+// 어떤 실수를 할지 모르기 때문에 항상 작성 하고나서 내 의도대로 됐는지 확인 해보는 게 좋음 ->  로그 찍어보기
+console.log(gnbIconBtn, sidebar, sidebarOverlay);
 
 
 function openSidebar() {
   // 우리가 하고 싶은 내용 = 사이드바, 오버레이가 보이게 하려면 
   // is-active라는 클래스를 가지고 있으면 됨
-  // DOM에 메소드를 이용해서 쉽게 클래스를 추가 및 제거 할 수 있음 
+  
+  // DOM 메소드를 이용해서 쉽게 클래스를 추가 및 제거 할 수 있다
+  // 현재 웹 브라우저에서 DOM을 조작하는 언어는 자바스크립트 뿐 
+  // DOM이란 자바스크립트 같은 스크립팅 언어가 우리가 만들어 놓은 웹 페이지에 접근해서 그 요소를 쉽게 조작할 수 있게 도와주는 역할을 한다.
+  // DOM의 데이터 타입 (프로퍼티, 메소드, 이벤트 리스너, 스타일 등) 
+
   // 그걸 도와주는 친구가 classList
   // class 탈부착 식으로 코드를 작성해야 확장성이 좋다.
   sidebar.classList.add('is-active');
