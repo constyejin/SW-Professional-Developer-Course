@@ -5,7 +5,6 @@ const gnbIconBtn = document.querySelector('.gnb-icon-button')
 const sidebar = document.querySelector('.sidebar')
 // 자바스크립트가 처음이기 때문에 하나하나 이해하려고 하지말고 
 // 저런 식으로 작성을 하는구나 정도만 느껴도 충분함 
-// 그렇다고 지켜보지만 말고 코드를 같이 작성 해보는게 중요함
 const sidebarOverlay = document.querySelector('.overlay')
 
 // 어떤 실수를 할지 모르기 때문에 항상 작성을 하고나서
