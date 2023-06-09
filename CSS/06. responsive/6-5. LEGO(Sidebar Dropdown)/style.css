@@ -47,8 +47,6 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  /* transform은 엘리먼트의 크기,위치,모양을 변경시켜주는 속성 */
-  /* 그 중 위치 이동 기능인 translate를 이용해서 위치 조정 */
   transform: translate(-50%, -50%);
 }
 
