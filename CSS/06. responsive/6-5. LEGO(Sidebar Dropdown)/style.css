@@ -256,6 +256,7 @@ button {
   visibility: visible;
 }
 
+/* 768px 이상 해당 스타일링 적용 */
 @media screen and (min-width: 768px) {
 
   .sm-only,
