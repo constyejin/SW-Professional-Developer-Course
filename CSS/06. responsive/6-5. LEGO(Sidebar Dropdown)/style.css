@@ -155,7 +155,7 @@ button {
   border-radius: 50%;
   overflow: hidden;
   margin-right: 8px;
-  /* 기본값은 1 / shrink 값을 0으로 바꾸면 부모 컨데이너 크기와 상관없이 본인 크기를 유지함 */
+  /* 기본값은 1 / 값을 0으로 바꾸면 부모 컨데이너 크기와 상관없이 본인 크기를 유지한다. */
   /* shrink : 줄어들다, 줄어들게하다 */
   flex-shrink: 0;
 }
