@@ -8,18 +8,18 @@ body {
   position:absolute;
   top:50%;
   left:50%;
-  transform: translate(-50%, -50%);
-  color: gold;
   width: 150px;
   height: 150px;
+  transform: translate(-50%, -50%);
+  color: gold;
 
 }
 
-.ring::before {
+.ring:before {
+  content: "";
   position:absolute;
   top: -1%;
   left: -1.8%;
-  content: "";
   width: 150px;
   height: 150px;
   border-radius: 50%;
