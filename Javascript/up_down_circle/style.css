@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+.circle {
+  width: 35px;
+  height: 35px;
+  background-color: aqua;
+  border-radius: 50%;
+  position: absolute;
+  animation: move 1.5s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0,0) scale(1);
+    background-color: aqua;
+  }
+  50% {
+    transform: translate(0,100px) scale(1.5);
+    background-color: rgb(0, 128, 255);
+  }
+  100% {
+    transform: translate(0,0) scale(1);
+    background-color: aqua;
+  }
+}
