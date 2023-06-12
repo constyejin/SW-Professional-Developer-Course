@@ -29,7 +29,6 @@ body {
   animation: rounding 2s linear infinite;
 }
 
-
 #load {
   position:absolute;
   top:50%;
@@ -45,16 +44,16 @@ body {
   animation: rounding 2s linear infinite;
 }
 
-#circle::after {
-  position:absolute;
+#circle:after {
   content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: gold;
+  position:absolute;
   top: 12%;
   left: 83%;
+  width: 10px;
+  height: 10px;
+  background-color: gold;
   box-shadow:0 0 20px #fff000;
+  border-radius: 50%;
 }
 
 /* 명심 가상요소는 자신의 "생성 요소"를 기준으로 위치를 정한다. */
