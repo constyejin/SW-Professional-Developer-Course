@@ -44,6 +44,7 @@ body {
   animation: rounding 2s linear infinite;
 }
 
+/* 가상요소는 자신의 "생성 요소"를 기준으로 위치를 정한다. */
 #circle:after {
   content: "";
   position:absolute;
@@ -56,7 +57,6 @@ body {
   border-radius: 50%;
 }
 
-/* 명심 가상요소는 자신의 "생성 요소"를 기준으로 위치를 정한다. */
 
 @keyframes rounding {
   0% {
