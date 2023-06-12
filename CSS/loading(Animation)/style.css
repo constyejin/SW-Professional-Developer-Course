@@ -1,0 +1,71 @@
+body {
+  margin:0;
+  padding:0;
+  background:#262626;
+}
+
+.ring {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  color: gold;
+  width: 150px;
+  height: 150px;
+
+}
+
+.ring::before {
+  position:absolute;
+  top: -1%;
+  left: -1.8%;
+  content: "";
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top: 3px solid gold;
+  border-left: 3px solid gold;
+  animation: rounding 2s linear infinite;
+}
+
+
+#load {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+#circle {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  animation: rounding 2s linear infinite;
+}
+
+#circle::after {
+  position:absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gold;
+  top: 12%;
+  left: 83%;
+  box-shadow:0 0 20px #fff000;
+}
+
+/* 명심 가상요소는 자신의 "생성 요소"를 기준으로 위치를 정한다. */
+
+@keyframes rounding {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+
