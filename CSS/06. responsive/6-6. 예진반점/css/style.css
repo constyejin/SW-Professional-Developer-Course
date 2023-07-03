@@ -18,7 +18,7 @@ body {
   margin: 0 auto;
   background-color: #e5e5e5;
   /* 마진상쇄 현상 */
-  /* 블록요소 두 개가 겹칠 때 발생하는 일종의 버그 */
+  /* 인접해 있는 블록요소 두 개가 겹칠 때 발생하는 일종의 버그 */
   /* 사이에 1px이라도 간격이 생기면 상쇄현상이 사라진다 */
   border: 1px solid transparent;
 }
@@ -40,7 +40,8 @@ body {
 }
 
 .menu-box {
-  width: calc((100% - 80px) / 4);
+  display: inline-block;
+  width: calc((100% - 100px) / 4);
   margin: 20px 10px;
   padding: 10px;
   background-color: white;
@@ -100,13 +101,14 @@ body {
 
 @media screen and (max-width: 1200px) {
   .menu-box {
-   width: calc((100% - 60px) / 3);
+    /* calc() CSS함수를 사용하면 CSS 속성의 값으로 계산식을 지정할 수 있다 */
+   width: calc((100% - 80px) / 3);
   }
 }
 
 @media screen and (max-width: 768px) {
   .menu-box {
-    width: calc((100% - 40px) / 2);
+    width: calc((100% - 60px) / 2);
   }
 }
 
