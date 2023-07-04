@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수, 사칙연산 실력향상 과제</title>
+</head>
+<body>
+  <h1>이 과정이 시작한 날짜는?</h1>
+  <input type="text" id="answer">
+  <button type="button" id="send">제출</button>
+  <script>
+    // Q1. 내 나이와 고향을 변수에 저장
+    // 나이는 해마다 바뀌니 재할당 가능한 변수
+    // 고향은 바뀌지 않으니 재할당 불가능한 변수
+    let age = '29'
+    const place = '울산'
+
+
+    // Q2. 왜 동작하지 않을까?
+    var name = 'yejin'
+    var id = 0;
+
+    function showName(){
+      // var name의 경우 함수 안에서 재선언, 재할당 했으니 그 값이 console에 찍힌다.
+      var name = 'lee'
+      var id = 1;
+      console.log(name)
+    }
+    showName()
+    // var id = 1은 함수 안에 있는 지역변수 이므로, 0인 전역변수가 출력된다.
+    console.log(id)
+
+
+    // Q3. 이자율 계산하기
+    // 첫 예금 금액이 5만원 미만이면 연이율 15%
+    // 첫 예금 금액이 5만원 이상이면 연이율 20%
+    // 변수에 예금액을 넣으면 2년후 총 예금액을 자동으로 콘솔창에 출력해주는 기능 만들기
+    let 예금액 = 60000;
+    let 미래예금액 = 0;
+
+    if(예금액 < 50000) {
+      미래예금액 = 예금액 * 1.15 * 1.15
+    } else {
+      미래예금액 = 예금액 * 1.2 * 1.2
+    }
+
+    console.log(미래예금액)
+
+
+    // Q4. 최대한 마실수 있는 커피양 계산
+    // 방금 마신 커피의 3분의 2만큼 총 2번 리필 해준다.
+    // 예를 들면 처음 커피를 90ml 마셨다면, 첫 리필은 60ml, 그 다음 리필은 40ml를 해준다.
+    // 처음 주문한 커피 양에 따라 최대한 마실수 있는 커피양을 구하시오.
+
+    // 360 + 240 + 160 = 760
+    let first = 480;
+    total = 0
+
+    total = first + first * 2 / 3 + first * 2 / 3 * 2 / 3
+    console.log(total)
+
+
+    // Q5. 유저가 <input>에 답을 적고 제출버튼을 누르는 간단한 퀴즈 UI 만들기
+    // 유저가 답을 맞추면 alert('정답!')
+    // 유저가 답을 세 번 찍어서 못 맞추면 alert('멍청이')
+    let count = 0;
+    let send_btn = document.getElementById('send');
+    
+    send_btn.addEventListener('click', function(){
+      // script안에 그냥 있는 코드는 새로고침시 1회만 실행된다.
+      // addEventListener 안에 있는 코드는 이벤트 발생시 실행된다.
+      let answer = document.getElementById('answer');
+      console.log(answer.value);
+      
+      count = count + 1;
+
+      if(answer.value  == '0508') {
+        alert('정답')
+      } else if(count >= 3 && answer.value != '0508') {
+        alert('멍청이')
+      }
+
+      answer.value = '';
+    })
+
+
+    // (응용 1)
+    // 위에서 1.2를 여러번 곱했는데 1.2를 10번 곱하려면 코드를 어떻게 짜야될까요? 
+    // 자바스크립트 ** 거듭제곱 연산자 사용
+    let num = 2;
+    // 거듭제곱 연산자는 거듭제곱 결과를 반환하므로 기존 변수의 값이 변경되지 않는다.
+    num ** 4;
+    // 하지만 거듭제곱 할당 연산자는 거듭제곱 결과는 기존 변수에 할당한다.
+    num **= 4
+    console.log(num)
+
+    // ** (거듭제곱)
+    let 예금액1 = 60000;
+    let 미래예금액1 = 0;
+    if(예금액1 < 50000) {
+      미래예금액1 = 예금액1 * (1.15 ** 10)
+    } else {
+      미래예금액1 = 예금액1 * (1.2 ** 10)
+    }
+    console.log(미래예금액1)
+
+    // Math.pow([대상 숫자], [거듭제곱 횟수]);
+    let 예금액2 = 60000;
+    let 미래예금액2 = 0;
+    if(예금액2 < 50000) {
+      미래예금액2 = 예금액2 * Math.pow(1.15, 10)
+    } else {
+      미래예금액2 = 예금액2 * Math.pow(1.2, 10)
+    }
+    // toFixed() 함수 : 인수로 전달된 소수 자릿수로 반올림된 숫자를 문자열 타입으로 반환한다.
+    console.log(미래예금액2.toFixed())
+    console.log(typeof(미래예금액2))
+    console.log(typeof(미래예금액2.toFixed()))
+
+    // Math.round() 함수 : 소수점 이하를 반올림
+    console.log(Math.round(미래예금액2))
+    console.log(typeof(Math.round(미래예금액2)))
+
+    // Math.floor() 함수 : 소수점 이하를 버림
+    console.log(Math.floor(미래예금액2))
+    console.log(typeof(Math.floor(미래예금액2)))
+
+    // Math.ceil() 함수 : 소수점 이하를 올림
+    console.log(Math.ceil(미래예금액2))
+    console.log(typeof(Math.ceil(미래예금액2)))
+
+    // (응용 2)
+    // 커피리필을 무한으로 해준다면 처음 담아주는 커피가 360ml일 때 총 몇 ml의 커피를 마실 수 있을까?
+    // 무한등비수열의 합 
+  </script>
+
+</body>
+</html>
