@@ -9,6 +9,7 @@ dropdownButton.addEventListener("click", function () {
 
   // 현재 버튼의 활성화 상태 확인
   // 활성화 상태라면 True니까 실행 아니라면 False니까 else구문 실행
+  // active CSS 의사 클래스는 사용자가 활성화한 요소(버튼 등)를 나타냅니다. 마우스를 사용하는 경우, "활성"이란 보통 마우스 버튼을 누르는 순간부터 떼는 시점까지를 의미합니다.
   if (this.active) {
     dropdownMenu.classList.remove("active")
   } else {
