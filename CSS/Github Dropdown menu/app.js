@@ -7,6 +7,8 @@ let dropdownButton = document.querySelector(".dropdown-button");
 dropdownButton.addEventListener("click", function () {
   // dropdownMenu.classList.toggle("active");
 
+  // 현재 버튼의 활성화 상태 확인
+  // 활성화 상태라면 True니까 실행 아니라면 False니까 else구문 실행
   if (this.active) {
     dropdownMenu.classList.remove("active")
   } else {
