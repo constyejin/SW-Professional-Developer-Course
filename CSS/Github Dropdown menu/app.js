@@ -4,7 +4,8 @@ let dropdownButton = document.querySelector(".dropdown-button");
 // dropdownButton에게 "click" 이벤트 리스너 추가
 // 버튼이 활성 상태면 "active" 클래스를 제거하고,
 // 비활성 상태면 "active" 클래스를 추가한다
-dropdownButton.addEventListener("click", function () {
+dropdownButton.addEventListener("click", function (e) {
+  e.preventDefault()
   // dropdownMenu.classList.toggle("active");
 
   // 현재 버튼의 활성화 상태 확인
