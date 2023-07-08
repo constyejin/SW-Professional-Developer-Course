@@ -1,15 +1,18 @@
-let button1 = document.querySelector('.btn1');
-let button2 = document.querySelector('.btn2');
-let button3 = document.querySelector('.btn3');
+let buttons = document.querySelectorAll('.btn-group button');
 
-button1.addEventListener('click', function() {
-  document.querySelector('.slide-list').style.transform = 'translateX(0)';
-})
+buttons.forEach(function(button, index) {
+  button.addEventListener('click', function() {
+    let slideList = document.querySelector('.slide-list');
+    let translateXValue = -index * 100 + 'vw';
+    slideList.style.transform = 'translateX(' + translateXValue + ')';
 
-button2.addEventListener('click', function() {
-  document.querySelector('.slide-list').style.transform = 'translateX(-100vw)';
-})
+    button.classList.add('active')
 
-button3.addEventListener('click', function() {
-  document.querySelector('.slide-list').style.transform = 'translateX(-200vw)';
-})
+    buttons.forEach(function(otherButton) {
+      if (otherButton !== button && otherButton.classList.contains('active')) {
+        otherButton.classList.remove('active');
+      }
+    });
+  });
+  console.log(button, index)
+});

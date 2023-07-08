@@ -7,13 +7,16 @@ li {
   list-style: none;
 }
 
+.wrapper {
+  position: relative;
+}
+
 .slide-wrapper {
   /* 기본이 1이니까 그 이상 보이는 것들이 사라짐 */
   overflow: hidden;
 }
 
 .slide-list {
-  position: relative;
   /* viewport width 3배 */
   display: flex;
   width: 300vw;
@@ -41,8 +44,10 @@ li {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+}
+
+.btn-group button.active {
+  background-color: dodgerblue;
 }
 
 .btn-group button {
@@ -51,5 +56,9 @@ li {
   border: none;
   border-radius: 50%;
   background-color: #fff;
-  margin-right: 5px;
+  margin-right: 8px;
+}
+
+.btn-group button:last-child {
+  margin-right: 0;
 }

@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.next').addEventListener('click', function() {
     if (currentSlide < slideItems.length - 1) {
       currentSlide++;
-      slideList.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+      slideList.style.transform = `translateX(-${currentSlide * 100}vw)`;
     }
   });
 
   document.querySelector('.prev').addEventListener('click', function() {
     if (currentSlide > 0) {
       currentSlide--;
-      slideList.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+      slideList.style.transform = `translateX(-${currentSlide * 100}vw)`;
     }
   });
 });
