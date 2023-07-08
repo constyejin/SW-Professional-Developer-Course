@@ -2,9 +2,15 @@ let button1 = document.querySelector('.btn1');
 let button2 = document.querySelector('.btn2');
 let button3 = document.querySelector('.btn3');
 
-button1.addEventListener('click', function() {
+// button1.addEventListener('click', function() {
+//   document.querySelector('.slide-list').style.transform = 'translateX(0)';
+// })
+
+function btn1 (){
   document.querySelector('.slide-list').style.transform = 'translateX(0)';
-})
+}
+
+addEventListener('click', btn1)
 
 button2.addEventListener('click', function() {
   document.querySelector('.slide-list').style.transform = 'translateX(-100vw)';
