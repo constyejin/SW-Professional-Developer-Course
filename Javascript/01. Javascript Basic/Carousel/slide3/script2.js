@@ -1,5 +1,5 @@
 let currentSlide = 0;
-let slideWrapper = document.querySelector('.slide-wrapper');
+// let slideWrapper = document.querySelector('.slide-wrapper');
 let slideList = document.querySelector('.slide-list');
 let slideItems = document.querySelectorAll('.slide-item');
 console.log(slideItems.length)
