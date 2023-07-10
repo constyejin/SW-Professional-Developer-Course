@@ -21,14 +21,16 @@ let prevBtn = document.querySelector('.prev');
 nextBtn.addEventListener('click', function() {
   if (currentSlide < slideItems.length - 1) {
     currentSlide++;
-    slideList.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    // slideList.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    slideList.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
   }
 });
 
 prevBtn.addEventListener('click', function() {
   if (currentSlide > 0) {
     currentSlide--;
-    slideList.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    // slideList.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    slideList.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
   }
 });
 
