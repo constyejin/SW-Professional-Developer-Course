@@ -43,7 +43,14 @@ a {
 }
 
 .sub {
-  display: none;
+  /* display: none; */
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 500ms ease-in-out;
+}
+
+.sub.active {
+  max-height: 260px;
 }
 
 .sub li a {
