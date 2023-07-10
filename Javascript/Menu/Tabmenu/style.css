@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 478px;
+  margin: 0 auto;
+}
+
+.tab-box-list {
+  display: flex;
+  margin-top: 25px;
+}
+
+.tab-box-item {
+  width: 160px;
+  height: 40px;
+  border: 1px solid #06c;
+  color: #06c;
+  background-color: #fff;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  /* border 겹치는 부분 합쳐주기 */
+  margin-right: -1px;
+  transition: background-color 300ms ease-in-out;
+}
+
+.tab-box-item:active {
+  background-color: #06c;
+  color: #fff;
+}
+
+.tab-content-wrapper {
+  margin-top: -1px;
+  padding: 10px;
+  border: 1px solid #06c;
+}
+
+#web {
+  display: block;
+}
+
+.tab-box-content {
+  display: none;
+}
+
+.tab-box-content p {
+  margin-top: 10px;
+}
