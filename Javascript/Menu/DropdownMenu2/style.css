@@ -41,7 +41,7 @@ li {
 
 .main-menu li a:hover,
 .main-menu li a.on {
-  background-color: aqua;
+  background-color: #ddd;
 }
 
 .drop-down {
