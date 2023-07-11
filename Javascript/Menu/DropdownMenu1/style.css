@@ -23,6 +23,7 @@ a {
 }
 
 .gnb > li {
+  position: relative;
   width: 25%;
   text-align: center;
 }
@@ -43,7 +44,9 @@ a {
 }
 
 .sub {
+  position: absolute;
   /* display: none; */
+  width: 100%;
   overflow: hidden;
   max-height: 0;
   transition: max-height 500ms ease-in-out;
@@ -54,7 +57,7 @@ a {
 }
 
 .sub li a {
-  display: inline-block;
+  display: block;
   width: 100%;
   padding: 16px 0;
   background-color: #eeeded;
