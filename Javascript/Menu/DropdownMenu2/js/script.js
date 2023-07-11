@@ -1,14 +1,12 @@
-$(".drop-down").css({display: "none"});
-
-$(".main-menu li, .drop-down").hover(function () {
+$(".main-menu li, .submenu-wrapper").hover(function () {
   // hover됐을 경우 실행할 함수
-  $(".drop-down").stop().slideDown(500);
+  $(".submenu-wrapper").stop().slideDown(500);
 }, function () {
   // hover되지 않았을 경우 실행할 함수
-  $(".drop-down").stop().slideUp(500);
+  $(".submenu-wrapper").stop().slideUp(500);
 });
 
-$(".drop-down > li").hover(function () {
+$(".submenu-list > li").hover(function () {
   // drop-down(ul)의 자식 li 4개 중 hover된 자신의 index번호를 변수 i에 저장
   let i = $(this).index();
   // eq(i) : eq() 인덱스 번호로 요소를 찾을 때 사용
