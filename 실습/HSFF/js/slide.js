@@ -15,5 +15,19 @@ buttons.forEach(function(button, index) {
   });
 });
 
-// jQuery
 
+// jQuery
+// let buttons = $('.slide-btn li');
+// console.log(buttons);
+
+// const slideList = $('.slide-list');
+
+// buttons.each(function(index) {
+//   $(this).on('click', function() {
+//     let translateXValue = -index * 100 + 'vw';
+//     slideList.css('transform', 'translateX(' + translateXValue + ')');
+    
+//     buttons.removeClass('active');
+//     $(this).addClass('active');
+//   });
+// });
