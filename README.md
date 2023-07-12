@@ -5,4 +5,5 @@
 - HTML, CSS, Javascript
 - 사용자 인터페이스 디자인 및 구현
 - SQL 활용
+- git
 
