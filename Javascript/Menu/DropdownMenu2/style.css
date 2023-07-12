@@ -41,8 +41,15 @@ li {
 }
 
 .submenu-wrapper {
-  display: none;
+  /* display: none; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms ease-in-out;
   background-color: cornflowerblue;
+}
+
+.submenu-wrapper.active {
+  max-height: 206px;
 }
 
 .submenu-list {
