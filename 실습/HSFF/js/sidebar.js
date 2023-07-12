@@ -8,6 +8,7 @@ document.querySelector('.sidebar-btn').addEventListener('click', function(){
   document.querySelector('.sidebar').classList.remove('is-active');
 })
 
+// jQuery
 // $('.gnb-open-btn').on('click', function(){
 //   $('.sidebar').addClass('is-active');
 // })
