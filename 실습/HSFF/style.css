@@ -67,6 +67,7 @@ li {
   padding: 16px;
 }
 
+.gnb-main-item a:hover,
 .gnb-main-item a.active {
   color: darkblue;
 }
@@ -92,9 +93,9 @@ li {
   transition: color 300ms ease-in-out;
 }
 
-.sub li a:hover {
+/* .sub li a:hover {
   color: #888;
-}
+} */
 
 /* .square {
   position: absolute;
