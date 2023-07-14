@@ -23,7 +23,6 @@ function handleSubmenuLeave() {
   mainMenuItem.classList.remove('on');
 }
 
-// Add event listeners for mouseenter and mouseleave on submenu list items
 submenuItems.forEach((item) => {
   item.addEventListener('mouseenter', handleSubmenuHover);
   item.addEventListener('mouseleave', handleSubmenuLeave);
