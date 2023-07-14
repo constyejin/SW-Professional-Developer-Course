@@ -41,10 +41,10 @@ li {
 }
 
 .submenu-wrapper {
-  /* display: none; */
-  max-height: 0;
+  display: none;
+  /* max-height: 0;
   overflow: hidden;
-  transition: max-height 500ms ease-in-out;
+  transition: max-height 500ms ease-in-out; */
   background-color: cornflowerblue;
 }
 
