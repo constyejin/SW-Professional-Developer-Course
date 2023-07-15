@@ -48,6 +48,7 @@ document.querySelectorAll(".animate-input").forEach((e) => {
 })
 
 // darkmode toggle
+// 가입하기 버튼(join-box 안 a태그 클릭시 다크모드 전환 체크
 darkmode_toggle.onclick = (e) => {
   e.preventDefault();
   let body = document.querySelector("body");
