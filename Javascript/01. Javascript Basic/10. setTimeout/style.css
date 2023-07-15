@@ -1,0 +1,8 @@
+.discount {
+  background-color: rgba(100, 144, 255, 0.5);
+  padding : 20px;
+}
+
+.discount.is-active {
+  display: none;
+}
