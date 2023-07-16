@@ -42,11 +42,21 @@
     
     // setTimeout(colorChange, 2000);
 
-    
+
     // 1초 마다 color 변경 (setInterval)
+    // setInterval : 일정한 시간 간격으로 함수를 반복 실행하는 함수
+    // 랜덤 hex 생성 
+    // 16진수 hex값 앞에 css에서는 #을 붙여서 사용!
+    // Math.random() : 0이상 1미만의 부동 소수점 난수 생성
+    // Math.round() : 소수점 이하의 값을 반올림해서 정수로 변환
+    // 16진수로 표현하려면 0x 를 표현하고자 하는 숫자 앞에 붙인다.
+    // ff : 16진수에서 255에 해당하는 값
+    // 0xffffff : RGB 255, 255, 255를 hex로 표현 (white)
+    // toString(16) : 16진수로 변환
     setInterval(function(){
       let randomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16)
-      document.querySelector('.discount').style.color = randomColor;
+      console.log(randomColor)
+      document.querySelector('.discount').style.backgroundColor = randomColor;
     }, 1000)
 
     // var, let, const, if, function => Javascript 문법
