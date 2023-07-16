@@ -1,6 +1,5 @@
 let buttons = document.querySelectorAll('.slide-btn li');
-console.log(buttons)
-const slideList = document.querySelector('.slide-list');
+let slideList = document.querySelector('.slide-list');
 
 buttons.forEach(function(button, index) {
   button.addEventListener('click', function() {
