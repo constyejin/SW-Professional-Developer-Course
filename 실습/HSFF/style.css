@@ -93,10 +93,6 @@ li {
   transition: color 300ms ease-in-out;
 }
 
-.sub li a:hover {
-  color: #888;
-}
-
 .square {
   position: absolute;
   bottom: -5px;
