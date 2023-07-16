@@ -36,11 +36,18 @@
     // }, 1000)
 
 
-    function colorChange(){
-      document.querySelector('.discount').style.color = 'white';
-    }
+    // function colorChange(){
+    //   document.querySelector('.discount').style.color = 'white';
+    // }
     
-    setTimeout(colorChange, 1000);
+    // setTimeout(colorChange, 2000);
+
+    
+    // 1초 마다 color 변경 (setInterval)
+    setInterval(function(){
+      let randomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16)
+      document.querySelector('.discount').style.color = randomColor;
+    }, 1000)
 
     // var, let, const, if, function => Javascript 문법
     // dodument.querySelector(), setTimeout, setInterval, addEvnetListner() => 웹 브라우저 사용법
