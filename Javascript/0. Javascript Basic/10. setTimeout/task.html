@@ -12,7 +12,7 @@
 <body>
   <div class="wrapper">
     <p class="discount">
-      <span class="num">5</span>초 이내 클릭시 할인!
+      <span class="num">5</span>초 마다 배경색 바꾸기
     </p>
   </div>
 
@@ -24,11 +24,14 @@
     let timer = setInterval(function(){
       count = count - 1;
       document.querySelector('.num').innerHTML = count;
-      // console.log(count)
+
+      let randomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16)
+      document.querySelector('.discount').style.backgroundColor = randomColor;
 
       if(count == 0) {
         clearTimeout(timer);
         // document.querySelector('.discount').classList.add('is-active');
+        
         document.querySelector('.discount').style.display = 'none';
       }
     }, 1000)

@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="wrapper">
-    <p class="discount">5초 이내 클릭시 할인!</p>
+    <p class="discount">1초마다 배경색 바꾸기</p>
   </div>
 
   <script>
@@ -22,6 +22,7 @@
     setTimeout(function(){
       document.querySelector('.discount').style.display = 'none';
       console.log('사라졌다!');
+      clearTimeout(bgcChange)
     }, 5000)
 
     // jQuery
@@ -53,7 +54,7 @@
     // ff : 16진수에서 255에 해당하는 값
     // 0xffffff : RGB 255, 255, 255를 hex로 표현 (white)
     // toString(16) : 16진수로 변환
-    setInterval(function(){
+    let bgcChange = setInterval(function(){
       let randomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16)
       console.log(randomColor)
       document.querySelector('.discount').style.backgroundColor = randomColor;
