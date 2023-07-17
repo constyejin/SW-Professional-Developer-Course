@@ -1,5 +1,10 @@
 let closeBtn = document.querySelector('.close-btn button');
 
+// Javascript 기본 함수 
+// n초 후 코드 실행
+// 파라미터 두 개를 받는데, 첫번째는 콜백함수, 두번째는 ms 단위
+// setTimeout(fuction(){실행할코드}, ms)
+
 closeBtn.addEventListener('click', function(){
   // setTimeout(function(){
      document.querySelector('.popup').style.display = 'none';
