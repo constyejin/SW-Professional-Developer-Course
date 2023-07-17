@@ -12,7 +12,7 @@
   height: 100vh;
 }
 
-#open-btn {
+.open-btn {
   width: 200px;
   height: 200px;
   color: #fff;
@@ -27,17 +27,17 @@
   transition: all 300ms;
 }
 
-#open-btn:hover {
+.open-btn:hover {
   background-color: #fff;
   border: 1px solid dodgerblue;
   color: dodgerblue;
 }
 
-#img-list {
+.img-list {
   height: 200px;
 }
 
-#img-list img {
+.img-list img {
   width: 200px;
   height: 200px;
   cursor: pointer;
@@ -46,11 +46,11 @@
   transition: opacity 2s;
 }
 
-#img-list img:hover {
+.img-list img:hover {
   opacity: .5;
 }
 
-#img-modal {
+.img-modal {
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -61,7 +61,7 @@
   z-index: 100;
 } 
 
-#img-modal-box  {
+.img-modal-box  {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -77,23 +77,24 @@
   border: none;
   font-size: 20px;
   padding: 5px;
+  background-color: transparent;
 }
 
-/* #img-wrapper {
+.img-wrapper {
   width: 500px;
   height: 400px;
   overflow: hidden;
   clear: right;
-} */
+}
 
-#img-modal-box img {
+.img-modal-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   margin-top: 10px;
 }
 
-#modal {
+.modal {
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -103,7 +104,7 @@
   bottom: 0;
 }
 
-#modal-box {
+.modal-box {
   /* opacity로 줬을 경우에는 visibility처럼 공간은 차지함 */
   opacity: 0;
   background-color: white;
@@ -113,22 +114,22 @@
   margin: 50px auto;
 }
 
-#modal-head {
+.modal-head {
   font-weight: 700;
   padding: 20px;
   border-bottom: 1px solid #ccc;
 }
 
-#modal-sec {
+.modal-sec {
   padding: 20px;
   border-bottom: 1px solid #ccc;
 }
 
-#modal-sec img {
+.modal-sec img {
   width: 100%;
   border-radius: 5px;
 }
 
-#modal-sec p {
+.modal-sec p {
   margin-top: 10px;
 }
