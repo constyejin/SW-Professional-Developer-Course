@@ -22,7 +22,8 @@
     setTimeout(function(){
       document.querySelector('.discount').style.display = 'none';
       console.log('사라졌다!');
-      clearTimeout(bgcChange)
+      clearTimeout(hexBgcChange);
+
     }, 5000)
 
     // jQuery
@@ -54,11 +55,24 @@
     // ff : 16진수에서 255에 해당하는 값
     // 0xffffff : RGB 255, 255, 255를 hex로 표현 (white)
     // toString(16) : 16진수로 변환
-    let bgcChange = setInterval(function(){
+    let hexBgcChange = setInterval(function(){
       let randomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16)
       console.log(randomColor)
       document.querySelector('.discount').style.backgroundColor = randomColor;
     }, 1000)
+
+    // RGB로 랜덤 컬러 변경
+    // function rand(min, max){
+    //   return Math.floor(Math.random()*(max-min+1)+min);
+    //  }
+
+    // let rgbBgcChange = setInterval(function(){
+    //   let r = rand(0,255);
+    //   let g = rand(0,255);
+    //   let b = rand(0,255);
+    //   console.log(r, g, b);
+    //   document.querySelector(".discount").style.backgroundColor = "rgb("+r+","+g+","+b+")";
+    //  }, 1000);
 
     // var, let, const, if, function => Javascript 문법
     // dodument.querySelector(), setTimeout, setInterval, addEvnetListner() => 웹 브라우저 사용법
