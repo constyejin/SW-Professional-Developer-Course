@@ -12,6 +12,7 @@ li {
 }
 
 .slide-wrapper {
+  /* 기본이 1이니까 그 이상 보이는 것들이 사라짐 */
   overflow: hidden;
 }
 
@@ -37,27 +38,27 @@ li {
   object-fit: cover;
 }
 
-.btn-group button {
+.btn-group {
   position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  width: 40px;
-  height: 40px;
+}
+
+.btn-group button.active {
+  background-color: dodgerblue;
+}
+
+.btn-group button {
+  width: 15px;
+  height: 15px;
   border: none;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: #fff;
+  margin-right: 8px;
 }
 
-.prev {
-  top: 50%;
-  left: 30px;
-  transform: translateY(-50%);
-}
-
-.next {
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
+.btn-group button:last-child {
+  margin-right: 0;
 }

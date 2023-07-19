@@ -1,0 +1,70 @@
+#h2box {
+    background-image: url(../images/biz_subimg01.jpg);
+}
+.pslider {
+    max-width: 980px;
+    margin: 50px auto;
+    margin-bottom: 60px;
+}
+.pslider .slick-slide {
+    padding: 0 40px;
+}
+.pslider .slick-slide img {
+    max-width: 900px;
+    width: 100%;
+}
+.pslider .slick-slide p {
+    margin-top: 0.8em;
+    text-align: center;
+}
+.pslider .slick-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+}
+.pslick-next {right: 0;}
+.pslider .slick-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -35px;
+    list-style: none;
+    margin-left: 0!important;
+}
+.pslider .slick-dots li {
+    float: left;
+    margin: 0 6px;
+}
+.pslider .slick-dots button {
+    color: transparent;
+    font-size: 0;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #4a70a3;
+    background-color: transparent;
+    border-radius: 50%;
+}
+.pslider .slick-dots .slick-active button {
+    background-color: #4a70a3;
+}
+
+
+
+@media all and (max-width: 769px) {
+    .pslider .slick-arrow img {
+        height: 20px;
+    }
+    .pslider .slick-slide {
+        padding: 0 30px;
+    }
+}
+
+
+
+
+
+
+

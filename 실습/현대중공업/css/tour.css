@@ -1,0 +1,174 @@
+#h2box {
+    background-image: url(../images/public_subimg04.jpg);
+}
+
+.tabconts {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.bg-gray {
+    background-color: #efefef;
+    padding: 0.8em 0.6em;
+    overflow: auto;
+}
+#course1 {
+    width: calc(100% - 310px);
+    margin-right: 10px;
+    float: left;
+}
+#course1 img {
+    width: 100%;
+}
+#course11 {
+    width: 300px;
+    height: 490px;
+    float: left;
+    overflow: auto;
+    padding: 0.8em;
+    background-color: white;
+}
+#course11>div {
+    overflow: auto;
+    margin-bottom: 15px;
+}
+#course11>div>img {
+    float: left;
+    width: 90px;
+    margin-right: 10px;
+}
+#course11>div>div {
+    float: left;
+    width: calc(100% - 100px);
+    font-size: 0.85em;
+}
+.ctitle {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2em 3.8em;
+    color: white;
+    font-size: 1.1em;
+}
+.btn-primary {
+    background-color: #134EA0;
+}
+.btn-secondary {
+    background-color: #31363E;
+}
+
+
+.border-gray {
+    border: 1px solid #d3d3d3;
+}
+#course2 {
+    padding: 30px;
+    overflow: auto;
+}
+#course2>img {
+    width: 70%;
+    float: left;
+}
+#course2>div {
+    width: 30%;
+    float: left;
+    padding-left: 60px;
+    padding-top: 70px;
+}
+#course2>div>p {
+    font-weight: bold;
+    font-size: 1.0em;
+    margin-bottom: 5px;
+}
+
+#course3 {overflow: auto;}
+#course3>img {
+    float: left;
+    width: 60%;
+}
+#course3>div {
+    float: left;
+    width: 40%;
+    padding: 100px 0 30px 60px;
+}
+.pill-blue {
+    width: 90px;
+    height: 35px;
+    border-radius: 18px;
+    background-color: #0a55a4;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+}
+
+
+@media all and (max-width: 1024px){
+    #course1, #course11 {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+    #course1 img {
+        display: block;
+        margin: auto;
+        width: auto;
+        max-width: 100%;
+    }
+    #course11>div {
+        width: calc((100% - 10px) / 2);
+        margin-right: 10px;
+        float: left;
+    }
+    #course11>div:nth-of-type(even) {
+        margin-right: 0;
+    }
+    #course2>div {
+        padding-top: 40px;
+    }
+    #course3>div {
+        padding: 80px 0 30px 30px;
+    }
+}
+
+@media all and (max-width: 800px){
+    .btn {
+        padding: 1.2em 1.5em;
+    }
+    #course2>img, 
+    #course2>div {
+        float: none;
+        width: 100%;
+    }
+    #course2>div {padding: 5px;}
+    #course2>div>p {
+        float: left;
+        width: 50%;
+    }
+    #course3>div {
+        padding: 50px 0 30px 20px;
+    }
+}
+@media all and (max-width: 769px) {
+    #course3>img,
+    #course3>div {
+        float: none; width: 100%;
+    }
+}
+@media all and (max-width: 480px){
+    #course11>div {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
+

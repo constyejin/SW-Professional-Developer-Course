@@ -1,0 +1,32 @@
+#ceo {
+    margin-top: 60px;
+}
+#ceopic {
+    width: 280px;
+}
+#ceotxt {
+    width: calc(100% - 280px);
+}
+
+@media all and (max-width: 800px) {
+    #ceopic, #ceotxt {
+        float: none;
+        width: 100%;
+    }
+    #ceopic {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #ceopic img {
+        max-height: 300px;
+    }
+}
+
+
+
+
+
+
+
+
+

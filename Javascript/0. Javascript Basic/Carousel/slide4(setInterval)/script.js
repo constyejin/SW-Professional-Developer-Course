@@ -1,38 +1,26 @@
-// 현재 index값
-// 현재 이미지 위치
-let currentSlide = 0;
-let currentImage = 0;
-let nextBtn = document.querySelector('.next');
-let prevBtn = document.querySelector('.prev');
-let slideList = document.querySelector('.slide-list');
-let slideWidth = slideList.clientWidth;
+let buttons = document.querySelectorAll('.btn-group button');
+const slideList = document.querySelector('.slide-list');
 
-// 딱 봐도 if문 냄새가 남
-// 코드 짤 때 영어부터 짤 생각하지 말고 한글로 최대한 구체적으로 설명부터 하고 시작해야 쉬움
+buttons.forEach(function(button, index) {
+  button.addEventListener('click', function() {
+    let translateXValue = -index * 100 + 'vw';
+    slideList.style.transform = 'translateX(' + translateXValue + ')';
+    
+    // buttons 라는 배열을 한 번 더 돌면서 모든 버튼이 가지고 있는 active class 삭제
+    buttons.forEach(function(otherBtn){
+      otherBtn.classList.remove('active');
+      console.log(otherBtn)
+    })
+    // 클릭된 버튼에만 actvie class 추가
+    button.classList.add('active');
 
-// nextBtn.addEventListener('click', function() {
-//   // 현재 사진이 1번이면 2번 사진
-//   // 2번 사진이면 3번 사진
-//   if (preImg < 3) {
-//     prevBtn.removeAttribute('disabled')
-//     slideList.style.transform = 'translageX(' +slideList+ 'vw)'
-//   }
-// });
-
-
-// prevBtn.addEventListener('click', function() {
-//   slideBox.style.transform = 'translateX(-' + present + '00vw)';
-//   present -= 1;
-// });
-
-
-// prevBtn.addEventListener('click', function() {
-//   if(present == 2) {
-//     document.querySelector('.slide-list').style.transform = 'translateX(0)';
-//         present++;
-
-//   }else if(present == 3) {
-//     document.querySelector('.slide-list').style.transform = 'translateX(-100vw)';
-//         present++;
-//   }
-// });
+    // 조건문
+    // 클릭된 버튼에게 activa class추가
+    // 현재 클릭되어 있는 버튼이 아닐 때 && actvie라는 클래스를 포함하고 있다면 remove
+    // buttons.forEach(function(otherButton) {
+    //   if (otherButton !== button && otherButton.classList.contains('active')) {
+    //     otherButton.classList.remove('active');
+    //   }
+    // });
+  });
+});
