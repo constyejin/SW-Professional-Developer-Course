@@ -11,28 +11,41 @@
 </head>
 <body>
   <div class="wrapper">
-    <p class="discount">
-      <span class="num">5</span>초 마다 배경색 바꾸기
+    <p class="count">
+      <span class="num">1</span>초 마다 배경색 바꾸기
     </p>
   </div>
 
   <script>
     // 1초 마다 5라는 문자를 1씩 감소시킨다. 5 4 3 2 1
     // 0이 되면 discount 클래스를 가진 태그가 화면상에서 보이지 않게한다.
-    let count = 5;
+    let count = 1;
 
-    let timer = setInterval(function(){
-      count = count - 1;
+    // let timer = setInterval(function(){
+    //   count = count - 1;
+    //   document.querySelector('.num').innerHTML = count;
+
+    //   let randomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16)
+    //   document.querySelector('.count').style.backgroundColor = randomColor;
+
+    //   if(count == 0) {
+    //     clearInterval(timer);
+    //     // document.querySelector('.discount').classList.add('is-active');
+        
+    //     document.querySelector('.count').style.display = 'none';
+    //   }
+    // }, 1000)
+
+    let plusTimer = setInterval(function(){
+      count = count + 1;
       document.querySelector('.num').innerHTML = count;
 
       let randomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16)
-      document.querySelector('.discount').style.backgroundColor = randomColor;
+      document.querySelector('.count').style.backgroundColor = randomColor;
 
-      if(count == 0) {
-        clearTimeout(timer);
-        // document.querySelector('.discount').classList.add('is-active');
-        
-        document.querySelector('.discount').style.display = 'none';
+      if(count == 10) {
+        clearInterval(plusTimer);
+        document.querySelector('.count').classList.add('is-active')
       }
     }, 1000)
 

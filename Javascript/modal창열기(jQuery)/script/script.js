@@ -7,7 +7,7 @@ $(".img-list img").click(function () {
     src: 이미지경로,
     alt: 대체텍스트
   });
-  $(".img-modal").delay(400).fadeIn();
+  $(".img-modal").fadeIn();
 });
 
 $(".img-modal-btn").click(function () {
@@ -16,16 +16,15 @@ $(".img-modal-btn").click(function () {
 
 // .modal Code
 $(".open-btn").click(function () {
-  // 선택한 요소를 천천히 나타나게 하는 효과
   $(".modal").fadeIn();
   // 애니메이션 효과를 만드는 메소드
   // 제이쿼리 animate 
-  $(".modal-box").delay(400).animate({opacity: 1});
+  $(".modal-box").animate({opacity: 1});
 });
 
 $(".modal-close").click(function () {
   $(".modal-box").animate({opacity: 0});
-  $(".modal").delay(400).fadeOut();
+  $(".modal").fadeOut();
 });
 
 
