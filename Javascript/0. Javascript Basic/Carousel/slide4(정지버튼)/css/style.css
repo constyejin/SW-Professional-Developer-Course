@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#slider {
+    width: 740px;
+    height: 555px;
+    overflow: hidden;
+    position: relative;
+}
+#bus {
+/*    width: 3700px;*/
+    height: 555px;
+}
+.slide {
+    float: left;
+    width: 740px;
+    height: 555px;
+    position: relative;
+}
+.slide p {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-shadow: 0 0.1em 0.12em rgba(0,0,0,0.4);
+}
+
+.sbtn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.2);
+    position: absolute;
+    bottom: 40px;
+    color: white;
+    cursor: pointer;
+}
+.snext {right: 50px;}
+.sprev {right: 79px;}
+.sauto {right: 120px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
