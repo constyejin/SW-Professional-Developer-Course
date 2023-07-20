@@ -9,43 +9,39 @@
 </head>
 <body>
   <div class="wrapper">
-    <button class="open-btn" type="button">모달열기</button>
-    <div class="img-list">
-      <img src="./images/img1.jpg" alt="쿼카">
-      <img src="./images/img2.jpg" alt="해달">
-      <img src="./images/img3.jpg" alt="리트리버">
-      <img src="./images/img4.jpg" alt="해달2">
-      <img src="./images/img5.jpg" alt="쿼카정면" />
-    </div>
+    <ul class="modal-list">
+      <li class="open-btn">모달열기</li>
+      <li><img src="./images/img1.jpg" alt="쿼카"></li>
+      <li><img src="./images/img2.jpg" alt="해달"></li>
+      <li><img src="./images/img3.jpg" alt="리트리버"></li>
+      <li><img src="./images/img4.jpg" alt="해달2"></li>
+      <li><img src="./images/img5.jpg" alt="쿼카정면"></li>
+    </ul>
 
-    <div class="modal">
-      <div class="modal-box">
-        <div class="modal-head">
-          <span>모달 타이틀</span>
-          <button class="modal-close close-btn" type="button">X</button>
-        </div>
-        <div class="modal-sec">
-          <img src="./images/img1.jpg" alt="" />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, est sagittis malesuada aliquet,
-            enim mauris commodo ipsum, vitae tempor elit leo accumsan nibh. Phasellus vulputate, est faucibus scelerisque
-            pulvinar, mi nibh euismod libero, vel vulputate odio leo quis ligula. Pellentesque congue nisl ante,
-            scelerisque tincidunt elit tempor eu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Donec iaculis, nisl nec semper viverra, lectus ante lacinia leo, sit amet dignissim magna
-            dolor non quam. Suspendisse porttitor tempor est, id tempus metus semper id. Nam ornare sed dui nec posuere.
-            Donec non nisi turpis. Ut at lacus enim. Phasellus ut ipsum sem. Aliquam erat volutpat.</p>
-        </div>
+    <div class="modal-box modal">
+      <div class="modal-head">
+        <span>모달 타이틀</span>
+        <button class="modal-close close-btn" type="button">X</button>
+      </div>
+      <div class="modal-sec">
+        <img src="./images/img1.jpg" alt="" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, est sagittis malesuada
+          aliquet,
+          enim mauris commodo ipsum, vitae tempor elit leo accumsan nibh. Phasellus vulputate, est faucibus
+          scelerisque
+          pulvinar, mi nibh euismod libero, vel vulputate odio leo quis ligula. Pellentesque congue nisl ante</p>
       </div>
     </div>
 
-    <div class="img-modal">
-      <div class="img-modal-box">
-        <button class="img-modal-btn close-btn">X</button>
-        <div class="img-wrapper">
-          <img src="" alt="" />
-        </div>
+    <div class="img-modal-box modal">
+      <button class="img-modal-btn close-btn">X</button>
+      <div class="img-modal-wrapper">
+        <img src="" alt="" />
       </div>
     </div>
+    <div class="overlay"></div>
   </div>
+
   <script src="script/script.js"></script>
 </body>
 </html>
