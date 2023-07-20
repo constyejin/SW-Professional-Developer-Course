@@ -1,3 +1,4 @@
+
 let cur = 0;
 let len = $(".slide").length;
 $("#bus").width(740*len);
