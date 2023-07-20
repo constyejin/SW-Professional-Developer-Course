@@ -1,123 +1,95 @@
-@charset "utf-8";
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#sel1 {
+  display: none;
 }
 
 #slider {
-    width: 100%;
-    min-width: 1180px;
-    height: 860px;
-    overflow: hidden;
-    position: relative;
-    background-color: black;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: black;
 }
 
 .slide {
-    width: 100%;
-    height: 860px;
-    position: absolute;
-    display: none;
-    z-index: 1;
+  width: 100%;
+  height: 100%;
 }
-.slide:first-of-type {display: block;}
+
+.slide:first-of-type {
+  display: block;
+}
+
 .slide img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    height: 900px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 900px;
 }
+
 .slide p {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 40%;
-    font-size: 3.5em;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    letter-spacing: -0.07em;
-    line-height: 1.25em;
-    margin-top: 20px;
-    opacity: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  font-size: 3.5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  letter-spacing: -0.07em;
+  line-height: 1.25em;
+  margin-top: 20px;
+  opacity: 0;
 }
 
-#prev, #next {
-    font-size: 4em;
-    font-weight: normal;
-    color: white;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 2;
-    background-color: transparent;
-    border: none;
+.slid-btn-list i {
+  border: 1px solid red;
 }
-#prev {
-    margin-left: -590px;
-}
+
+#prev,
 #next {
-    margin-left: 590px;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 48px;
+  color: white;
+  background-color: transparent;
+  border: none;
 }
+
+#prev {
+  left: 80px;
+}
+
+#next {
+  right: 80px;
+}
+
 #dots {
-    position: absolute;
-    left: 50%;
-    bottom: 230px;
-    transform: translateX(-50%);
-    z-index: 2;
+  position: absolute;
+  left: 50%;
+  bottom: 230px;
+  transform: translateX(-50%);
+  z-index: 2;
 }
+
 #dots>div {
-    float: left;
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
-    border: 1px solid white;
-    margin: 0 3px;
-    cursor: pointer;
-}
-#dots .sactive {background-color: white;}
-
-
-#sel1 {display: none;}
-
-#baji {
-    width: 200px;
-    height: 40px;
-    background-color: pink;
-}
-.aaa {
-    width: 200px;
-    height: 40px;
-    background-color: green;
-}
-.bbb {
-    position: absolute;
-    z-index: 999;
-    width: 200px;
-    background-color: coral;
-    display: none;
+  float: left;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  border: 1px solid white;
+  margin: 0 3px;
+  cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#dots .sactive {
+  background-color: white;
+}
