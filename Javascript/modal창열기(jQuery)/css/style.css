@@ -29,6 +29,8 @@ button {
   width: 200px;
   height: 200px;
   cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .modal-list li:not(:last-child) {
@@ -37,7 +39,6 @@ button {
 
 .open-btn {
   color: #fff;
-  border-radius: 10px;
   background-color: dodgerblue;
   text-align: center;
   line-height: 200px;
@@ -57,7 +58,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
   transition: opacity 300ms ease-in-out;
 }
 
