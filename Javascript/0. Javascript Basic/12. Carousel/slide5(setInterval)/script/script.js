@@ -38,9 +38,14 @@ function sliding(dir){
       marginTop : 0,
       opacity : 1
     }, 600)
-  });
 
-  
+    $(this).siblings(".slide-item").children("img").css({
+      height : "calc(100vh + 30px)"
+    });
+    $(this).children("img").stop().animate({
+      height : "100vh"
+    },4000);
+  });
 
   $('#dots div').removeClass('is-active');
   $('#dots div').eq(cur).addClass('is-active');
