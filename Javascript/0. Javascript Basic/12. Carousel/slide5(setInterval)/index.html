@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -8,39 +7,33 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <!-- Fontawesome -->
+  <!-- Font awesome -->
   <script src="https://kit.fontawesome.com/b5b1d8cfa4.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-
-  <select id="sel1">
-    <option value="1">첫번째</option>
-    <option value="2">두번째</option>
-    <option value="3">세번째</option>
-    <option value="4">네번째</option>
-  </select>
-
-  <div id="slider">
-    <div class="slide">
-      <img src="images/img_visual1.jpg" alt="식자재 유통의 베스트 솔루션" />
-      <p>식자재 유통의 베스트<br />솔루션</p>
+  <div class="slide-list">
+    <div class="slide-item">
+      <img class="active" src="images/img_visual1.jpg" alt="식자재 유통의 베스트 솔루션" />
+      <p>식자재 유통의 베스트<br>솔루션</p>
     </div>
-    <div class="slide">
+    <div class="slide-item">
       <img src="images/img_visual2.jpg" alt="신선하고 차별화된 식자재 Provider" />
-      <p>신선하고 차별화된 식자재<br />Provider</p>
+      <p>신선하고 차별화된 식자재<br>Provider</p>
     </div>
-    <div class="slide">
+    <div class="slide-item">
       <img src="images/img_visual3.jpg" alt="고객의 성공을 위해 함께하는 파트너" />
-      <p>고객의 성공을 위해 함께하는<br />파트너</p>
+      <p>고객의 성공을 위해<br> 함께하는 파트너</p>
     </div>
+
     <button id="prev" type="button">
-      <</button> <button id="next" type="button">>
+      <i class="fas fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="next" type="button">
+      <i class="fas fa-solid fa-chevron-right"></i>
     </button>
     <div id="dots"></div>
   </div>
 
   <script src="script/script.js"></script>
 </body>
-
 </html>
