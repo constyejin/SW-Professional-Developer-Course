@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 30px;
+  transition: background-color 300ms ease-in-out;
+}
+
+.logo img {
+  width: 80px;
+}
+
+i {
+  font-size: 24px;
+}
+
+.line {
+  position: fixed;
+  top: 107px;
+  left: 0;
+  right : 0;
+  width: 0;
+  height: 5px;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.box {
+  height: 3000px;
+  background-color :cornflowerblue;
+}
+
+.lorem {
+  width: 200px;
+  height: 200px;
+  overflow-y: scroll;
+  margin: 50px auto;
+}
