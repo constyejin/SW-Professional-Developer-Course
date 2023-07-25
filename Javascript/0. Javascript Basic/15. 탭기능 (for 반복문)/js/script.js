@@ -49,11 +49,11 @@ let buttons = $('.tab-button');
 // 3. 나중에 관리가 용이한지
 // 4. 성능문제는 없는지
 for(let i = 0; i < buttons.length; i++) {
-  buttons.eq(i).on('click', function(){
-    buttons.removeClass('orange');
+  $('.tab-button').eq(i).on('click', function(){
+    $('.tab-button').removeClass('blue');
     $('.tab-content').removeClass('show');
 
-    $(this).addClass('orange');
+    $(this).addClass('blue');
     $('.tab-content').eq(i).addClass('show');
   })
 }
