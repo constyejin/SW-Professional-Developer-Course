@@ -6,10 +6,10 @@
 
 // 함수로 축약하기
 function 탭열기(num){
-  $('.tab-button').removeClass('orange');
+  $('.tab-button').removeClass('blue');
   $('.tab-content').removeClass('show');
 
-  $('.tab-button').eq(num).addClass('orange');
+  $('.tab-button').eq(num).addClass('blue');
   $('.tab-content').eq(num).addClass('show');
 }
 
@@ -33,7 +33,7 @@ function 탭열기(num){
 // html 태그에 유저는 볼 수 없게 몰래 정보 숨기기 가능
 // data-자료이름 = "값"
 // document.querySelector('').dataset.자료이름
-document.querySelector('.list').addEventListener('click', function(e){
+document.querySelector('.tab-list').addEventListener('click', function(e){
   // 지금 누른 버튼에 숨겨져있는 dataset.id를 매개변수로 넘겨준다.
   // 자바스크립트 형변환
   탭열기(Number(e.target.dataset.id));
