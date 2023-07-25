@@ -1,3 +1,5 @@
+// Animate On Scroll (Scroll Evnet)
+
 // 유저가 스크롤을 얼마나 내렸는지 파악하고 싶을 때 사용하는 이벤트
 // window : 현재 html 페이지를 의미 (document랑 같은 개념이라고 생각하면 된다.)
 // window > document > html tags
@@ -20,7 +22,7 @@ window.addEventListener('scroll', function(){
 
   // task1
   // 페이지 스크롤바를 100 이상 내렸을 때 배경색 변경
-  if(100 < window.scrollY) {
+  if(100 <= window.scrollY) {
     document.querySelector('nav').style.backgroundColor = '#ccc';
   } else {
     document.querySelector('nav').style.backgroundColor = '#fff';
