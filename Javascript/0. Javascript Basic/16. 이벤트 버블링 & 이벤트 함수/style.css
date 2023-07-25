@@ -22,6 +22,14 @@
     transition: all 1s;
   }
 
+  .black-bg.is-open {
+    /* display : blcok과 유사 */
+    visibility: visible;
+    opacity: 1;
+    /* top: 0; */
+    /* left: 0; */
+  }
+
   .white-bg {
     display: block;
     justify-content: space-between;
@@ -30,11 +38,4 @@
     padding: 30px;
   }
 
-  .is-open {
-    /* display : blcok과 유사 */
-    visibility: visible;
-    opacity: 1;
-    /* position: fixed;
-    top: 0; */
-    /* left: 0; */
-  }
+
