@@ -31,8 +31,6 @@
   }
 
   .white-bg {
-    display: block;
-    justify-content: space-between;
     background-color: white;
     border-radius: 5px;
     padding: 30px;
