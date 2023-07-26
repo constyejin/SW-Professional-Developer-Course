@@ -14,12 +14,12 @@ li {
 }
 
 .global-header {
-  position: relative;
+  position: relative; 
   max-width: 768px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px auto;
+  margin: 50px auto;
 }
 
 .logo img {
@@ -40,18 +40,11 @@ section label {
   display: flex;
 }
 
-label p {
-  width: calc(100% - 30px);
-  font-size: 18px;
-  font-weight: bold;
-}
-
 label input[type="checkbox"] {
   display: none;
 }
 
 .checkbox-img {
-  margin-top: 2px;
   margin-right: 8px;
 }
 
@@ -65,23 +58,20 @@ label input[type="checkbox"] {
   background-image: url(../images/pc_check_on_l_24.png);
 }
 
-.agree-list {
-  margin-top: 40px;
+label p {
+  width: calc(100% - 32px);
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .agree {
-  margin-bottom: 40px;
-}
-
-.agree:last-child {
-  margin-bottom: 0;
+  margin-top: 40px;
 }
 
 .agree .checkbox-img {
   width: 20px;
   height: 20px;
   background-image: url(../images/pc_chcek_off_s_20.png);
-  margin-right: 8px;
 }
 
 .agree .checkbox-img.checked {
@@ -93,29 +83,29 @@ label input[type="checkbox"] {
   align-items: center;
 }
 
-.text-primary {
-  margin-left: 4px;
-  color: #08A600;
-  font-size: 14px;
+.agree label span {
+  margin-left: 8px;
   font-weight: normal;
+  font-size: 14px;
+}
+
+.text-primary {
+  color: #08A600;
 }
 
 .text-secondary {
-  margin-left: 4px;
   color: #8E8E8E;
-  font-size: 14px;
-  font-weight: normal;
 }
 
 .terms {
-  height: 120px;
+  height: 130px;
   margin-top: 10px;
+  padding: 16px;
   overflow: auto;
-  background-color: white;
   border: 1px solid #dadada;
   border-radius: 5px;
-  padding: 16px;
   color: #666666;
+  background-color: white;
 }
 
 .terms p {
@@ -126,11 +116,7 @@ label input[type="checkbox"] {
   color: #08A600;
 }
 
-.terms a:hover {
-  text-decoration: underline;
-}
-
-#req-alert {
+.req-alert {
   visibility: hidden;
   padding: 20px 0;
   font-size: 14px;
@@ -139,6 +125,7 @@ label input[type="checkbox"] {
 
 .btn-box {
   display: flex;
+  justify-content: space-between;
 }
 
 #cancel,
@@ -152,14 +139,13 @@ label input[type="checkbox"] {
   border: none;
 }
 
-#cancel {
-  margin-right: 8px;
-}
-
 .group-join {
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
+.group-join a {
+  transition: color 300ms ease-in-out;
+}
 
 .group-join a:hover {
   color: #08A600;;
