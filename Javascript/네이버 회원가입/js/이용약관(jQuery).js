@@ -10,9 +10,9 @@ $('label').on('click', function(e) {
   
   if ($(this).children(".checkbox-img").hasClass('checked')) {
     // $(selector).attr(attribute, value)
-    $(this).children("input[type='checkbox']").attr('checked', 'checked');
+    $(this).children("input[type='checkbox']").attr('checked', true);
   } else {
-    $(this).children("input[type='checkbox']").removeAttr("checked", 'checked');
+    $(this).children("input[type='checkbox']").removeAttr("checked", false);
   }
 })
 
@@ -29,10 +29,10 @@ $('label').on('click', function(e) {
 $('.total label').on('click', function() {
   if($(this).children(".checkbox-img").hasClass('checked')) {
     $(".agree").find(".checkbox-img").addClass('checked');
-    $(".agree").find("input[type='checkbox']").attr('checked', 'checked');
+    $(".agree").find("input[type='checkbox']").attr('checked', true);
   } else {
     $(".agree").find(".checkbox-img").removeClass("checked");
-    $(".agree").find("input[type='checkbox']").removeAttr("checked");
+    $(".agree").find("input[type='checkbox']").removeAttr("checked", false);
   }
 })
 
@@ -49,10 +49,10 @@ $('.agree label').on('click', function(){
   // total label input checkbox에 checked 속성 추가
   if (unchk == 0) {
     $(".total label .checkbox-img").addClass("checked");
-    $(".total label input[type='checkbox']").attr("checked", 'checked');
+    $(".total label input[type='checkbox']").attr("checked", true);
   } else {
     $(".total label .checkbox-img").removeClass("checked");
-    $(".total label input[type='checkbox']").removeAttr("checked");
+    $(".total label input[type='checkbox']").removeAttr("checked", false);
   }
 })
 
