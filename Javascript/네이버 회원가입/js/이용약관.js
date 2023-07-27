@@ -1,11 +1,14 @@
 let labels = document.querySelectorAll('label');
-let totalLabels = document.querySelector('.total label');
+let totalLabel = document.querySelector('.total label');
 let agreeAll = document.querySelectorAll('.agree');
 let agreeLabels = document.querySelectorAll('.agree label');
 let submitBtn = document.getElementById('submit');
 let cancelBtn = document.getElementById('cancel');
 // console.log(agreeLabels);
 
+// 각 label 클릭시 
+// 클릭된 label 안 .checkbox-img에 checked class toggle
+// 클릭된 label 안 input checkbox에 checked 속성 ture / false
 labels.forEach(function(label){
   label.addEventListener('click', function(e){
     e.preventDefault();
@@ -24,9 +27,12 @@ labels.forEach(function(label){
 })
 
 
-totalLabels.addEventListener('click', function(){
+// .total label 클릭시
+// .agree 안에 있는 모든 .checkbox-img에 checked class add / remove
+// .agree 안에 있는 모든 input checkbox에 checked 속성 ture / false 
+totalLabel.addEventListener('click', function(){
   agreeAll.forEach(function(agree){
-    if(totalLabels.querySelector('.checkbox-img').classList.contains('checked')) {
+    if(totalLabel.querySelector('.checkbox-img').classList.contains('checked')) {
       agree.querySelector('.checkbox-img').classList.add('checked');
       agree.querySelector("input[type='checkbox']").checked = true;
     } else {
@@ -37,6 +43,13 @@ totalLabels.addEventListener('click', function(){
 })
 
 
+// .agree label이 모두 체크 됐을 때 
+// .total label 안 .checkbox-img에 checked class add
+// .total label 안 input checkbox에 checked 속성 true
+
+// .agree label이 모두 체크 되지 않았을 때
+// .total label 안 .checkbox-img에 checked class remove
+// .total label 안 input checkbox에 checked 속성 falsew
 agreeLabels.forEach(function(alabel){
   alabel.addEventListener('click', function(){
     let len = document.querySelectorAll('.agree .checkbox-img').length;
@@ -55,6 +68,9 @@ agreeLabels.forEach(function(alabel){
 })
 
 
+// #submit(확인) 버튼을 클릭 했을 때
+// 필수 항목 2개 모두 체크 되었다면 #form1 submit
+// 필수 항목 2개 모두 체크되지 않았다면 e.preventDefault()로 전송을 막고 .req-alert를 보여준다.
 submitBtn.addEventListener('click', function(e){
   let req = document.querySelectorAll('.req').length;
   let chkreq = document.querySelectorAll('.req .checked').length;
