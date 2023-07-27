@@ -77,10 +77,6 @@ li {
   width: calc((100% - 20px) / 3);
 }
 
-.three-box .inputbox input {
-  width: 100%;
-}
-
 .inputbox select {
   width: 100%;
   font-size: 18px;
@@ -95,7 +91,12 @@ li {
 }
 
 #gender input[type="radio"] {
-  display: none;
+  /* display: none; */
+}
+
+.text-secondary {
+  color: #8e8e8e;
+  margin-left: 4px;
 }
 
 #phonenum,
