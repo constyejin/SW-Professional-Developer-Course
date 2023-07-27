@@ -6,8 +6,8 @@ let submitBtn = document.getElementById('submit');
 let cancelBtn = document.getElementById('cancel');
 // console.log(agreeLabels);
 
-labels.forEach(function(tlabel){
-  tlabel.addEventListener('click', function(e){
+labels.forEach(function(label){
+  label.addEventListener('click', function(e){
     e.preventDefault();
     this.querySelector('.checkbox-img').classList.toggle('checked');
 
