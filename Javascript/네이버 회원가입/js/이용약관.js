@@ -30,9 +30,10 @@ labels.forEach(function(label){
 // .total label 클릭시
 // .agree 안에 있는 모든 .checkbox-img에 checked class add / remove
 // .agree 안에 있는 모든 input checkbox에 checked 속성 ture / false 
-totalLabel.addEventListener('click', function(){
-  agreeAll.forEach(function(agree){
-    if(totalLabel.querySelector('.checkbox-img').classList.contains('checked')) {
+agreeAll.forEach(function(agree){
+  totalLabel.addEventListener('click', function(){
+    // forEach 메서드 안에서 this를 사용하면, this는 현재 반복 중인 배열의 요소를 참조
+    if(this.querySelector('.checkbox-img').classList.contains('checked')) {
       agree.querySelector('.checkbox-img').classList.add('checked');
       agree.querySelector("input[type='checkbox']").checked = true;
     } else {
@@ -41,6 +42,7 @@ totalLabel.addEventListener('click', function(){
     }
   })
 })
+
 
 
 // .agree label이 모두 체크 됐을 때 
