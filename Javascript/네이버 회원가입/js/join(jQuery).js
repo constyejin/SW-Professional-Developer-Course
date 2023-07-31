@@ -7,81 +7,85 @@ $("input").focusout(function () {
   $(this).parent(".inputbox").removeClass("input-act");
 });
 
-
+// 필수 요소들은 값은 false로 준 후 조건을 만족 했을 때 true로 바꿔준다.
+// 선택사항은 입력하지 않아도 제출 시켜줘야 하니까 항상 true
 let idveri, pwveri, pwchkveri, nameveri, birthveri, genderveri, phoneveri, addressveri = false;
 let mailveri = true;
 
 // 아이디
 // #userid input에 focusout 됐을 때 입력된 값이 0이라면 (조건)
 // #userid .warn에 내용을 쓰자. (실행문)
-$("#userid input").focusout(function () {
+$(".userid input").focusout(function () {
   let userId = $(this).val();
-  // 영문 소문자 + 숫자 조합으로 5~8사이 글자로 작성
-  let idExp= /^[a-z][0-9a-z]{4,7}$/
+  // 최소 5글자 ~ 최대 8글자 사이 영문 소문자 + 숫자 포함
+  let idExp= /^[a-z0-9]{5,8}$/
   idveri = false;
 
   if (userId.length == 0) {
-    $("#userid .warn").html("<span class='text-red'>필수 정보입니다.</span>");
-    // len이 5보다 작거나 20보다 클 때
+    $(".userid .warn").html("<span class='text-red'>필수 정보입니다.</span>");
   } else if (!idExp.test(userId)) {
-    $("#userid .warn").html("<span class='text-red'>5~8자의 영문 소문자만 사용가능합니다.</span>");
+    $(".userid .warn").html("<span class='text-red'>5~8자의 영문 소문자만 사용가능합니다.</span>");
   } else {
-    $("#userid .warn").html("<span class='text-green'>멋진 아이디네요!</span>");
+    $(".userid .warn").html("<span class='text-green'>멋진 아이디네요!</span>");
     idveri = true;
   }
 });
 
 
 // 비밀번호
-// "#userpw input"에 focusout 됐을 때 입력된 값이 0이라면 (조건)
+// "#userpw input에 focusout 됐을 때 입력된 값이 0이라면 (조건)
 // #userpw .warn에 내용을 쓰자. (실행문)
-$("#userpw input").focusout(function () {
-  let len = $(this).val().length;
+$(".userpw input").focusout(function () {
+  let userPw = $(this).val();
+  // 8~20자 사이 영문 대소문자, 숫자, 특수문자 포함
+  let pwExp = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{8,20}$/
   pwveri = false;
-  if (len == 0) {
-    $("#userpw .warn").html("<span class='text-red'>필수 정보입니다.</span>");
-    $("#userpw .inputbox span").empty();
-    $("#userpw .inputbox img").attr("src", "images/m_icon_pw_step_01.png");
-  } else if (len < 8 || len > 16) {
-    $("#userpw .warn").html("<span class='text-red'>8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</span>");
-    $("#userpw .inputbox p").html("<span class='text-red'>사용불가</span>");
-    $("#userpw .inputbox img").attr("src", "images/m_icon_pw_step_10.png");
+
+  if (userPw.length == 0) {
+    $(".userpw .warn").html("<span class='text-red'>필수 정보입니다.</span>");
+    $(".userpw .inputbox span").empty();
+    $(".userpw .inputbox img").attr("src", "images/m_icon_pw_step_01.png");
+  } else if (!pwExp.test(userPw)) {
+    $(".userpw .warn").html("<span class='text-red'>8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</span>");
+    $(".userpw .inputbox p").html("<span class='text-red'>사용불가</span>");
+    $(".userpw .inputbox img").attr("src", "images/m_icon_pw_step_10.png");
   } else {
     pwveri = true;
-    $("#userpw .warn").empty();
-    $("#userpw .inputbox p").html("<span class='text-green'>안전</span>");
-    $("#userpw .inputbox img").attr("src", "images/m_icon_pw_step_04.png");
+    $(".userpw .warn").empty();
+    $(".userpw .inputbox p").html("<span class='text-green'>안전</span>");
+    $(".userpw .inputbox img").attr("src", "images/m_icon_pw_step_04.png");
   }
 });
 
 
 // 비밀번호 재확인
-// #userpw_chk input 에서 focusout 됐을 때 value 값의 length가0이라면 (조건1)
-// #userpw_chk .warn에 빨간글자(필수 정보입니다). (실행문1)
-// #userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
+// .userpw_chk input에 focusout 됐을 때 입력된 값이 0이라면 (조건)
+// .userpw_chk .warn에 빨간글자(필수 정보입니다). (실행문1)
+// .userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
 
-// 그렇지 않다면 그것의 값과 #userpw input의 값이 같은가? (조건2)
+// 그렇지 않다면 그것의 값과 .userpw input의 값이 같은가? (조건2)
 // 같다면 else if
-// #userpw_chk .warn을 비운다 empty() (실행문1)
-// #userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
+// .userpw_chk .warn을 비운다 empty() (실행문1)
+// .userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
 // 그렇지 않다면 else
-// #userpw_chk .warn에 '비밀번호가 일치하지 않습니다.' (실행문1)
-// #userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
-$("#userpw-chk input").focusout(function(){
-  let userpwchk = $(this).val();
+// .userpw_chk .warn에 '비밀번호가 일치하지 않습니다.' (실행문1)
+// .userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
+$(".userpw-chk input").focusout(function(){
+  let userPwChk = $(this).val();
   pwchkveri = false;
-  if(userpwchk.length == 0) {
-    $("#userpw-chk .warn").html('<span class="text-red">필수 정보입니다.</span>');
-    $("#userpw-chk .inputbox img").attr("src", "images/m_icon_pw_step_02.png");
-  } else if(userpwchk == $("#userpw input").val()) {
+
+  if(userPwChk.length == 0) {
+    $(".userpw-chk .warn").html('<span class="text-red">필수 정보입니다.</span>');
+    $(".userpw-chk .inputbox img").attr("src", "images/m_icon_pw_step_02.png");
+  } else if(userPwChk == $(".userpw input").val()) {
     pwchkveri = true;
     // remove / empty 
     // remove 요소 자체를 지우고 empty 요소 안 내용을 지운다.
-    $("#userpw-chk .warn").empty();
-    $("#userpw-chk .inputbox img").attr("src", "images/m_icon_pw_step_07.png");
+    $(".userpw-chk .warn").empty();
+    $(".userpw-chk .inputbox img").attr("src", "images/m_icon_pw_step_07.png");
   } else {
-    $("#userpw-chk .warn").html('<span class="text-red">비밀번호가 일치하지 않습니다.</span>');
-    $("#userpw-chk .inputbox img").attr("src", "images/m_icon_pw_step_02.png");
+    $(".userpw-chk .warn").html('<span class="text-red">비밀번호가 일치하지 않습니다.</span>');
+    $(".userpw-chk .inputbox img").attr("src", "images/m_icon_pw_step_02.png");
   }
 })
 
@@ -94,22 +98,22 @@ $("#userpw-chk input").focusout(function(){
 // 그렇지 않다면
 // #username .warn을 비운다.
 $("#username input").focusout(function () {
-  let username = $("#username input").val();
-  // JS 정규 표현식으로 입력값 체크
-  // 형식 : /정규식/
-  // 문자와 숫자가 아닌 것
-  let reg = /[^ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9]/g;
+  let userName = $("#username input").val();
+
+  // 최소 2글자 ~ 최대 5글자 한글
+  let nameExp = /^[가-힣]{2,5}$/;
   nameveri = false;
-  if (username.length == 0) {
+  if (userName.length == 0) {
     $("#username .warn").html("<span class='text-red'>필수 정보입니다.</span>");
-  } else if (reg.test(username)) {
+  } else if (!nameExp.test(userName)) {
     // 정규식을 만족하면 true 만족하지 않으면 false를 반환
-    $("#username .warn").html("<span class='text-red'>한글과 영문 대 소문자를 사용하세요. (특수기호 사용 불가)</span>");
+    $("#username .warn").html("<span class='text-red'>2 ~ 5글자 사이의 한글로 입력하세요.(특수기호 사용 불가)</span>");
   } else {
     nameveri = true;
     $("#username .warn").empty();
   }
 });
+
 
 // #year, #month, #date 에서 focusout될 때 (실행할 함수)
 // #year의 value의 langth가 숫자 4가 아니라면(조건1)
