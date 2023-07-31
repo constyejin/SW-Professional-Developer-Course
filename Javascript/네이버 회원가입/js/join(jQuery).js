@@ -1,34 +1,30 @@
-// join html
-
-// .inputbox를 클릭하면
-// 그것의 후손중에 input에게 focus를 주자.
-// $(".inputbox").click(function () {
-//   $(this).find("input").trigger("focus");
-// });
-
-// input에 focus가 들어오면 그것의 부모 .inputbox에게 "inputboxact"라는 클래스를 준다. (border)
+// input에 focusin 되면 부모 .inputbox에 input-act class add (border)
 $("input").focusin(function () {
-  $(this).parent(".inputbox").addClass("inputboxact");
+  $(this).parent(".inputbox").addClass("input-act");
 });
-// input이나 select에서 focus가 나가면
-// 그것의 부모 .inputbox에게서 "inputboxact"라는 클래스를 뺏는다.
+// input에 focusout되면 부모 .inputbox에 input-act class remove
 $("input").focusout(function () {
-  $(this).parent(".inputbox").removeClass("inputboxact");
+  $(this).parent(".inputbox").removeClass("input-act");
 });
+
 
 let idveri, pwveri, pwchkveri, nameveri, birthveri, genderveri, phoneveri, addressveri = false;
 let mailveri = true;
 
 // 아이디
-// "#userid input"에서 focusout 됐을 때 그것의 글자수가 0이라면 (조건)
+// #userid input에 focusout 됐을 때 입력된 값이 0이라면 (조건)
 // #userid .warn에 내용을 쓰자. (실행문)
 $("#userid input").focusout(function () {
-  let len = $(this).val().length;
+  let userId = $(this).val();
+  // 영문 소문자 + 숫자 조합으로 5~8사이 글자로 작성
+  let idExp= /^[a-z][0-9a-z]{4,7}$/
   idveri = false;
-  if (len == 0) {
+
+  if (userId.length == 0) {
     $("#userid .warn").html("<span class='text-red'>필수 정보입니다.</span>");
-  } else if (len < 5 || len > 20) {
-    $("#userid .warn").html("<span class='text-red'>5~20자의 영문소문자만 사용가능합니다.</span>");
+    // len이 5보다 작거나 20보다 클 때
+  } else if (!idExp.test(userId)) {
+    $("#userid .warn").html("<span class='text-red'>5~8자의 영문 소문자만 사용가능합니다.</span>");
   } else {
     $("#userid .warn").html("<span class='text-green'>멋진 아이디네요!</span>");
     idveri = true;
@@ -37,7 +33,7 @@ $("#userid input").focusout(function () {
 
 
 // 비밀번호
-// "#userpw input"에서 focusout 됐을 때 그것의 글자수가 0이라면 (조건)
+// "#userpw input"에 focusout 됐을 때 입력된 값이 0이라면 (조건)
 // #userpw .warn에 내용을 쓰자. (실행문)
 $("#userpw input").focusout(function () {
   let len = $(this).val().length;
@@ -191,15 +187,17 @@ $("#year, #month, #date").focusout(function () {
 // 방금클릭한그것에게 .radiochk 클래스를 주고.
 // 방금클릭한그것 안에 들어있는 radio버튼에게
 // checked 속성을 준다.
-$("#gender .inputbox").click(function (e) {
-  // radio의 기본 클릭동작 해제 
-  e.preventDefault();
+$("#gender .inputbox").click(function () {
   $("#gender .inputbox").removeClass("btn-primary");
-  $("#gender .inputbox input").removeAttr("checked");
+  // jQuery에서 radio 버튼을 제어할 때는 prop 사용
+  $("#gender .inputbox input[type='radio']").prop("checked", false);
   $(this).addClass("btn-primary");
-  $(this).children("input").attr("checked", "checked");
+  $(this).children("input[type='radio']").prop("checked", true);
   genderveri = true;
 });
+
+
+
 
 
 // 본인 확인 이메일
