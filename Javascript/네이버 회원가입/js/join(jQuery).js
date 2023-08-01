@@ -187,12 +187,10 @@ $("#year, #month, #date").focusout(function () {
 
 // 성별
 // #gender .inputbox를 클릭했을때
-// #gender .inputbox에서 .radiochk을 뺏어주고   
-// #gender .inputbox안에 들어있는 radio버튼에서
-// checked속성을 지운다.  
-// 방금클릭한그것에게 .radiochk 클래스를 주고.
-// 방금클릭한그것 안에 들어있는 radio버튼에게
-// checked 속성을 준다.
+// #gender 모든 .inputbox에 .btn-primary class remove
+// #gender .inputbox안 모든 input radio에서 checked false
+// 클릭된 자신에게만 .btn-primary class add
+// 클릭된 자신에게만 input radio에서 checked true
 $("#gender .inputbox").click(function () {
   $("#gender .inputbox").removeClass("btn-primary");
   // jQuery에서 radio 버튼을 제어할 때는 prop 사용
@@ -203,24 +201,24 @@ $("#gender .inputbox").click(function () {
 });
 
 
-
 // 본인 확인 이메일
 // #usermail input에서 focusout될 때
-// 그것에 쓴 값을 mail이라는 변수에 담는다
-// 이메일 형식 let regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-// 만약 mail의 글자수가 0이라면
-// #usermail .warn에다가 ""라고 쓰자.
-// 그게아니고 mail이라는 문자열이 이메일형식을 따르지 않는다면
+// 유저가 입력한 값을 mail이라는 변수에 담는다
+// 이메일 형식에 맞게 입력하는 정규식을 mailExp 변수에 담는다.
+// 만약 mail의 글자수가 0이라면 (조건1)
+// #usermail .warn 내용을 비운다. (선택사항 이니까 경고 메시지 X)
+// 값을 입력 했는데 입력받은 값이 메일 정규식에 맞지 않는다면 (조건2) 
 // #usermail .warn에다가 "이메일 주소를 다시 확인해주세요."라고 쓰자.
-// 그게아니라면
-// #usermail .warn에다가 ""라고 쓰자.
+// 그게 아니면 #usermail .warn 값을 비운다.
 $("#usermail input").focusout(function () {
   let mail = $(this).val();
-  let regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+  // 대소문자, 숫자로 시작 가능 @ 다음에 . 까지 나와야함
+  let mailExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
   mailveri = true;
+
   if (mail.length == 0) {
     $("#usermail .warn").empty();
-  } else if (!regExp.test(mail)) {
+  } else if (!mailExp.test(mail)) {
     $("#usermail .warn").html("<span class='text-red'>이메일 주소를 다시 확인해주세요.</span>");
     mailveri = false;
   } else {
@@ -249,7 +247,6 @@ $("#veribtn").click(function () {
   // 숫자를 제외한 모든 문자제거
   // 문자열 치환 replace
   verifi = verifi.replace(/[^0-9]/g, '');
-  
   $("#phonenum input").val(verifi);
 
   let veri1;
@@ -286,13 +283,12 @@ $("#veribtn").click(function () {
     // #veritext의 부모(.inputbox)에게 disinput이라는 클래스를 준다.
     $("#phone .warn").html("<span class='text-red'>형식에 맞지 않는 번호입니다.</span>");
     $("#veritext").val("");
-    $("#veritext").attr("disabled", "disabled");
+    $("#veritext").attr("disabled", true);
     $("#veritext").parent(".inputbox").addClass("disinput");
   }
 });
 
-// #veritext 에서 focusput될 때 그 값이 "1234"와 같다면
-// 형제 요소인 div를 비운다. (empty)
+// #veritext 에서 focusout될 때 그 값이 "1234"와 같다면 형제 요소인 div를 비운다.(empty)
 // #phone .warn 에 "인증되었습니다."
 // .inputbox에 border-red 클래스를 remove한다
 // 그렇지 않다면
