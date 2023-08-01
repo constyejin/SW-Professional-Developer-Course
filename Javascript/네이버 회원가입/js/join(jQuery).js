@@ -313,9 +313,9 @@ $("#veritext").focusout(function () {
 // 행정자치부에서 제공하는 데이터 베이스를 바탕으로 업데이트 되므로 가장 최신 데이터
 // API란? Application Programming Interface의 줄임말
 // 프론트앤드(클라이언트)와 백앤드(서버)가 요청과 응답을 받을 수 있게 만들어진 체계
-// API 요청에서 가장 기본적이고 중요한 개념 CRUD
-// Create, Read, Update, Delete APT 요청의 기본요소 네가지
-// 이 API를 만드는 역할을 하는게 서버 개발자 = 즉 백엔드 개발자
+// 이 API를 만드는 사람이 서버 개발자 = 즉 백엔드 개발자
+// Daum 우편번호 서비스 
+// 예제 -> 사용자가 선택한 값 이용하기 -> 예제 코드보기
 function sample6_execDaumPostcode() {
   addressveri = true;
   new daum.Postcode({
