@@ -123,6 +123,7 @@ a {
   background-color: #f7f7f7;
 }
 
+/* JS에서 인증번호 불일치 아이콘 */
 .disagree {
   display: inline-block;
   width: 15px;
