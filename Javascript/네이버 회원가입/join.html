@@ -22,10 +22,10 @@
     <section class="join-box-list">
       <form id="join-form" action="./submit.html">
         <div class="join-box-item userid">
-          <label for="id">아이디 </label>
+          <label for="id">아이디</label>
           <div class="inputbox">
             <!-- name : form action에 전달하는 파라미터의 key값  key, value 형식으로 데이터 저장 -->
-            <input type="text" id="id">
+            <input type="text" name="userid" id="id">
             <div>@naver.com</div>
           </div>
           <p class="warn"></p>
@@ -48,7 +48,7 @@
           <div class="inputbox">
             <input type="password" name="userpw-chk" id="pw-chk">
             <div>
-              <img src="./images/m_icon_pw_step_02.png" alt="비밀번호 아이콘2">
+              <img src="./images/m_icon_pw_step_02.png" alt="비밀번호 재확인 아이콘">
             </div>
           </div>
           <p class="warn"></p>
@@ -57,7 +57,7 @@
         <div class="join-box-item" id="username">
           <label for="name">이름 </label>
           <div class="inputbox">
-            <input type="text" name="username" id="name">
+            <input type="text" class="username" id="name">
           </div>
           <p class="warn"></p>
         </div>
@@ -66,27 +66,27 @@
           <label for="year">생년월일</label>
           <div class="three-box">
             <div class="inputbox">
-              <input type="text" name="birth" id="year" maxlength="4" placeholder="년(4자)">
+              <input type="text" name="year" id="year" maxlength="4" placeholder="년(4자)">
             </div>
             <div class="inputbox">
               <select name="month" id="month">
                 <option value="">월</option>
-                <option value="0">1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-                <option value="4">5</option>
-                <option value="5">6</option>
-                <option value="6">7</option>
-                <option value="7">8</option>
-                <option value="8">9</option>
-                <option value="9">10</option>
-                <option value="10">11</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
                 <option value="11">12</option>
               </select>
             </div>
             <div class="inputbox">
-              <input type="text" id="date" name="date" maxlength="2" placeholder="일">
+              <input type="text" name="date" id="date" maxlength="2" placeholder="일">
             </div>
           </div>
           <p class="warn"></p>
@@ -97,15 +97,15 @@
             <div class="three-box">
               <div class="inputbox">
                 <p>남자</p>
-                <input type="radio" id="male">
+                <input type="radio" name="gender" value="0" id="male">
               </div>
               <div class="inputbox">
                 <p>여자</p>
-                <input type="radio" id="female">
+                <input type="radio" name="gender" value="1" id="female">
               </div>
               <div class="inputbox">
                 <p>선택안함</p>
-                <input type="radio" id="no-gender">
+                <input type="radio" name="gender" value="2 " id="no-gender">
               </div>
             </div>
         </div>
