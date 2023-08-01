@@ -63,9 +63,8 @@ $(".userpw input").focusout(function () {
 // .userpw_chk .warn에 빨간글자(필수 정보입니다). (실행문1)
 // .userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
 
-// 그렇지 않다면 그것의 값과 .userpw input의 값이 같은가? (조건2)
-// 같다면 else if
-// .userpw_chk .warn을 비운다 empty() (실행문1)
+// 그렇지 않다면 이 값과 .userpw input의 값이 같은가? (조건2)
+// 같다면 .userpw_chk .warn을 비운다 empty() (실행문1)
 // .userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
 // 그렇지 않다면 else
 // .userpw_chk .warn에 '비밀번호가 일치하지 않습니다.' (실행문1)
@@ -94,7 +93,7 @@ $(".userpw-chk input").focusout(function(){
 // #username input value의 length가 0이라면 (조건)
 // #username .warn에 빨간글씨로 "필수 정보입니다."라고 쓴다. (실행문1)
 // #username input 의 값이 글자가 아닌부분을 포함한다면
-// #username .warn에 빨간글씨로 "한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)"라고 쓴다.
+// #username .warn에 빨간글씨로 "한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 ~`불가)"라고 쓴다.
 // 그렇지 않다면
 // #username .warn을 비운다.
 $("#username input").focusout(function () {
@@ -117,7 +116,7 @@ $("#username input").focusout(function () {
 
 // #year, #month, #date 에서 focusout될 때 (실행할 함수)
 // #year의 value의 langth가 숫자 4가 아니라면(조건1)
-// #birth .warn에 빨간글씨로 "태어난 년도 4자리를 정확하게 입력하세요."라고 쓴다
+// #birth .warn에 빨간글씨로 "태어난 년도 4자리를 정확하게 입력하세요."
 
 // 그게 아니고 #month의 값이 비어있으면 (조건2)
 // #birth .warn에 빨간글씨로 "태어난 월을 선택하세요."라고 쓴다 
@@ -136,7 +135,7 @@ $("#username input").focusout(function () {
 // 그게 아니라면 경고를 비운다.
 
 // 매개변수(파라미터)
-function bwarn(text) {
+function birthWarn(text) {
   $("#birth .warn").html("<span class='text-red'>" + text + "</span>");
 }
 
@@ -145,43 +144,46 @@ $("#year, #month, #date").focusout(function () {
   // boolean값 false(0), true(1)
   let month = $("#month").val();
   let date = $("#date").val();
-  // 현재 날짜 및 시간
+
+  // 현재 날짜 및 시간 (한국 표준시)
   let now = new Date();
-  // Date 객체의 getTime() 메서드는 1970년 1월 1일 00시 00분 00초 (utc)세계표준시를 기준으로 경과 한 밀리초를 반환
+  // Date 객체의 getTime() 메서드는 1970년 1월 1일 00시 00분 00초 (utc)세계표준시를 기준으로 경과한 밀리초를 반환
   let nowstamp = now.getTime();
-  console.log(nowstamp);
   // 현재 날짜 및 시간에서 현재 연도의 네 자릿값을 변수에 할당
   now = now.getFullYear();
 
+  // 사용자가 입력한 year, month, date 값으로 Date 객체 생성
   let birth = new Date(year, month, date);
+  // UTC 기준으로 입력받은 값 년,월,일이 경과한 밀리초 반환
   birth = birth.getTime();
   console.log(birth);
   birthveri = false;
 
   if (year.length != 4) {
     $("#birth .warn").html("<span class='text-red'>태어난 년도 4자리를 정확하게 입력하세요.</span>");
-    // bwarn("태어난 년도 4자리를 정확하게 입력하세요.");
+    // birthWarn("태어난 년도 4자리를 정확하게 입력하세요.");
   } else if (month.length == 0 ) {
     $("#birth .warn").html("<span class='text-red'>태어난 월을 선택하세요.</span>");
-    // bwarn("태어난 월을 선택하세요.");
+    // birthWarn("태어난 월을 선택하세요.");
   } else if (date.length == 0 || date > 31 || date <= 0) {
     $("#birth .warn").html("<span class='text-red'>태어난 일(날짜) 2자리를 정확하게 입력하세요.</span>");
-    // bwarn("태어난 일(날짜) 2자리를 정확하게 입세요.");
+    // birthWarn("태어난 일(날짜) 2자리를 정확하게 입세요.");
   } else if (isNaN(year * month * date)) {
     $("#birth .warn").html("<span class='text-red'>생년월일을 다시 확인해주세요.</span>");
-    // bwarn("생년월일을 다시 확인해주세요.");
+    // birthWarn("생년월일을 다시 확인해주세요.");
   } else if (now - year > 100) {
     $("#birth .warn").html("<span class='text-red'>정말이세요?</span>");
-    // bwarn("정말이세요?");
+    // birthWarn("정말이세요?");
   } else if (nowstamp < birth) {
     $("#birth .warn").html("<span class='text-red'>미래에서 오셨군요. ^^</span>");
-    // bwarn("미래에서 오셨군요. ^^");
+    // birthWarn("미래에서 오셨군요. ^^");
   } else {
     birthveri = true;
     $("#birth .warn").empty();
-    // bwarn("");
+    // birthWarn("");
   }
 });
+
 
 // 성별
 // #gender .inputbox를 클릭했을때
@@ -199,8 +201,6 @@ $("#gender .inputbox").click(function () {
   $(this).children("input[type='radio']").prop("checked", true);
   genderveri = true;
 });
-
-
 
 
 
@@ -380,6 +380,7 @@ $("#joinbtn").click(function () {
     $("#join-form").submit();
   } else {
     // 강제로 이벤트 발생시키는 메서드 trigger
-    $("input").trigger("focusout");
+    $("input, select").trigger("focusout");
+    // $(".warn .text-red").first().parent().parent().find("input").trigger("focus");
   }
 });
