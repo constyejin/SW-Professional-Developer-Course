@@ -88,6 +88,7 @@ $(".userpw-chk input").focusout(function(){
   }
 })
 
+
 // 이름
 // #username input에서 focus가 나갈때 (실행 할 함수 focusout)
 // #username input value의 length가 0이라면 (조건)
@@ -364,6 +365,7 @@ function sample6_execDaumPostcode() {
     }
   }).open();
 }
+
 
 // #joinbtn을 눌렀을때 8가지 인증요소를 모두 true라면 (조건1)
 // #joinform을 submit (실행문)
