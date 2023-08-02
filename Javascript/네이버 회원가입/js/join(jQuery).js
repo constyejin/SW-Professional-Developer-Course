@@ -9,7 +9,8 @@ $("input").focusout(function () {
 
 // 필수 요소들은 값은 false로 준 후 조건을 만족 했을 때 true로 바꿔준다.
 // 선택사항은 입력하지 않아도 제출 시켜줘야 하니까 항상 true
-let idveri, pwveri, pwchkveri, nameveri, birthveri, genderveri, phoneveri, addressveri = false;
+// equal(=)이 아니라 comma(,)로 작성시 마지막 값에만 false값 대입된다
+let idveri = pwveri = pwchkveri = nameveri = birthveri = genderveri = phoneveri = addressveri = false;
 let mailveri = true;
 
 // 아이디
@@ -19,7 +20,6 @@ $(".userid input").focusout(function () {
   let userId = $(this).val();
   // 최소 5글자 ~ 최대 8글자 사이 영문 소문자 + 숫자 포함
   let idExp= /^[a-z0-9]{5,8}$/
-  idveri = false;
 
   if (userId.length == 0) {
     $(".userid .warn").html("<span class='text-red'>필수 정보입니다.</span>");
@@ -39,7 +39,6 @@ $(".userpw input").focusout(function () {
   let userPw = $(this).val();
   // 8~20자 사이 영문 대소문자, 숫자, 특수문자 포함
   let pwExp = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{8,20}$/
-  pwveri = false;
 
   if (userPw.length == 0) {
     $(".userpw .warn").html("<span class='text-red'>필수 정보입니다.</span>");
@@ -71,7 +70,6 @@ $(".userpw input").focusout(function () {
 // .userpw_chk .inputbox img의 속성중에 src의 값을 바꾼다. (실행문2)
 $(".userpw-chk input").focusout(function(){
   let userPwChk = $(this).val();
-  pwchkveri = false;
 
   if(userPwChk.length == 0) {
     $(".userpw-chk .warn").html('<span class="text-red">필수 정보입니다.</span>');
@@ -99,10 +97,9 @@ $(".userpw-chk input").focusout(function(){
 // .username .warn을 비운다.
 $(".username input").focusout(function () {
   let userName = $(".username input").val();
-
   // 최소 2글자 ~ 최대 5글자 한글
   let nameExp = /^[가-힣]{2,5}$/;
-  nameveri = false;
+
   if (userName.length == 0) {
     $(".username .warn").html("<span class='text-red'>필수 정보입니다.</span>");
   } else if (!nameExp.test(userName)) {
@@ -157,8 +154,7 @@ $("#year, #month, #date").focusout(function () {
   let birth = new Date(year, month, date);
   // UTC 기준으로 입력받은 값 년,월,일이 경과한 밀리초 반환
   birth = birth.getTime();
-  console.log(birth);
-  birthveri = false;
+  // console.log(birth);
 
   if (year.length != 4) {
     $(".birth .warn").html("<span class='text-red'>태어난 년도 4자리를 정확하게 입력하세요.</span>");
@@ -215,7 +211,6 @@ $(".usermail input").focusout(function () {
   let mail = $(this).val();
   // 대소문자, 숫자로 시작 가능 @ 다음에 . 까지 나와야함
   let mailExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-  mailveri = true;
 
   if (mail.length == 0) {
     $(".usermail .warn").empty();
@@ -296,7 +291,6 @@ $("#veribtn").click(function () {
 // 형제 요소인 div에 "불일치"라는 글을 보여준다
 // #phone .warn 에 "인증번호를 다시 확인해주세요."
 $("#veritext").focusout(function () {
-  phoneveri = false;
   if ($(this).val() == "1234") {
     $(this).next("div").empty();
     $("#phone .warn").html("<span class='text-green'>인증되었습니다.</span>");
@@ -373,10 +367,11 @@ function sample6_execDaumPostcode() {
 // 현 페이지에 존재하는 모든 input,select들을 focusout 시킨다.
 // .warn .text-red 중에서 첫번째의 부모
 // 의 자손중에 input에게 focus를 준다.
-$("#joinbtn").click(function () {
+$("#joinbtn").click(function (e) {
   if (idveri && pwveri && pwchkveri && nameveri && birthveri && genderveri && mailveri && phoneveri && addressveri) {
     $("#join-form").submit();
   } else {
+    e.preventDefault();
     // 강제로 이벤트 발생시키는 메서드 trigger
     $("input, select").trigger("focusout");
     // $(".warn .text-red").first().parent().parent().find("input").trigger("focus");
