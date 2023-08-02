@@ -82,39 +82,32 @@ a {
   outline: none;
 }
 
-#gender .inputbox {
+.gender .inputbox {
   display: flex;
   justify-content: center;
 }
 
-#gender input[type="radio"] {
+.gender input[type="radio"] {
   display: none;
 }
 
-.text-secondary {
-  color: #8e8e8e;
-  margin-left: 4px;
-}
-
-#phonenum,
-#postnum {
+.phonenum,
+.postnum {
   display: flex;
   align-items: center;
 }
 
-#phonenum .inputbox,
-#postnum .inputbox {
+.phonenum .inputbox,
+.postnum .inputbox {
   width: calc(100% - 122px);
   margin-right: 7px;
 }
 
-#phonenum button,
-#postnum button {
+.phonenum button,
+.postnum button {
   width: 115px;
   height: 52px;
   margin-top: 10px;
-  border: none;
-  cursor: pointer;
 }
 
 .disinput,
@@ -155,19 +148,20 @@ a {
 #joinbtn {
   width: 100%;
   height: 58px;
-  color: white;
-  background-color: #03C75A;
   font-size: 18px;
-  font-weight: bold;
-  margin: 20px 0;
-  border: none;
-  cursor: pointer;
 } 
 
 .btn-primary {
   background-color: #03C75A;
   color: white;
   font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.text-secondary {
+  color: #8e8e8e;
+  margin-left: 4px;
 }
 
 .text-red {
