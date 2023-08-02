@@ -373,7 +373,7 @@ $("#joinbtn").click(function (e) {
   } else {
     e.preventDefault();
     // 강제로 이벤트 발생시키는 메서드 trigger
-    $("input, select").trigger("focusout");
+    $("input").trigger("focusout");
     // $(".warn .text-red").first().parent().parent().find("input").trigger("focus");
   }
 });
