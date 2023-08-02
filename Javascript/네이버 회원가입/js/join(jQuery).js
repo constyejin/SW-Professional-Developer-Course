@@ -90,54 +90,54 @@ $(".userpw-chk input").focusout(function(){
 
 
 // 이름
-// #username input에서 focus가 나갈때 (실행 할 함수 focusout)
-// #username input value의 length가 0이라면 (조건)
-// #username .warn에 빨간글씨로 "필수 정보입니다."라고 쓴다. (실행문1)
-// #username input 의 값이 글자가 아닌부분을 포함한다면
-// #username .warn에 빨간글씨로 "한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 ~`불가)"라고 쓴다.
+// .username input에서 focus가 나갈때 (실행 할 함수 focusout)
+// .username input value의 length가 0이라면 (조건)
+// .username .warn에 빨간글씨로 "필수 정보입니다."라고 쓴다. (실행문1)
+// .username input 의 값이 글자가 아닌부분을 포함한다면
+// .username .warn에 빨간글씨로 "한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 ~`불가)"라고 쓴다.
 // 그렇지 않다면
-// #username .warn을 비운다.
-$("#username input").focusout(function () {
-  let userName = $("#username input").val();
+// .username .warn을 비운다.
+$(".username input").focusout(function () {
+  let userName = $(".username input").val();
 
   // 최소 2글자 ~ 최대 5글자 한글
   let nameExp = /^[가-힣]{2,5}$/;
   nameveri = false;
   if (userName.length == 0) {
-    $("#username .warn").html("<span class='text-red'>필수 정보입니다.</span>");
+    $(".username .warn").html("<span class='text-red'>필수 정보입니다.</span>");
   } else if (!nameExp.test(userName)) {
     // 정규식을 만족하면 true 만족하지 않으면 false를 반환
-    $("#username .warn").html("<span class='text-red'>2 ~ 5글자 사이의 한글로 입력하세요.(특수기호 사용 불가)</span>");
+    $(".username .warn").html("<span class='text-red'>2 ~ 5글자 사이의 한글로 입력하세요.(특수기호 사용 불가)</span>");
   } else {
     nameveri = true;
-    $("#username .warn").empty();
+    $(".username .warn").empty();
   }
 });
 
 
 // #year, #month, #date 에서 focusout될 때 (실행할 함수)
 // #year의 value의 langth가 숫자 4가 아니라면(조건1)
-// #birth .warn에 빨간글씨로 "태어난 년도 4자리를 정확하게 입력하세요."
+// .birth .warn에 빨간글씨로 "태어난 년도 4자리를 정확하게 입력하세요."
 
 // 그게 아니고 #month의 값이 비어있으면 (조건2)
-// #birth .warn에 빨간글씨로 "태어난 월을 선택하세요."라고 쓴다 
+// .birth .warn에 빨간글씨로 "태어난 월을 선택하세요."라고 쓴다 
 
 // 그게 아니고 #date의 값이 비어 있다면 (조건3)
-// #birth .warn에 빨간글씨로 "태어난 일(날짜) 2자리를 정확하게 입력하세요."라고 쓴다.
+// .birth .warn에 빨간글씨로 "태어난 일(날짜) 2자리를 정확하게 입력하세요."라고 쓴다.
 
 // 그게 아니고 만약 연x월x일 의 값이 숫자가 아니라면 (조건4)
-// #birth .warn에 빨간글씨로 "생년월일을 다시 확인해주세요."라고 쓴다.
+// .birth .warn에 빨간글씨로 "생년월일을 다시 확인해주세요."라고 쓴다.
 
 // 그게 아니고 만약 올 해 기준으로 나이가 100 초과라면 (조건5)
-// #birth .warn에 빨간글씨로 "정말이세요?"라고 쓴다.
+// .birth .warn에 빨간글씨로 "정말이세요?"라고 쓴다.
 
 // 그게 아니고 
-// #birth .warn에 빨간글씨로 "미래에서 오셨군요. ^^"라고 쓴다.
+// .birth .warn에 빨간글씨로 "미래에서 오셨군요. ^^"라고 쓴다.
 // 그게 아니라면 경고를 비운다.
 
 // 매개변수(파라미터)
 function birthWarn(text) {
-  $("#birth .warn").html("<span class='text-red'>" + text + "</span>");
+  $(".birth .warn").html("<span class='text-red'>" + text + "</span>");
 }
 
 $("#year, #month, #date").focusout(function () {
@@ -161,41 +161,41 @@ $("#year, #month, #date").focusout(function () {
   birthveri = false;
 
   if (year.length != 4) {
-    $("#birth .warn").html("<span class='text-red'>태어난 년도 4자리를 정확하게 입력하세요.</span>");
+    $(".birth .warn").html("<span class='text-red'>태어난 년도 4자리를 정확하게 입력하세요.</span>");
     // birthWarn("태어난 년도 4자리를 정확하게 입력하세요.");
   } else if (month.length == 0 ) {
-    $("#birth .warn").html("<span class='text-red'>태어난 월을 선택하세요.</span>");
+    $(".birth .warn").html("<span class='text-red'>태어난 월을 선택하세요.</span>");
     // birthWarn("태어난 월을 선택하세요.");
   } else if (date.length == 0 || date > 31 || date <= 0) {
-    $("#birth .warn").html("<span class='text-red'>태어난 일(날짜) 2자리를 정확하게 입력하세요.</span>");
+    $(".birth .warn").html("<span class='text-red'>태어난 일(날짜) 2자리를 정확하게 입력하세요.</span>");
     // birthWarn("태어난 일(날짜) 2자리를 정확하게 입세요.");
   } else if (isNaN(year * month * date)) {
-    $("#birth .warn").html("<span class='text-red'>생년월일을 다시 확인해주세요.</span>");
+    $(".birth .warn").html("<span class='text-red'>생년월일을 다시 확인해주세요.</span>");
     // birthWarn("생년월일을 다시 확인해주세요.");
   } else if (now - year > 100) {
-    $("#birth .warn").html("<span class='text-red'>정말이세요?</span>");
+    $(".birth .warn").html("<span class='text-red'>정말이세요?</span>");
     // birthWarn("정말이세요?");
   } else if (nowstamp < birth) {
-    $("#birth .warn").html("<span class='text-red'>미래에서 오셨군요. ^^</span>");
+    $(".birth .warn").html("<span class='text-red'>미래에서 오셨군요. ^^</span>");
     // birthWarn("미래에서 오셨군요. ^^");
   } else {
     birthveri = true;
-    $("#birth .warn").empty();
+    $(".birth .warn").empty();
     // birthWarn("");
   }
 });
 
 
 // 성별
-// #gender .inputbox를 클릭했을때
-// #gender 모든 .inputbox에 .btn-primary class remove
-// #gender .inputbox안 모든 input radio에서 checked false
+// .gender .inputbox를 클릭했을때
+// .gender 모든 .inputbox에 .btn-primary class remove
+// .gender .inputbox안 모든 input radio에서 checked false
 // 클릭된 자신에게만 .btn-primary class add
 // 클릭된 자신에게만 input radio에서 checked true
-$("#gender .inputbox").click(function () {
-  $("#gender .inputbox").removeClass("btn-primary");
+$(".gender .inputbox").click(function () {
+  $(".gender .inputbox").removeClass("btn-primary");
   // jQuery에서 radio 버튼을 제어할 때는 prop 사용
-  $("#gender .inputbox input[type='radio']").prop("checked", false);
+  $(".gender .inputbox input[type='radio']").prop("checked", false);
   $(this).addClass("btn-primary");
   $(this).children("input[type='radio']").prop("checked", true);
   genderveri = true;
@@ -203,52 +203,52 @@ $("#gender .inputbox").click(function () {
 
 
 // 본인 확인 이메일
-// #usermail input에서 focusout될 때
+// .usermail input에서 focusout될 때
 // 유저가 입력한 값을 mail이라는 변수에 담는다
 // 이메일 형식에 맞게 입력하는 정규식을 mailExp 변수에 담는다.
 // 만약 mail의 글자수가 0이라면 (조건1)
-// #usermail .warn 내용을 비운다. (선택사항 이니까 경고 메시지 X)
+// .usermail .warn 내용을 비운다. (선택사항 이니까 경고 메시지 X)
 // 값을 입력 했는데 입력받은 값이 메일 정규식에 맞지 않는다면 (조건2) 
-// #usermail .warn에다가 "이메일 주소를 다시 확인해주세요."라고 쓰자.
-// 그게 아니면 #usermail .warn 값을 비운다.
-$("#usermail input").focusout(function () {
+// .usermail .warn에다가 "이메일 주소를 다시 확인해주세요."라고 쓰자.
+// 그게 아니면 .usermail .warn 값을 비운다.
+$(".usermail input").focusout(function () {
   let mail = $(this).val();
   // 대소문자, 숫자로 시작 가능 @ 다음에 . 까지 나와야함
   let mailExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
   mailveri = true;
 
   if (mail.length == 0) {
-    $("#usermail .warn").empty();
+    $(".usermail .warn").empty();
   } else if (!mailExp.test(mail)) {
-    $("#usermail .warn").html("<span class='text-red'>이메일 주소를 다시 확인해주세요.</span>");
+    $(".usermail .warn").html("<span class='text-red'>이메일 주소를 다시 확인해주세요.</span>");
     mailveri = false;
   } else {
-    $("#usermail .warn").empty();
+    $(".usermail .warn").empty();
   }
 });
 
 
 // 휴대전화
-// #phonenum input에서 focusout됐을 때
+// .phonenum input에서 focusout됐을 때
 // 그것의 value.length가 0이라면 (조건1)
 // #phone .warn에 "필수 정보입니다." (실행문1)
-$("#phonenum input").focusout(function () {
+$(".phonenum input").focusout(function () {
   if ($(this).val().length == 0) {
-    $("#phone .warn").html("<span class='text-red'>필수 정보입니다.</span>");
+    $(".phone .warn").html("<span class='text-red'>필수 정보입니다.</span>");
   } else {
-    $("#phone .warn").empty();
+    $(".phone .warn").empty();
   }
 });
 
 
 $("#veribtn").click(function () {
-  // #phonenum input의 length가 10-11자리가 아니라면(조건1)
+  // .phonenum input의 length가 10-11자리가 아니라면(조건1)
   // 숫자가 아닌 경우(조건2)
-  let verifi = $("#phonenum input").val();
+  let verifi = $(".phonenum input").val();
   // 숫자를 제외한 모든 문자제거
   // 문자열 치환 replace
   verifi = verifi.replace(/[^0-9]/g, '');
-  $("#phonenum input").val(verifi);
+  $(".phonenum input").val(verifi);
 
   let veri1;
   if (verifi.length < 10 || verifi.length > 11) {
@@ -273,7 +273,7 @@ $("#veribtn").click(function () {
     // 인증번호 입력칸을 활성화 (실행문2)
     // .disinput으로부터 disinput이라는 클래스를 뺏고
     // #veritext로부터 disabled라는 속성을 뺏는다.
-    $("#phone .warn").html('<span class="text-green">인증번호를 발송했습니다.(유효시간 30분)<br/>인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.<br/>이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.</span>');
+    $(".phone .warn").html('<span class="text-green">인증번호를 발송했습니다.(유효시간 30분)<br/>인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.<br/>이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.</span>');
     $(".disinput").removeClass("disinput");
     $("#veritext").removeAttr("disabled");
   } else {
@@ -282,7 +282,7 @@ $("#veribtn").click(function () {
     // 인증번호 입력칸을 비활성화 
     // #veritext에게 disabled라는 속성을 준다.
     // #veritext의 부모(.inputbox)에게 disinput이라는 클래스를 준다.
-    $("#phone .warn").html("<span class='text-red'>형식에 맞지 않는 번호입니다.</span>");
+    $(".phone .warn").html("<span class='text-red'>형식에 맞지 않는 번호입니다.</span>");
     $("#veritext").val("");
     $("#veritext").attr("disabled", true);
     $("#veritext").parent(".inputbox").addClass("disinput");
