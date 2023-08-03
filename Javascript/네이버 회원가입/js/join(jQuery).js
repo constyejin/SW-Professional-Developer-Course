@@ -265,13 +265,6 @@ $('.usermail input').focusout(function(){
 // .phonenum input에서 focusout 됐을 때
 // .phonenum input value length가 0이라면(조건)
 // .phonenum .warn에 text-red class '필수 정보입니다.
-
-// #veribtn(인증번호 받기)를 클릭 했을 때
-// .phonenum input value에 숫자를 제외한 모든 문자를 제거하고,
-// 제거한 값을 변수에 담아서 input에 다시 넣어준다.
-
-// .phonenum input value length가 10~11 자리가 아니라면(조건1)
-
 $(".phonenum input").focusout(function () {
   if ($(this).val().length == 0) {
     $(".phone .warn").html("<span class='text-red'>필수 정보입니다.</span>");
@@ -280,61 +273,66 @@ $(".phonenum input").focusout(function () {
   }
 });
 
-
+// #veribtn(인증번호 받기)를 클릭 했을 때
+// .phonenum input value에 숫자를 제외한 모든 문자를 제거하고, (문자열 치환 replace)
+// 제거한 값을 변수에 담아서 input에 다시 넣어준다.
 $("#veribtn").click(function () {
-  // .phonenum input의 length가 10-11자리가 아니라면(조건1)
-  // 숫자가 아닌 경우(조건2)
-  let verifi = $(".phonenum input").val();
-  // 숫자를 제외한 모든 문자제거
-  // 문자열 치환 replace
-  verifi = verifi.replace(/[^0-9]/g, '');
-  $(".phonenum input").val(verifi);
+  let phoneVal = $(".phonenum input").val();
+  phoneVal = phoneVal.replace(/[^0-9]/g, '');
+  $(".phonenum input").val(phoneVal);
 
-  let veri1;
-  if (verifi.length < 10 || verifi.length > 11) {
-    veri1 = false;
+  // .phonenum input의 value length가 10-11자리가 아니라면 (조건1)
+  // false를 반환하고 그 사이로 작성되었다면 true
+  let phoneValLeng;
+  if (phoneVal.length < 10 || phoneVal.length > 11) {
+    phoneValLeng = false;
   } else {
-    veri1 = true;
+    phoneValLeng = true;
   }
 
-  var veri2;
-  if (!isNaN(verifi)) {
-    veri2 = true;
+  // .phonenum input value가 숫자가 아닌 경우 (조건2)
+  // 숫자가 아닐 경우 false, 숫자가 맞다면 true
+  var phoneValNum;
+  if (isNaN(phoneVal)) {
+    phoneValNum = false;
   } else {
-    veri2 = false;
+    phoneValNum = true;
   }
 
-  // 1. 전화번호를 제대로 입력하면 인증번호를 발급해준다.
-  // 2. 인증번호를 발급받으면 인증번호 입력칸을 활성화시킨다.
-  // 3. 전화번호를 제대로 입력하지 않으면 인증번호 입력칸을 비활성화시킨다.
-  if (veri1 && veri2) {
-    // veri1, veri2 모두 true일 경우(조건1)
-    // 인증번호를 보내고 .warn에 "인증번호가 발송되었습니다" (실행문1)
-    // 인증번호 입력칸을 활성화 (실행문2)
-    // .disinput으로부터 disinput이라는 클래스를 뺏고
-    // #veritext로부터 disabled라는 속성을 뺏는다.
+  // phoneValLeng, phoneValNum 모두 true일 경우(조건1)
+  // .phone .warn에 "인증번호가 발송되었습니다 ~~ 어쩌구" (실행문1)
+  // .inputbox에 .disinput class remove
+  // #veritext에 disabled 속성 false
+
+  // veri1, veri2가 모두 true가 아닐 경우(조건1)
+  // #phone .warn에 "형식에 맞지 않는 번호입니다."
+  // #veritext의 부모 .inputbox에 disinput class add 
+  // #veritext에 disabled 속성 true
+  // #veritext 값을 비운다. 
+  if (phoneValLeng && phoneValNum) {
     $(".phone .warn").html('<span class="text-green">인증번호를 발송했습니다.(유효시간 30분)<br/>인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.<br/>이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.</span>');
-    $(".disinput").removeClass("disinput");
-    $("#veritext").removeAttr("disabled");
+    $("#veritext").parent(".inputbox").removeClass("disinput");
+
+    $("#veritext").attr("disabled", false);
   } else {
-    // veri1, veri2가 모두 true가 아닐 경우(조건1)
-    // #phone .warn에 "형식에 맞지 않는 번호입니다."
-    // 인증번호 입력칸을 비활성화 
-    // #veritext에게 disabled라는 속성을 준다.
-    // #veritext의 부모(.inputbox)에게 disinput이라는 클래스를 준다.
     $(".phone .warn").html("<span class='text-red'>형식에 맞지 않는 번호입니다.</span>");
-    $("#veritext").val("");
     $("#veritext").attr("disabled", true);
     $("#veritext").parent(".inputbox").addClass("disinput");
+    $("#veritext").val("");
   }
 });
 
-// #veritext 에서 focusout될 때 그 값이 "1234"와 같다면 형제 요소인 div를 비운다.(empty)
+// #veritext에 focusout될 때
+// 입력된 인증번호가 "1234"와 같다면 (조건1) 
+// 형제 요소인 div를 비운다. (우측 텍스트 & X자)
 // #phone .warn 에 "인증되었습니다."
-// .inputbox에 border-red 클래스를 remove한다
-// 그렇지 않다면
-// 형제 요소인 div에 "불일치"라는 글을 보여준다
-// #phone .warn 에 "인증번호를 다시 확인해주세요."
+// #veritext의 부모인 .inputbox에 border-red class remove
+// phoneveri = true;
+
+// else (인증번호가 1234가 아니라면)
+// 형제 요소인 div에 "불일치"라는 글을 보여주고 미리 만들어준 disagree(X) 가상요소를 보여준다
+// #phone .warn 에 text-red class "인증번호를 다시 확인해주세요."
+// #veritext의 부모인 .inputbox에 border-red class add
 $("#veritext").focusout(function () {
   if ($(this).val() == "1234") {
     $(this).next("div").empty();
@@ -353,7 +351,8 @@ $("#veritext").focusout(function () {
 // 행정자치부에서 제공하는 데이터 베이스를 바탕으로 업데이트 되므로 가장 최신 데이터
 // API란? Application Programming Interface의 줄임말
 // 프론트앤드(클라이언트)와 백앤드(서버)가 요청과 응답을 받을 수 있게 만들어진 체계
-// 이 API를 만드는 사람이 서버 개발자 = 즉 백엔드 개발자
+// 이 API를 만드는 사람이 백엔드 개발자
+
 // Daum 우편번호 서비스 
 // 예제 -> 사용자가 선택한 값 이용하기 -> 예제 코드보기
 function sample6_execDaumPostcode() {
@@ -406,12 +405,12 @@ function sample6_execDaumPostcode() {
 }
 
 
-// #joinbtn을 눌렀을때 8가지 인증요소를 모두 true라면 (조건1)
+// #joinbtn을 눌렀을때 8가지 필수 인증 요소가 모두 true라면 (조건1)
 // #joinform을 submit (실행문)
+
 // 그렇지 않다면 (하나라도 통과하지 못했다면)
-// 현 페이지에 존재하는 모든 input,select들을 focusout 시킨다.
-// .warn .text-red 중에서 첫번째의 부모
-// 의 자손중에 input에게 focus를 준다.
+// 현 페이지에 존재하는 모든 input을 focusout 시킨다.
+// .warn .text-red 중에서 첫번째의 부모의 자손중에 input에게 focus를 준다.
 $("#joinbtn").click(function (e) {
   if (idveri && pwveri && pwchkveri && nameveri && birthveri && genderveri && mailveri && phoneveri && addressveri) {
     $("#join-form").submit();
@@ -419,6 +418,5 @@ $("#joinbtn").click(function (e) {
     e.preventDefault();
     // 강제로 이벤트 발생시키는 메서드 trigger
     $("input").trigger("focusout");
-    // $(".warn .text-red").first().parent().parent().find("input").trigger("focus");
   }
 });
