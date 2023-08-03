@@ -96,3 +96,51 @@ document.querySelector('.username input').addEventListener('focusout', function(
     nameWarn.innerHTML = '';
   }
 })
+
+
+// 생년월일
+function birthWarnTxt(text) {
+  document.querySelector('.birth .warn').innerHTML = '<span class="text-red">' + text + '</span>';
+}
+
+let birthItems = document.querySelectorAll('.birth-item');
+// console.log(birthItems);
+
+birthItems.forEach(function(item){
+  item.addEventListener('focusout', function(){
+    let year = birthItems[0].value;
+    let month = birthItems[1].value;
+    let date = birthItems[2].value;
+    // console.log(month)
+    let birthWarn = document.querySelector('.birth .warn');
+
+    let now = new Date();
+    let nowstamp = now.getTime();
+    now = now.getFullYear();
+
+    let birth = new Date(year, month, date);
+    birth = birth.getTime();
+
+    if (year.length !== 4) {
+      birthWarn.innerHTML = "<span class='text-red'>태어난 년도 4자리를 정확하게 입력하세요.</span>";
+    } else if (month.length === 0) {
+      birthWarn.innerHTML = "<span class='text-red'>태어난 월을 선택하세요.</span>";
+    } else if (date.length === 0 || date > 31 || date <= 0) {
+      birthWarn.innerHTML = "<span class='text-red'>태어난 일(날짜) 2자리를 정확하게 입력하세요.</span>";
+    } else if (isNaN(year * month * date)) {
+      birthWarn.innerHTML = "<span class='text-red'>생년월일을 다시 확인해주세요.</span>";
+    } else if (now - year > 100) {
+      birthWarn.innerHTML = "<span class='text-red'>정말이세요?</span>";
+    } else if (nowstamp < birth) {
+      birthWarn.innerHTML = "<span class='text-red'>미래에서 오셨군요. ^^</span>";
+    } else {
+      birthveri = true;
+      birthWarn.innerHTML = "";
+    }
+  })
+})
+
+
+
+
+
