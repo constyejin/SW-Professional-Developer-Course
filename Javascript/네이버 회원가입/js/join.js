@@ -175,8 +175,66 @@ document.querySelector('.usermail input').addEventListener('focusout', function(
 })
 
 
+// 휴대전화
+document.querySelector('.phonenum input').addEventListener('focusout', function(){
+  let phoneNum = this.value;
+  let numWarn = document.querySelector('.phone .warn');
+
+  if(phoneNum.length == 0) {
+    numWarn.innerHTML = essenInfo;
+  } else {
+    numWarn.innerHTML = '';
+  }
+})
+
+document.getElementById('veribtn').addEventListener('click', function(){
+  let phoneNum = document.querySelector('.phonenum input').value;
+  phoneNum = phoneNum.replace(/[^0-9]/g, '');
+  document.querySelector('.phonenum input').value = phoneNum;
+  let numWarn = document.querySelector('.phone .warn');
+  let veriText = document.getElementById('veritext');
+
+  let phoneValLeng;
+  if (phoneNum.length < 10 || phoneNum.length > 11) {
+    phoneValLeng = false;
+  } else {
+    phoneValLeng = true;
+  }
+
+  var phoneValNum;
+  if (isNaN(phoneNum)) {
+    phoneValNum = false;
+  } else {
+    phoneValNum = true;
+  }
+
+  if (phoneValLeng && phoneValNum) {
+    numWarn.innerHTML = '<span class="text-green">인증번호를 발송했습니다.(유효시간 30분)<br/>인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.<br/>이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.</span>';
+    veriText.parentNode.classList.remove('disinput');
+    veriText.disabled = false;
+  } else {
+    numWarn.innerHTML = '<span class="text-red">형식에 맞지 않는 번호입니다.</span>';
+    veriText.parentNode.classList.add('disinput');
+    veriText.disabled = true;
+    veriText.value = '';
+  }
+})
 
 
+document.getElementById('veritext').addEventListener('focusout', function(){
+  let numWarn = document.querySelector('.phone .warn');
+
+  if(this.value == '1234') {
+    phoneveri = true;
+    numWarn.innerHTML = '<span class="text-green">인증되었습니다.</span>';
+    this.nextElementSibling.innerHTML = '';
+    this.parentNode.classList.remove('border-red');
+  } else {
+    numWarn.innerHTML = '<span class="text-red">인증번호를 다시 확인해주세요.</span>';
+    this.nextElementSibling.innerHTML = '<span class="text-red">불일치</span> <span class="disagree"></span>';
+    this.parentNode.classList.add('border-red');
+  }
+})
 
 
 
