@@ -239,6 +239,7 @@ document.getElementById('veritext').addEventListener('focusout', function(){
 
 // 주소
 function sample6_execDaumPostcode() {
+  addressveri = true;
   new daum.Postcode({
     oncomplete: function(data) {
       // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -287,3 +288,16 @@ function sample6_execDaumPostcode() {
 }
 
 
+// 가입하기 버튼 제출
+document.getElementById('joinbtn').addEventListener('click', function(e){
+  let isTrue = idveri && pwveri && pwchkveri && nameveri && birthveri && genderveri && mailveri && phoneveri && addressveri;
+  
+  if(isTrue) {
+    document.getElementById('join-form').submit();
+  } else {
+    e.preventDefault();
+    document.querySelectorAll('input').forEach(function(input){
+      input.dispatchEvent(new Event("focusout"));
+    })
+  }
+})
