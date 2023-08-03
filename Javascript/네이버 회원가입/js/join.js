@@ -112,7 +112,6 @@ birthItems.forEach(function(item){
     let month = birthItems[1].value;
     let date = birthItems[2].value;
     // console.log(month)
-    let birthWarn = document.querySelector('.birth .warn');
 
     let now = new Date();
     let nowstamp = now.getTime();
@@ -122,20 +121,20 @@ birthItems.forEach(function(item){
     birth = birth.getTime();
 
     if (year.length !== 4) {
-      birthWarn.innerHTML = "<span class='text-red'>태어난 년도 4자리를 정확하게 입력하세요.</span>";
+      birthWarnTxt("<span class='text-red'>태어난 년도 4자리를 정확하게 입력하세요.</span>");
     } else if (month.length === 0) {
-      birthWarn.innerHTML = "<span class='text-red'>태어난 월을 선택하세요.</span>";
+      birthWarnTxt("<span class='text-red'>태어난 월을 선택하세요.</span>");
     } else if (date.length === 0 || date > 31 || date <= 0) {
-      birthWarn.innerHTML = "<span class='text-red'>태어난 일(날짜) 2자리를 정확하게 입력하세요.</span>";
+      birthWarnTxt("<span class='text-red'>태어난 일(날짜) 2자리를 정확하게 입력하세요.</span>");
     } else if (isNaN(year * month * date)) {
-      birthWarn.innerHTML = "<span class='text-red'>생년월일을 다시 확인해주세요.</span>";
+      birthWarnTxt("<span class='text-red'>생년월일을 다시 확인해주세요.</span>");
     } else if (now - year > 100) {
-      birthWarn.innerHTML = "<span class='text-red'>정말이세요?</span>";
+      birthWarnTxt("<span class='text-red'>정말이세요?</span>");
     } else if (nowstamp < birth) {
-      birthWarn.innerHTML = "<span class='text-red'>미래에서 오셨군요. ^^</span>";
+      birthWarnTxt("<span class='text-red'>미래에서 오셨군요. ^^</span>");
     } else {
       birthveri = true;
-      birthWarn.innerHTML = "";
+      birthWarnTxt('');
     }
   })
 })
@@ -176,9 +175,11 @@ document.querySelector('.usermail input').addEventListener('focusout', function(
 
 
 // 휴대전화
+let numWarn = document.querySelector('.phone .warn');
+let veriText = document.getElementById('veritext');
+
 document.querySelector('.phonenum input').addEventListener('focusout', function(){
   let phoneNum = this.value;
-  let numWarn = document.querySelector('.phone .warn');
 
   if(phoneNum.length == 0) {
     numWarn.innerHTML = essenInfo;
@@ -191,8 +192,6 @@ document.getElementById('veribtn').addEventListener('click', function(){
   let phoneNum = document.querySelector('.phonenum input').value;
   phoneNum = phoneNum.replace(/[^0-9]/g, '');
   document.querySelector('.phonenum input').value = phoneNum;
-  let numWarn = document.querySelector('.phone .warn');
-  let veriText = document.getElementById('veritext');
 
   let phoneValLeng;
   if (phoneNum.length < 10 || phoneNum.length > 11) {
@@ -221,9 +220,7 @@ document.getElementById('veribtn').addEventListener('click', function(){
 })
 
 
-document.getElementById('veritext').addEventListener('focusout', function(){
-  let numWarn = document.querySelector('.phone .warn');
-
+veriText.addEventListener('focusout', function(){
   if(this.value == '1234') {
     phoneveri = true;
     numWarn.innerHTML = '<span class="text-green">인증되었습니다.</span>';
