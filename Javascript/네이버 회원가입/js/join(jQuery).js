@@ -312,7 +312,6 @@ $("#veribtn").click(function () {
   if (phoneValLeng && phoneValNum) {
     $(".phone .warn").html('<span class="text-green">인증번호를 발송했습니다.(유효시간 30분)<br/>인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.<br/>이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.</span>');
     $("#veritext").parent(".inputbox").removeClass("disinput");
-
     $("#veritext").attr("disabled", false);
   } else {
     $(".phone .warn").html("<span class='text-red'>형식에 맞지 않는 번호입니다.</span>");
