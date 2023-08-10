@@ -1,236 +1,311 @@
-@charset "utf-8";
-
-/* 웹 브라우저에게 서체 이름과 다운받을 위치를 알려준다 */
 @font-face {
 	font-family: Orbitron;
-	src: url(../webfonts/Orbitron-Regular.eot);
-	src: url(../webfonts/Orbitron-Regular.woff) format("woff");
+	src: url('../webfonts//Orbitron-Regular.eot');
+	src: url('../webfonts/Orbitron-Regular.woff') format("woff");
 }
 
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
-ul {
+
+li {
 	list-style: none;
 }
+
 a {
 	text-decoration: none;
 	color: #555;
 }
 
-/* font-family 에 명시한 첫 번째 서체가 컴퓨터에 없는 경우, 
-브라우저는 사용 가능한 서체를 발견할 때 까지 font-family 
-에 지정된 폰트 목록을 찾는다*/
+/* 명시한 첫번째 폰트가 없을 경우 기본 폰트 지정 */
 body {
 	font-family: Orbitron, sans-serif;
 }
 
-#wrap {
+#wrapper {
+	/* 뷰포트 기준으로 움직이므로 문서의 흐름을 벗어나서 화면 영역을 기준으로 정렬 */
 	position: fixed;
 	width: 100%;
-	height: 100%;
-	min-width: 1024px;
-	min-height: 768px;
-	left: 0;
-	top: 0;
-	/*background: url(../img/bg_morning.jpg);*/
-	background-size: cover;
+	height: 100vh;
 }
-/* --- 로고 --- */
-#wrap h1 {
+
+.global-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 50px;
+}
+
+.logo {
 	width: 90px;
 	height: 80px;
-	position: fixed;
-	left: 40px;
-	top: 30px;
-	background: url(../img/logo_b.png) no-repeat;
+	background-image: url('../img/logo_b.png');
+	background-position: center;
+  background-repeat: no-repeat;
 	background-size: contain;
 }
-/* --- 주메뉴 --- */
-#gnb {
-	position: fixed;
-	top: 50px;
-	right: 200px;
+
+.gnb {
+	display: flex;
 }
-#gnb li {
-	float: left;
-	margin-left: 30px;
+
+.gnb li {
+	margin-right: 30px;
 }
-#gnb li a {
-	font-size: 14px;
-	font-weight: bold;
+
+.gnb li:last-child {
+	margin-right: 0;
 }
-#gnb li a:hover {
-	color: #000;
+
+.gnb li a {
+	font-weight: 700;
 }
-#gnb li a:after {
-	content: "";
+
+.gnb li a::before {
+	content: '';
 	width: 100%;
-	margin: 0 auto;
 	display: block;
 	border-bottom: 2px solid #444;
-	transform: scaleX(0);
 	padding-bottom: 5px;
+	/* 중심점이 가상 요소의 가운데로 설정되어 있음 */
+	transform: scaleX(0);
 	transition: transform 500ms;
 }
-#gnb li a:hover:after {
+
+.gnb li a:hover::before {
 	transform: scaleX(1);
 }
-/* --- sns --- */
-#sns {
-	position: fixed;
-	top: 50px;
-	right: 50px;
-}
-#sns li {
-	float: left;
-	margin-left: 20px;
-}
-#sns li i {
-	font-size: 18px;
-	transition: all 0.4s;
-}
-#sns li i:hover {
-	transform: scale(1.3);
-	color: #222;
-}
-/* --- text box --- */
-article {
+
+section {
 	position: absolute;
 	top: 300px;
 	left: 150px;
-	width: 450px;
 }
-article p {
+
+section p {
 	font-size: 50px;
 	color: #666;
 }
-article p strong {
+
+section p strong {
 	color: #333;
 }
-article em {
+
+section em {
 	font-size: 14px;
 	font-style: normal;
 	color: #333;
 }
-/* --- moblie frame --- */
-div#phone {
+
+#phone {
 	position: absolute;
 	top: 200px;
 	right: -300px;
-	width: 1226px;
-	height: 809px;
-	/*background: url(../img/phone_morning.png);*/
+	width: 1200px;
+	height: 800px;
+	/* background-image: url(./img/phone_afternoon.png); */
 }
-div#phone p {
+
+/* 1. position */
+/* 2. width / height Size */
+/* 3. display */
+#phone p {
 	position: absolute;
 	top: 100px;
-	left: 137px;
-	width: 540px;
-	height: 307px;
+	left: 135px;
+	width: 545px;
+	height: 310px;
 	overflow: hidden;
 	font-size: 60px;
-	font-weight: bold;
+	font-weight: 700;
 	color: #333;
-	line-height: 5;
+	line-height: 310px;
 	padding-left: 60px;
-	box-sizing: border-box;
 }
-/* --- 테마 변경 메뉴 --- */
+
 nav {
 	position: fixed;
 	bottom: 70px;
-	left: 6%;
-	width: 88%;
-}
-nav ul li {
-	width: 25%;
-	float: left;
-}
-nav ul li a {
-	display: block;
-	position: relative;
-	width: 98%;
-	height: 35px;
-	line-height: 35px;
-	font-size: 12px;
-	background: #fff;
-	opacity: 0.6;
-	color: #111;
-	text-align: center;
-	font-weight: bold;
-	letter-spacing: 3px;
-	transition: all 0.5s;
-}
-nav ul li:hover a, nav li.on a {
-	background: #111;
-	color: #ddd;
-	opacity: 0.9;
+	width: 90%;
+	left: 50%;
+	transform: translate(-50%);
 }
 
-#wrap > img:nth-child(1) {
+nav ul {
+	display: flex;
+}
+
+nav ul li {
+	width: 25%;
+	margin-right: 8px;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	display: block;
+	width: 100%;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 12px;
+	font-weight: 700;
+	background-color: #fff;
+	opacity: .6;
+	color: #111;
+	/* 자간 : 글자와 글자 사이 간격 */
+	letter-spacing: 3px;
+}
+
+nav ul li:hover a,
+nav li.on a {
+	color: #ddd;
+	background-color: #111;
+	opacity: .8;
+}
+
+
+/* background 변경 */
+#wrapper.morning {
+	background-image: url('../img/bg_morning.jpg');
+}
+
+#wrapper.morning #phone {
+	background-image: url('../img/phone_morning.png');
+}
+
+#wrapper.afternoon {
+	background-image: url('../img/bg_afternoon.jpg');
+}
+
+#wrapper.afternoon #phone {
+	background-image: url('../img/phone_afternoon.png');
+}
+
+#wrapper.evening {
+	background-image: url('../img/bg_evening.jpg');
+}
+
+#wrapper.evening #phone {
+	background-image: url('../img/phone_evening.png');
+}
+
+#wrapper.night {
+	background-image: url('../img/bg_night.jpg');
+}
+
+#wrapper.night #phone {
+	background-image: url('../img/phone_night.png');
+}
+
+
+/* night일 경우 로고, 컬러 */
+#wrapper.night h1 {
+	background: url('../img/logo_w.png') no-repeat;
+	background-size: contain;
+}
+
+#wrapper.night .gnb a {
+	color: #fff;
+}
+
+#wrapper.night .gnb li a::after {
+	border-color: #fff;
+}
+
+#wrapper.night strong {
+	color: #fff;
+}
+
+#wrapper.night p,
+#wrapper.night em {
+	color: #999;
+}
+
+#wrapper.night #phone p {
+	color: #fff;
+}
+
+#wrapper>img:nth-child(1) {
 	position: absolute;
 	top: 0;
-	left: -1146px;
-	opacity: 0.8;
-	animation: ani1 100s linear infinite;
+	left: 0;
+	opacity: .8;
+	z-index: -1;
+	width: 1200px;
+	animation-name: ani1;
+	animation-duration: 100s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }
-#wrap > img:nth-child(2) {
+
+#wrapper>img:nth-child(2) {
 	position: absolute;
 	top: 20px;
 	left: 0;
-	opacity: 0.8;
+	opacity: .8;
+	z-index: -1;
+	/* name | duration | timing-fuction */
 	animation: ani2 100s linear infinite;
 }
-#phone p img.c1 {
+
+#phone p .cloud1 {
 	width: 600px;
 	position: absolute;
-	top: 30px;
-	left: -600px;
+	top: 0;
+	left: 0;
 	animation: ani3 100s linear infinite;
 }
-#phone p img.c2 {
+
+#phone p .cloud2 {
 	width: 600px;
 	position: absolute;
-	top: 20px;
-	left: 0px;
+	top: 10px;
+	left: 0;
 	animation: ani4 100s linear infinite;
 }
+
 @keyframes ani1 {
+
+	/* from - to */
 	0% {
 		left: -100vw;
 	}
+
 	100% {
 		left: 100vw;
 	}
 }
+
 @keyframes ani2 {
 	0% {
 		left: 0;
 	}
+
 	50% {
-		left: 1960px;
-		opacity: 0;
+		left: 1200px;
 	}
-	50.001%{
-		left: -1840px;
-		opacity: 0.8;
-	}
+
 	60% {
-		left: -1840px;
-		opacity: 0.8;
+		left: -1200px;
 	}
-	100%{
+
+	100% {
 		left: 0;
 	}
 }
+
 @keyframes ani3 {
 	0% {
 		left: -600px;
 	}
+
 	100% {
-		left: 580px;
+		left: 600px;
 	}
 }
 
@@ -238,60 +313,18 @@ nav ul li:hover a, nav li.on a {
 	0% {
 		left: 0;
 	}
+
 	50% {
 		left: 540px;
 		opacity: 0;
 	}
+
 	60% {
-		left: -600px;
+		left: -540px;
 		opacity: 1;
 	}
-	100%{
+
+	100% {
 		left: 0;
 	}
-}
-
-#wrap.morning {
-	background: url(../img/bg_morning.jpg);
-}
-#wrap.morning #phone {
-	background: url(../img/phone_morning.png);
-}
-#wrap.afternoon {
-	background: url(../img/bg_afternoon.jpg);
-}
-#wrap.afternoon #phone {
-	background: url(../img/phone_afternoon.png);
-}
-#wrap.evening {
-	background: url(../img/bg_evening.jpg);
-}
-#wrap.evening #phone {
-	background: url(../img/phone_evening.png);
-}
-#wrap.night {
-	background: url(../img/bg_night.jpg);
-}
-#wrap.night #phone {
-	background: url(../img/phone_night.png);
-}
-
-#wrap.night #gnb a {
-	color: #fff;
-}
-#wrap.night #sns i {
-	color: #fff;
-}
-#wrap.night strong {
-	color: #fff;
-}
-#wrap.night p, #wrap.night em  {
-	color: #999;
-}
-#wrap.night h1 {
-	background: url(../img/logo_w.png) no-repeat;
-	background-size: contain;
-}
-#wrap.night #phone p {
-	color: #fff;
 }
