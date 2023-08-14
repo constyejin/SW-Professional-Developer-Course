@@ -225,7 +225,7 @@ section em {
 }
 
 #wrapper.night .gnb li a::after {
-	border-color: #fff;
+	border-bottom-color: #fff;
 }
 
 #wrapper.night strong {
