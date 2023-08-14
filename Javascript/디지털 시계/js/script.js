@@ -32,21 +32,21 @@ let hr = now.getHours();
 
 if(hr >= 6 && hr < 12) {
   document.getElementById("wrapper").classList.add("morning");
-  document.querySelectorAll("nav li")[0].classList.add("on");
+  document.querySelectorAll(".btn-list li")[0].classList.add("on");
 } else if(hr >= 12 && hr < 16) {
   document.getElementById("wrapper").classList.add("afternoon");
-  document.querySelectorAll("nav li")[1].classList.add("on");
+  document.querySelectorAll(".btn-list li")[1].classList.add("on");
 } else if(hr >= 16 && hr < 20) {
   document.getElementById("wrapper").classList.add("evening");
-  document.querySelectorAll("nav li")[2].classList.add("on");
+  document.querySelectorAll(".btn-list li")[2].classList.add("on");
 } else {
   document.getElementById("wrapper").classList.add("night");
-  document.querySelectorAll("nav li")[3].classList.add("on");
+  document.querySelectorAll(".btn-list li")[3].classList.add("on");
 }
 
 
 // querySelectorAll을 이용해서 nav li 들을 담아준다
-let btnList = document.querySelectorAll("nav li");
+let btnList = document.querySelectorAll(".btn-list li");
 let back = document.getElementById("wrapper");
 
 btnList.forEach(function(btn){
@@ -64,18 +64,18 @@ btnList.forEach(function(btn){
 })
 
 
-let name = ['예진1', '예진2', '예진3', '예진4', '예진5'];
+// let name = ['예진1', '예진2', '예진3', '예진4', '예진5'];
 
-// for문 (console.log)
-for(let i = 0; i < name.length; i++) {
-  console.log(name[i]);
-}
+// // for문 (console.log)
+// for(let i = 0; i < name.length; i++) {
+//   console.log(name[i]);
+// }
 
-// forEach문
-// forEach 메서드로 배열을 순회하려면 콜백 함수 필요하다.
-// 배열의 요소를 나타내는 매개변수가 반드시 하나 이상 있어야 한다.
-// IE버전 8 이하를 제외한 모든 브라우저에서 사용 가능
-// Can i use
-name.forEach(function(yejin){
-  console.log(yejin);
-})
+// // forEach문
+// // forEach 메서드로 배열을 순회하려면 콜백 함수 필요하다.
+// // 배열의 요소를 나타내는 매개변수가 반드시 하나 이상 있어야 한다.
+// // IE버전 8 이하를 제외한 모든 브라우저에서 사용 가능
+// // Can i use
+// name.forEach(function(yejin){
+//   console.log(yejin);
+// })
