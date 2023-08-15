@@ -1,3 +1,4 @@
+// 두자리수로 시간 표시
 setInterval(function(){
   let now = new Date();
   let hr =  now.getHours();
@@ -35,24 +36,31 @@ setInterval(function(){
   // sec = String(sec).padStart(2, '0');
 
   // document.querySelector('.phone-time').innerHTML = `${hr} : ${min} : ${sec}`;
-})
+}, 1000)
+
 
 let now = new Date();
 let hr = now.getHours();
+let buttons = document.querySelectorAll(".btn-list li");
 
+// 6시 ~ 11시 까지 morning
+// 12 ~ 15시 까지 afternoon
+// 16 ~ 19시 까지 evening
+// 20 ~ night
 if(hr >= 6 && hr < 12) {
   document.getElementById("wrapper").classList.add("morning");
-  document.querySelectorAll(".btn-list li")[0].classList.add("on");
+  buttons[0].classList.add("on");
 } else if(hr >= 12 && hr < 16) {
   document.getElementById("wrapper").classList.add("afternoon");
-  document.querySelectorAll(".btn-list li")[1].classList.add("on");
+  buttons[1].classList.add("on");
 } else if(hr >= 16 && hr < 20) {
   document.getElementById("wrapper").classList.add("evening");
-  document.querySelectorAll(".btn-list li")[2].classList.add("on");
+  buttons[2].classList.add("on");
 } else {
   document.getElementById("wrapper").classList.add("night");
-  document.querySelectorAll(".btn-list li")[3].classList.add("on");
+  buttons[3].classList.add("on");
 }
+
 
 
 // querySelectorAll을 이용해서 nav li 들을 담아준다
