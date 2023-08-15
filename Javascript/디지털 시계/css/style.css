@@ -283,8 +283,6 @@ section em {
 }
 
 @keyframes ani1 {
-
-	/* from - to */
 	0% {
 		left: -100vw;
 	}
@@ -329,12 +327,10 @@ section em {
 
 	50% {
 		left: 540px;
-		opacity: 0;
 	}
 
 	60% {
 		left: -540px;
-		opacity: 1;
 	}
 
 	100% {
