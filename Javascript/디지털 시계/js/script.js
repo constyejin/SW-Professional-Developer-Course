@@ -3,7 +3,9 @@ setInterval(function(){
   let hr =  now.getHours();
   let min = now.getMinutes();
   let sec = now.getSeconds();
+  // console.log(typeof(hr))
 
+  // 조건문으로 구현
   if(hr >= 10) {
     hnum = hr;
   } else {
@@ -21,10 +23,18 @@ setInterval(function(){
   } else {
     snum = '0' + sec;
   }
+  document.querySelector('.phone-time').innerHTML = `${hnum} : ${mnum} : ${snum}`;
 
-  document.querySelectorAll("#phone p span")[0].innerHTML = hnum;
-  document.querySelectorAll("#phone p span")[1].innerHTML = mnum;
-  document.querySelectorAll("#phone p span")[2].innerHTML = snum;
+
+  // padStart() method 사용
+  // 값.padStart(자리수, 채울문자)
+  // 현재 문자열의 length가 자리수 보다 작을 경우 채울문자에 작성된 문자로 자리수를 채워주는 method
+  // String(숫자) -> 숫자를 문자로 변환
+  // hr = String(hr).padStart(2, '0');
+  // min = String(min).padStart(2, '0');
+  // sec = String(sec).padStart(2, '0');
+
+  // document.querySelector('.phone-time').innerHTML = `${hr} : ${min} : ${sec}`;
 })
 
 let now = new Date();
@@ -62,4 +72,3 @@ btnList.forEach(function(btn){
     back.className = text;
   })
 })
-
