@@ -63,19 +63,3 @@ btnList.forEach(function(btn){
   })
 })
 
-
-// let name = ['예진1', '예진2', '예진3', '예진4', '예진5'];
-
-// // for문 (console.log)
-// for(let i = 0; i < name.length; i++) {
-//   console.log(name[i]);
-// }
-
-// // forEach문
-// // forEach 메서드로 배열을 순회하려면 콜백 함수 필요하다.
-// // 배열의 요소를 나타내는 매개변수가 반드시 하나 이상 있어야 한다.
-// // IE버전 8 이하를 제외한 모든 브라우저에서 사용 가능
-// // Can i use
-// name.forEach(function(yejin){
-//   console.log(yejin);
-// })
