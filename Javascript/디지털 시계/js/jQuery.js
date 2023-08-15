@@ -1,87 +1,56 @@
-$(function () {
-	let timer = setInterval(function () {
-		let now = new Date();
-		let hr = now.getHours();
-		let min = now.getMinutes();
-		let sec = now.getSeconds();
+let now = new Date();
+let hr = now.getHours();
 
-		if (hr >= 10) {
-			hnum = hr;
-		} else {
-			hnum = "0" + hr;
-		}
-
-		if (min >= 10) {
-			mnum = min;
-		} else {
-			mnum = "0" + min;
-		}
-
-		if (sec >= 10) {
-			snum = sec;
-		} else {
-			snum = "0" + sec;
-		}
-		$("#phone p span").eq(0).text(hnum);
-		$("#phone p span").eq(1).text(mnum);
-		$("#phone p span").eq(2).text(snum);
-	}, 1000);
-
+setInterval(function () {
 	let now = new Date();
 	let hr = now.getHours();
-	if (hr >= 6 && hr < 12) {
-		$("#wrap").removeClass();
-		$("#wrap").addClass("morning");
-		$("nav li").removeClass();
-		$("nav li").eq(0).addClass("on");
-	} else if (hr >= 12 && hr < 16) {
-		$("#wrap").removeClass();
-		$("#wrap").addClass("afternoon");
-		$("nav li").removeClass();
-		$("nav li").eq(1).addClass("on");
-	} else if (hr >= 16 && hr < 20) {
-		$("#wrap").removeClass();
-		$("#wrap").addClass("evening");
-		$("nav li").removeClass();
-		$("nav li").eq(2).addClass("on");
+	let min = now.getMinutes();
+	let sec = now.getSeconds();
+
+	if (hr >= 10) {
+		hnum = hr;
 	} else {
-		$("#wrap").removeClass();
-		$("#wrap").addClass("night");
-		$("nav li").removeClass();
-		$("nav li").eq(3).addClass("on");
+		hnum = "0" + hr;
 	}
 
-	/*	$("nav li").eq(0).click(function(){
-			$("#wrap").removeClass();
-			$("#wrap").addClass("morning");
-			$("nav li").removeClass();
-			$("nav li").eq(0).addClass("on");
-		})
-		$("nav li").eq(1).click(function(){
-			$("#wrap").removeClass();
-			$("#wrap").addClass("afternoon");
-			$("nav li").removeClass();
-			$("nav li").eq(1).addClass("on");
-		})
-		$("nav li").eq(2).click(function(){
-			$("#wrap").removeClass();
-			$("#wrap").addClass("evening");
-			$("nav li").removeClass();
-			$("nav li").eq(2).addClass("on");
-		})
-		$("nav li").eq(3).click(function(){
-			$("#wrap").removeClass();
-			$("#wrap").addClass("night");
-			$("nav li").removeClass();
-			$("nav li").eq(3).addClass("on");
-		})*/
+	if (min >= 10) {
+		mnum = min;
+	} else {
+		mnum = "0" + min;
+	}
+
+	if (sec >= 10) {
+		snum = sec;
+	} else {
+		snum = "0" + sec;
+	}
+	$("#phone p").html(hnum + ':' + mnum + ':' + snum);
+}, 1000);
 
 
-	$("nav li").click(function () {
-		let name = $(this).children("a").text();
-		$("nav li").removeClass();
-		$(this).addClass("on");
-		$("#wrap").removeClass();
-		$("#wrap").addClass(name);
-	});
+if (hr >= 6 && hr < 12) {
+	$("#wrapper").addClass("morning");
+	$(".btn-list li").eq(0).addClass("on");
+} else if (hr >= 12 && hr < 16) {
+	$("#wrapper").addClass("afternoon");
+	$(".btn-list li").eq(1).addClass("on");
+} else if (hr >= 16 && hr < 20) {
+	$("#wrapper").addClass("evening");
+	$(".btn-list li").eq(2).addClass("on");
+} else {
+	$("#wrapper").addClass("night");
+	$(".btn-list li").eq(3).addClass("on");
+}
+
+
+$(".btn-list li").click(function (e) {
+	e.preventDefault();
+	let name = $(this).children("a").text();
+	// console.log(name)
+
+	$(".btn-list li").removeClass();
+	$(this).addClass("on");
+
+	$("#wrapper").removeClass();
+	$("#wrapper").addClass(name);
 });
