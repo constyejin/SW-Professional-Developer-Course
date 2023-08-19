@@ -122,23 +122,23 @@ body {
 	transform: scaleX(1);
 }
 
-section {
+.lorem-txt {
 	position: absolute;
 	top: 50%;
 	left: 150px;
 	transform: translateY(-50%);
 }
 
-section p {
+.lorem-txt p {
 	font-size: 50px;
 	color: #666;
 }
 
-section p strong {
+.lorem-txt p strong {
 	color: #333;
 }
 
-section em {
+.lorem-txt em {
 	font-size: 14px;
 	font-style: normal;
 	color: #333;
@@ -167,7 +167,6 @@ section em {
 #wrapper.evening #phone {
 	background-image: url('../img/phone_evening.png');
 }
-
 
 #wrapper.night #phone {
 	background-image: url('../img/phone_night.png');
