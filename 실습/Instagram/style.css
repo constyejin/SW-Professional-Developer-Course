@@ -1,3 +1,4 @@
+/* :root는 html 문서 어디에서나 이 속성을 사용할 수 있다. */
 :root {
   --body-bg: #fafafa;
   --box-bg: #fff;
@@ -36,21 +37,13 @@ body {
   color: var(--txt-color);
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .form-container {
   width: 350px;
-  margin-bottom: 10px;
+  margin: 10px auto;
   padding: 10px;
 }
 
-.box {
+.form-box {
   border: 1px solid var(--box-border-color);
   background-color: var(--box-bg);
   border-radius: 5px;
@@ -256,10 +249,6 @@ button:disabled {
 
 .store-link a:nth-child(1) {
   margin-right: 8px;
-}
-
-footer {
-  padding-top: 24px;
 }
 
 .links {
