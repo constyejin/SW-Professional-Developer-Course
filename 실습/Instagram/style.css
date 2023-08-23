@@ -35,6 +35,14 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+}
+
 body {
   background-color: var(--body-bg);
   color: var(--txt-color);
@@ -42,8 +50,9 @@ body {
 
 .form-container {
   width: 350px;
-  margin: 10px auto;
-  padding: 10px;
+  /* 상 좌/우, 하 */
+  margin: 50px auto 0;
+  padding: 10px; 
 }
 
 .form-box {
@@ -52,13 +61,13 @@ body {
   border-radius: 5px;
 }
 
-.form-container .logo {
+.logo {
   width: 175px;
   height: 50px;
   margin: 20px auto;
 }
 
-.form-container .logo img {
+.logo img {
   width: 100%;
 }
 
@@ -66,18 +75,17 @@ body {
   display: none;
 }
 
-/* body한테 dark라는 클래스가 있을 때 .logo-dark */
-body.dark .logo-dark {
+/* body한테 dark라는 클래스가 있을 때(body는 생략 가능) .logo-dark */
+.dark .logo-dark {
   display: block;
 }
 
-body.dark .logo-light {
+.dark .logo-light {
   display: none;
 }
 
 .signin-form {
-  padding-top: 24px;
-  margin-bottom: 10px;
+  padding: 24px 0;
 }
 
 .form-group {
@@ -104,9 +112,6 @@ body.dark .logo-light {
   */
   /* 마우스 커서가 input한테 가야 하므로 비활성화 */
   pointer-events: none;
-  
-  /*  요소에 적용된 변형(트랜스폼)의 축을 설정하는 속성 */
-  /* transform-origin: left; */
 }
 
 .animate-input input {
@@ -115,8 +120,8 @@ body.dark .logo-light {
   padding: 8px;
   border: none;
   outline: none;
-  background-color: var(--box-bg);
   color: var(--txt-color);
+  background-color: var(--box-bg);
 }
 
 .animate-input.active span {
@@ -134,12 +139,6 @@ body.dark .logo-light {
   top: 50%;
   transform: translateY(-50%);
   display: none;
-  border: none;
-  outline: none;
-  background-color:transparent;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
 }
 
 .animate-input.active button{
@@ -152,15 +151,10 @@ body.dark .logo-light {
 
 .btn-login {
   width: 100%;
-  border: none;
-  outline: none;
   background-color: var(--btn-bg);
   color: var(--btn-color);
   padding: 6px 10px;
   border-radius: 4px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
 }
 
 button:disabled {
@@ -171,13 +165,10 @@ button:disabled {
 .or-box {
   display: flex;
   align-items: center;
-  /* 위, 좌/우, 아래 */
-  padding: 10px 40px 18px;
-
+  padding: 10px 40px;
 }
 
-.or-box div:nth-child(1),
-.or-box div:nth-child(3) {
+.or-box div:not(:nth-child(2)) {
   flex-grow: 1;
   height: 1px;
   background-color: var(--box-border-color);
@@ -195,10 +186,6 @@ button:disabled {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .btn-fb img {
@@ -221,8 +208,7 @@ button:disabled {
 }
 
 .join-box {
-  margin: 10px 0;
-  padding: 22px;
+  margin: 24px 0;
 }
 
 .join-box p {
@@ -243,20 +229,19 @@ button:disabled {
 .app-download p {
   font-size: 14px;
   text-align: center;
-  margin: 10px;
 }
 
 .store-link {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  margin: 20px 0;
 }
 
 .store-link a img {
   height: 40px;
 }
 
-.store-link a:nth-child(1) {
+.store-link a:not(:last-child) {
   margin-right: 8px;
 }
 
@@ -264,13 +249,12 @@ button:disabled {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .links a {
   color: var(--txt-second-color);
   font-size: 12px;
-  margin: 0 8px;
+  padding: 8px;
 }
 
 .copyright {
