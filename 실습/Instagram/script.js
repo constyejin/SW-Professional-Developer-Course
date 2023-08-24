@@ -1,6 +1,6 @@
-let signin_form = document.getElementById("signin-form");
-let btn_login = document.getElementById("btn-login");
-let darkmode_toggle = document.getElementById("darkmode-toggle");
+let signin_form = document.querySelector(".signin-form");
+let btn_login = document.querySelector(".btn-login");
+let darkmode_toggle = document.getElementById(".darkmode-toggle");
 
 // 화살표 함수(arrow function)
 // 함수 선언문 방식 보다 훨씬 간결하게 함수를 만들 수 있다.
@@ -10,6 +10,7 @@ let darkmode_toggle = document.getElementById("darkmode-toggle");
 // }
 
 // let num = (x,y) => x + y;
+
 
 document.querySelectorAll(".animate-input").forEach((e) => {
   // e : .animate-input이라는 class
@@ -22,13 +23,9 @@ document.querySelectorAll(".animate-input").forEach((e) => {
   input.onkeyup = () => {
     if(input.value.trim().length > 0) {
       e.classList.add("active");
-    } else {
-      e.classList.remove("active");
-    }
-
-    if(input.value.trim().length != 0) {
       btn_login.removeAttribute("disabled");
     } else {
+      e.classList.remove("active");
       btn_login.setAttribute("disabled", "true");
     }
   }
