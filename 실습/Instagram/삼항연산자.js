@@ -1,7 +1,8 @@
 // ES6 문법은 아니지만, 리액트에서 많이 사용하는 삼항 연산자
 let person = {
   name : 'yejin',
-  age : 15
+  age : 15,
+  colors : ['red', 'blue', 'green', 'white']
 }
 
 // 조건문
@@ -29,17 +30,15 @@ console.log(person.age >= 18 ? '성인 입니다.' : '미성년자 입니다.')
 
 
 // 2
-// 아무 배열이나 만들고, 그 배열의 길이가 5이상일 경우 '길다' 아니라면 '짧다'
-let colors = ['red', 'blue', 'green', 'white']
-
-if(colors.length >= 5) {
+// 아무 배열이나 만들고, 그 배열의 길이가 5이상일 경우 '길다' 아니라면 '짧다'let colors = ['red', 'blue', 'green', 'white']
+if(person.colors.length >= 5) {
   result1 = '길다'
 } else {
   result1 = '짧다'
 }
 console.log(result1)
 
-let result2 = colors.length >= 5 ? '길다' : '짧다'
+let result2 = person.colors.length >= 5 ? '길다' : '짧다'
 console.log(result2)
 
 
