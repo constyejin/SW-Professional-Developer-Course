@@ -22,7 +22,7 @@
   position: relative;
   /* 아이템이 자신의 컨테이너가 차지하는 공간에 맞추기 위해
   크기를 키우거나 줄이는 방법을 설정하는 속성 */
-  flex: 1;
+  flex-grow: 1;
   padding: 25px;
   color: #fff;
   transition: all 500ms;
