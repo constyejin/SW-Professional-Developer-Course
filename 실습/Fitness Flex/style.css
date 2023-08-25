@@ -1,3 +1,9 @@
+:root {
+  --cross-fit : #283491;
+  --weight : #f18684;
+  --yoga : #6ee2f1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,15 +29,15 @@
 }
 
 .card-item:nth-child(1) {
-  background: #283491;
+  background-color: var(--cross-fit)
 }
 
 .card-item:nth-child(2) {
-  background: #f18684;
+  background: var(--weight)
 }
 
 .card-item:nth-child(3) {
-  background: #6ee2f1;
+  background: var(--yoga)
 }
 
 .card-item h2 {
